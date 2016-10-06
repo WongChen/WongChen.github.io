@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+
+
+    
+    
+    
+  <url>
+    <loc>http://wongchen.github.io/2016/10/06/remove_footer/</loc>
+    <lastmod>2016-10-06T08:03:33.284Z</lastmod>
+    <data>
+        <display>
+        <title>如何去掉Hexo博客底部页脚</title>
+        <pubTime>2016-10-06T07:31:33.000Z</pubTime>
+        
+        <tag>blog</tag>
+         
+        <tag>hexo</tag>
+         
+         
+           
+             
+              <breadCrumb title="Blog" url="http://wongchen.github.io/categories/Blog/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+    
+    
+  <url>
+    <loc>http://wongchen.github.io/2016/10/03/hello-world/</loc>
+    <lastmod>2016-10-03T01:05:34.342Z</lastmod>
+    <data>
+        <display>
+        <title>Hello World</title>
+        <pubTime>2016-10-03T01:05:34.342Z</pubTime>
+        
+         
+           
+        </display>
+    </data>
+    </url>
+
+</urlset>
