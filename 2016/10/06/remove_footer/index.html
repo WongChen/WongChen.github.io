@@ -90,8 +90,9 @@
 
 由Hexo强力驱动
 
-遂想删之
-1. 查找到git pages site目录,    1grep &quot;强力驱动&quot; -r *">
+遂想删之,不过自己也不懂这些语言,只能想到这样一种办法了
+查找到git pages site目录,    1grep &quot;强力驱动&quot; -r *
+输出123456789public/tags/index.html:  由 &amp;lt;a class=&quot;theme-link&quot; href=">
 <meta property="og:type" content="article">
 <meta property="og:title" content="如何去掉Hexo博客底部页脚">
 <meta property="og:url" content="http://wongchen.github.io/2016/10/06/remove_footer/index.html">
@@ -100,17 +101,19 @@
 
 由Hexo强力驱动
 
-遂想删之
-1. 查找到git pages site目录,    1grep &quot;强力驱动&quot; -r *">
-<meta property="og:updated_time" content="2016-10-06T07:49:43.514Z">
+遂想删之,不过自己也不懂这些语言,只能想到这样一种办法了
+查找到git pages site目录,    1grep &quot;强力驱动&quot; -r *
+输出123456789public/tags/index.html:  由 &amp;lt;a class=&quot;theme-link&quot; href=">
+<meta property="og:updated_time" content="2016-10-06T08:03:33.284Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="如何去掉Hexo博客底部页脚">
 <meta name="twitter:description" content="昨天参照网上的参考,利用Hexo和Git Pages,搭建了自己的博客,强迫症的我,发现最下面的
 
 由Hexo强力驱动
 
-遂想删之
-1. 查找到git pages site目录,    1grep &quot;强力驱动&quot; -r *">
+遂想删之,不过自己也不懂这些语言,只能想到这样一种办法了
+查找到git pages site目录,    1grep &quot;强力驱动&quot; -r *
+输出123456789public/tags/index.html:  由 &amp;lt;a class=&quot;theme-link&quot; href=">
 
 
 
@@ -394,8 +397,12 @@
 <blockquote>
 <p>由Hexo强力驱动</p>
 </blockquote>
-<p>遂想删之</p>
-<h2 id="1-查找"><a href="#1-查找" class="headerlink" title="1. 查找"></a>1. 查找</h2><p>到<code>git pages site</code>目录,<br>    <figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">grep <span class="string">"强力驱动"</span> -r *</div></pre></td></tr></table></figure></p>
+<p>遂想删之,不过自己也不懂这些语言,只能想到这样一种办法了</p>
+<h2 id="查找"><a href="#查找" class="headerlink" title="查找"></a>查找</h2><p>到<code>git pages site</code>目录,<br>    <figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">grep <span class="string">"强力驱动"</span> -r *</div></pre></td></tr></table></figure></p>
+<p>输出<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">public/tags/index.html:  由 &lt;a class=<span class="string">"theme-link"</span> href=<span class="string">"https://hexo.io"</span>&gt;Hexo&lt;/a&gt; 强力驱动</div><div class="line">public/2016/10/03/hello-world/index.html:  由 &lt;a class=<span class="string">"theme-link"</span> href=<span class="string">"https://hexo.io"</span>&gt;Hexo&lt;/a&gt; 强力驱动</div><div class="line">public/2016/10/06/post-second-md/index.html:  由 &lt;a class=<span class="string">"theme-link"</span> href=<span class="string">"https://hexo.io"</span>&gt;Hexo&lt;/a&gt; 强力驱动</div><div class="line">public/index.html:  由 &lt;a class=<span class="string">"theme-link"</span> href=<span class="string">"https://hexo.io"</span>&gt;Hexo&lt;/a&gt; 强力驱动</div><div class="line">public/categories/index.html:  由 &lt;a class=<span class="string">"theme-link"</span> href=<span class="string">"https://hexo.io"</span>&gt;Hexo&lt;/a&gt; 强力驱动</div><div class="line">public/archives/2016/index.html:  由 &lt;a class=<span class="string">"theme-link"</span> href=<span class="string">"https://hexo.io"</span>&gt;Hexo&lt;/a&gt; 强力驱动</div><div class="line">public/archives/2016/10/index.html:  由 &lt;a class=<span class="string">"theme-link"</span> href=<span class="string">"https://hexo.io"</span>&gt;Hexo&lt;/a&gt; 强力驱动</div><div class="line">public/archives/index.html:  由 &lt;a class=<span class="string">"theme-link"</span> href=<span class="string">"https://hexo.io"</span>&gt;Hexo&lt;/a&gt; 强力驱动</div><div class="line">themes/next/languages/zh-Hans.yml:  powered: <span class="string">"由 %s 强力驱动"</span></div></pre></td></tr></table></figure></p>
+<p>跟着路径,从<code>themes</code>中的 <code>zh-Hans.yml</code>文件中找到<code>footer</code></p>
+<p>so,next<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line">grep <span class="string">"powered"</span> -r themes/next <span class="comment">#next 是我使用的主题</span></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line">languages/pt-BR.yml:  powered: <span class="string">"Feito com %s"</span></div><div class="line">languages/de.yml:  powered: <span class="string">"Erstellt mit  %s"</span></div><div class="line">languages/default.yml:  powered: <span class="string">"Powered by %s"</span></div><div class="line">languages/fr-FR.yml:  powered: <span class="string">"Powered by %s"</span></div><div class="line">layout/_partials/comments.swig:          &lt;a href=<span class="string">"//disqus.com/?ref_noscript"</span>&gt;comments powered by Disqus.&lt;/a&gt;</div><div class="line">layout/_partials/footer.swig:&lt;div class=<span class="string">"powered-by"</span>&gt;</div><div class="line">layout/_partials/footer.swig:  &#123;&#123; __(<span class="string">'footer.powered'</span>, <span class="string">'&lt;a class="theme-link" href="https://hexo.io"&gt;Hexo&lt;/a&gt;'</span>)  &#125;&#125;</div><div class="line"><span class="built_in">source</span>/css/_common/components/footer/footer.styl:.powered-by,</div><div class="line">    <span class="built_in">source</span>/css/_common/components/footer/footer.styl:.powered-by &#123;</div><div class="line"></div><div class="line">    &#125;</div></pre></td></tr></table></figure></p>
+<p>languages目录下自不必理会,将layout下的<code>footer.swig</code>中的带有<code>powered-by</code> 的<code>div</code>标签删除即可</p>
 
       
     </div>
@@ -613,7 +620,7 @@
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-查找"><span class="nav-number">1.</span> <span class="nav-text">1. 查找</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#查找"><span class="nav-number">1.</span> <span class="nav-text">查找</span></a></li></ol></div>
             
           </div>
         </section>
