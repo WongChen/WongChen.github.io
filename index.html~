@@ -117,6 +117,7 @@
 
   <link rel="canonical" href="http://wongchen.github.io/"/>
 
+<meta name="baidu-site-verification" content="rmeRtZOXoQ" />
   <title> 印第安老斑鸠 </title>
 </head>
 
@@ -302,6 +303,144 @@
             
               
                 
+                <a class="post-title-link" href="/2016/10/06/remove_footer/" itemprop="url">
+                  如何去掉Hexo博客底部页脚
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-10-06T15:31:33+08:00" content="2016-10-06">
+              2016-10-06
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/Blog/" itemprop="url" rel="index">
+                    <span itemprop="name">Blog</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2016/10/06/remove_footer/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count fb-comments-count" data-href="http://wongchen.github.io/2016/10/06/remove_footer/" itemprop="commentsCount">0</span> comments
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+             <span id="/2016/10/06/remove_footer/" class="leancloud_visitors" data-flag-title="如何去掉Hexo博客底部页脚">
+               &nbsp; | &nbsp;
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               <span class="post-meta-item-text">阅读次数 </span>
+               <span class="leancloud-visitors-count"></span>
+              </span>
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>昨天参照网上的参考,利用<code>Hexo</code>和<code>Git Pages</code>,搭建了自己的博客,强迫症的我,发现最下面的</p>
+<blockquote>
+<p>由Hexo强力驱动</p>
+</blockquote>
+<p>遂想删之,不过自己也不懂这些语言,只能想到这样一种办法了</p>
+<h2 id="查找"><a href="#查找" class="headerlink" title="查找"></a>查找</h2><p>到<code>git pages site</code>目录,<br>    <figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">grep <span class="string">"强力驱动"</span> -r *</div></pre></td></tr></table></figure></p>
+<p>输出<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">public/tags/index.html:  由 &lt;a class=<span class="string">"theme-link"</span> href=<span class="string">"https://hexo.io"</span>&gt;Hexo&lt;/a&gt; 强力驱动</div><div class="line">public/2016/10/03/hello-world/index.html:  由 &lt;a class=<span class="string">"theme-link"</span> href=<span class="string">"https://hexo.io"</span>&gt;Hexo&lt;/a&gt; 强力驱动</div><div class="line">public/2016/10/06/post-second-md/index.html:  由 &lt;a class=<span class="string">"theme-link"</span> href=<span class="string">"https://hexo.io"</span>&gt;Hexo&lt;/a&gt; 强力驱动</div><div class="line">public/index.html:  由 &lt;a class=<span class="string">"theme-link"</span> href=<span class="string">"https://hexo.io"</span>&gt;Hexo&lt;/a&gt; 强力驱动</div><div class="line">public/categories/index.html:  由 &lt;a class=<span class="string">"theme-link"</span> href=<span class="string">"https://hexo.io"</span>&gt;Hexo&lt;/a&gt; 强力驱动</div><div class="line">public/archives/2016/index.html:  由 &lt;a class=<span class="string">"theme-link"</span> href=<span class="string">"https://hexo.io"</span>&gt;Hexo&lt;/a&gt; 强力驱动</div><div class="line">public/archives/2016/10/index.html:  由 &lt;a class=<span class="string">"theme-link"</span> href=<span class="string">"https://hexo.io"</span>&gt;Hexo&lt;/a&gt; 强力驱动</div><div class="line">public/archives/index.html:  由 &lt;a class=<span class="string">"theme-link"</span> href=<span class="string">"https://hexo.io"</span>&gt;Hexo&lt;/a&gt; 强力驱动</div><div class="line">themes/next/languages/zh-Hans.yml:  powered: <span class="string">"由 %s 强力驱动"</span></div></pre></td></tr></table></figure></p>
+<p>跟着路径,从<code>themes</code>中的 <code>zh-Hans.yml</code>文件中找到<code>footer</code></p>
+<p>so,next<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line">grep <span class="string">"powered"</span> -r themes/next <span class="comment">#next 是我使用的主题</span></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line">languages/pt-BR.yml:  powered: <span class="string">"Feito com %s"</span></div><div class="line">languages/de.yml:  powered: <span class="string">"Erstellt mit  %s"</span></div><div class="line">languages/default.yml:  powered: <span class="string">"Powered by %s"</span></div><div class="line">languages/fr-FR.yml:  powered: <span class="string">"Powered by %s"</span></div><div class="line">layout/_partials/comments.swig:          &lt;a href=<span class="string">"//disqus.com/?ref_noscript"</span>&gt;comments powered by Disqus.&lt;/a&gt;</div><div class="line">layout/_partials/footer.swig:&lt;div class=<span class="string">"powered-by"</span>&gt;</div><div class="line">layout/_partials/footer.swig:  &#123;&#123; __(<span class="string">'footer.powered'</span>, <span class="string">'&lt;a class="theme-link" href="https://hexo.io"&gt;Hexo&lt;/a&gt;'</span>)  &#125;&#125;</div><div class="line"><span class="built_in">source</span>/css/_common/components/footer/footer.styl:.powered-by,</div><div class="line">    <span class="built_in">source</span>/css/_common/components/footer/footer.styl:.powered-by &#123;</div><div class="line"></div><div class="line">    &#125;</div></pre></td></tr></table></figure></p>
+<p>languages目录下自不必理会,将layout下的<code>footer.swig</code>中的带有<code>powered-by</code> 的<code>div</code>标签删除即可</p>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
                 <a class="post-title-link" href="/2016/10/03/hello-world/" itemprop="url">
                   Hello World
                 </a>
@@ -440,13 +579,27 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">1</span>
+              <span class="site-state-item-count">2</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
 
           
+            <div class="site-state-item site-state-categories">
+              <a href="/categories">
+                <span class="site-state-item-count">1</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
 
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">2</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
           
 
         </nav>
@@ -540,7 +693,6 @@
   </span>
   <span class="author" itemprop="copyrightHolder">Wong Chen</span>
 </div>
-
 
 
         
