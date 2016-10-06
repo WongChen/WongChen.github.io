@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://wongchen.github.io/"/>
-  <updated>2016-10-03T02:22:48.745Z</updated>
+  <updated>2016-10-03T01:05:34.342Z</updated>
   <id>http://wongchen.github.io/</id>
   
   <author>
@@ -14,24 +14,6 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
-  
-  <entry>
-    <title></title>
-    <link href="http://wongchen.github.io/2016/10/03/hello/"/>
-    <id>http://wongchen.github.io/2016/10/03/hello/</id>
-    <published>2016-10-03T02:22:48.745Z</published>
-    <updated>2016-10-03T02:22:48.745Z</updated>
-    
-    <content type="html"><![CDATA[<h1 id="First-Blog-to-see-if"><a href="#First-Blog-to-see-if" class="headerlink" title="First Blog to see if"></a>First Blog to see if</h1>]]></content>
-    
-    <summary type="html">
-    
-      &lt;h1 id=&quot;First-Blog-to-see-if&quot;&gt;&lt;a href=&quot;#First-Blog-to-see-if&quot; class=&quot;headerlink&quot; title=&quot;First Blog to see if&quot;&gt;&lt;/a&gt;First Blog to see if&lt;/h1&gt;
-    
-    </summary>
-    
-    
-  </entry>
   
   <entry>
     <title>Hello World</title>
