@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://wongchen.github.io/"/>
-  <updated>2016-10-03T01:05:34.342Z</updated>
+  <updated>2016-10-06T06:49:22.126Z</updated>
   <id>http://wongchen.github.io/</id>
   
   <author>
@@ -14,6 +14,20 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>_post/second.md</title>
+    <link href="http://wongchen.github.io/2016/10/06/post-second-md/"/>
+    <id>http://wongchen.github.io/2016/10/06/post-second-md/</id>
+    <published>2016-10-06T06:49:22.000Z</published>
+    <updated>2016-10-06T06:49:22.126Z</updated>
+    
+    <summary type="html">
+    
+    </summary>
+    
+    
+  </entry>
   
   <entry>
     <title>Hello World</title>
