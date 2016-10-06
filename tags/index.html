@@ -84,9 +84,6 @@
 
 
 
-  <meta property="fb:admins" content="yachen.wang.902" />
-  <meta property="fb:app_id" content="1601634983475672" />
-
 
 
 <meta name="description" content="若你喜欢怪人,其实我很美">
@@ -133,24 +130,6 @@
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
 
   
-<script>
-  window.fbAsyncInit = function() {
-    FB.init({
-      appId      : '1601634983475672',
-      xfbml      : true,
-      version    : 'v2.6'
-    });
-  };
-
-  (function(d, s, id){
-     var js, fjs = d.getElementsByTagName(s)[0];
-     if (d.getElementById(id)) {return;}
-     js = d.createElement(s); js.id = id;
-     js.src = "//connect.facebook.net/zh_Hans/sdk.js";
-     fjs.parentNode.insertBefore(js, fjs);
-   }(document, 'script', 'facebook-jssdk'));
-</script>
-
 
 
 <script>
@@ -328,11 +307,11 @@
           
   <div class="comments" id="comments">
     
-      <div class="fb-comments"
-           data-href="http://wongchen.github.io/tags/index.html"
-           data-numposts="10"
-           data-width="100%"
-           data-colorscheme="light">
+      <div id="disqus_thread">
+        <noscript>
+          Please enable JavaScript to view the
+          <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
       </div>
     
   </div>
