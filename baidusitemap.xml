@@ -3,11 +3,24 @@
 
 
     
-    
+  <url>
+    <loc>http://wongchen.github.io/2016/10/09/hello-world/</loc>
+    <lastmod>2016-10-08T17:08:24.000Z</lastmod>
+    <data>
+        <display>
+        <title>Hello World</title>
+        <pubTime>2016-10-09T02:42:21.318Z</pubTime>
+        
+         
+           
+        </display>
+    </data>
+    </url>
+
     
   <url>
     <loc>http://wongchen.github.io/2016/10/06/remove_footer/</loc>
-    <lastmod>2016-10-06T08:03:33.284Z</lastmod>
+    <lastmod>2016-10-08T17:08:24.000Z</lastmod>
     <data>
         <display>
         <title>如何去掉Hexo博客底部页脚</title>
@@ -29,18 +42,5 @@
     
     
     
-  <url>
-    <loc>http://wongchen.github.io/2016/10/03/hello-world/</loc>
-    <lastmod>2016-10-03T01:05:34.342Z</lastmod>
-    <data>
-        <display>
-        <title>Hello World</title>
-        <pubTime>2016-10-03T01:05:34.342Z</pubTime>
-        
-         
-           
-        </display>
-    </data>
-    </url>
-
+    
 </urlset>
