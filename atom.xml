@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://wongchen.github.io/"/>
-  <updated>2016-10-08T17:08:24.000Z</updated>
+  <updated>2016-10-12T13:23:06.073Z</updated>
   <id>http://wongchen.github.io/</id>
   
   <author>
@@ -14,6 +14,33 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>xx.md</title>
+    <link href="http://wongchen.github.io/2016/10/12/xx-md/"/>
+    <id>http://wongchen.github.io/2016/10/12/xx-md/</id>
+    <published>2016-10-12T13:21:44.000Z</published>
+    <updated>2016-10-12T13:23:06.073Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="I-love-xx"><a href="#I-love-xx" class="headerlink" title="I love xx!"></a>I love xx!</h2><ul>
+<li>Jxx</li>
+<li>wyc</li>
+<li>www</li>
+</ul>
+<p><a href="wongchen.github.io">jxx</a></p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;I-love-xx&quot;&gt;&lt;a href=&quot;#I-love-xx&quot; class=&quot;headerlink&quot; title=&quot;I love xx!&quot;&gt;&lt;/a&gt;I love xx!&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;Jxx&lt;/li&gt;
+&lt;li&gt;wyc&lt;/li&gt;
+&lt;li&gt;www&lt;/li&gt;
+    
+    </summary>
+    
+    
+  </entry>
   
   <entry>
     <title>Hello World</title>

@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://wongchen.github.io/2016/10/12/xx-md/</loc>
+    
+    <lastmod>2016-10-12T13:23:06.073Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://wongchen.github.io/2016/10/09/hello-world/</loc>
     
     <lastmod>2016-10-08T17:08:24.000Z</lastmod>
@@ -30,14 +37,14 @@
   </url>
   
   <url>
-    <loc>http://wongchen.github.io/categories/index.html</loc>
+    <loc>http://wongchen.github.io/tags/index.html</loc>
     
     <lastmod>2016-10-08T17:08:24.000Z</lastmod>
     
   </url>
   
   <url>
-    <loc>http://wongchen.github.io/tags/index.html</loc>
+    <loc>http://wongchen.github.io/categories/index.html</loc>
     
     <lastmod>2016-10-08T17:08:24.000Z</lastmod>
     
