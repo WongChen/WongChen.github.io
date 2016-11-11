@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://wongchen.github.io/"/>
-  <updated>2016-11-11T04:32:41.847Z</updated>
+  <updated>2016-11-11T05:18:14.000Z</updated>
   <id>http://wongchen.github.io/</id>
   
   <author>
@@ -16,40 +16,13 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>jj</title>
-    <link href="http://wongchen.github.io/2016/11/11/jj/"/>
-    <id>http://wongchen.github.io/2016/11/11/jj/</id>
-    <published>2016-11-11T04:32:41.000Z</published>
-    <updated>2016-11-11T04:32:41.847Z</updated>
+    <title>jsa</title>
+    <link href="http://wongchen.github.io/2016/11/11/jsa/"/>
+    <id>http://wongchen.github.io/2016/11/11/jsa/</id>
+    <published>2016-11-11T05:18:14.000Z</published>
+    <updated>2016-11-11T05:18:14.000Z</updated>
     
     <summary type="html">
-    
-    </summary>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>xx.md</title>
-    <link href="http://wongchen.github.io/2016/10/12/xx-md/"/>
-    <id>http://wongchen.github.io/2016/10/12/xx-md/</id>
-    <published>2016-10-12T13:21:44.000Z</published>
-    <updated>2016-10-12T13:23:06.073Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="I-love-xx"><a href="#I-love-xx" class="headerlink" title="I love xx!"></a>I love xx!</h2><ul>
-<li>Jxx</li>
-<li>wyc</li>
-<li>www</li>
-</ul>
-<p><a href="wongchen.github.io">jxx</a></p>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;h2 id=&quot;I-love-xx&quot;&gt;&lt;a href=&quot;#I-love-xx&quot; class=&quot;headerlink&quot; title=&quot;I love xx!&quot;&gt;&lt;/a&gt;I love xx!&lt;/h2&gt;&lt;ul&gt;
-&lt;li&gt;Jxx&lt;/li&gt;
-&lt;li&gt;wyc&lt;/li&gt;
-&lt;li&gt;www&lt;/li&gt;
     
     </summary>
     
@@ -58,9 +31,9 @@
   
   <entry>
     <title>Hello World</title>
-    <link href="http://wongchen.github.io/2016/10/09/hello-world/"/>
-    <id>http://wongchen.github.io/2016/10/09/hello-world/</id>
-    <published>2016-10-09T02:42:21.318Z</published>
+    <link href="http://wongchen.github.io/2016/11/11/hello-world/"/>
+    <id>http://wongchen.github.io/2016/11/11/hello-world/</id>
+    <published>2016-11-11T05:10:59.000Z</published>
     <updated>2016-10-08T17:08:24.000Z</updated>
     
     <content type="html"><![CDATA[<p>Welcome to <a href="https://hexo.io/" target="_blank" rel="external">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="external">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="external">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="external">GitHub</a>.</p>
@@ -77,6 +50,47 @@
     <summary type="html">
     
       &lt;p&gt;Welcome to &lt;a href=&quot;https://hexo.io/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Hexo&lt;/a&gt;! This is your very first post. Check &lt;a href=&quot;https://hexo.
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>jj</title>
+    <link href="http://wongchen.github.io/2016/11/11/jj/"/>
+    <id>http://wongchen.github.io/2016/11/11/jj/</id>
+    <published>2016-11-11T04:32:41.000Z</published>
+    <updated>2016-11-11T04:32:41.000Z</updated>
+    
+    <summary type="html">
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>xx.md</title>
+    <link href="http://wongchen.github.io/2016/10/12/xx-md/"/>
+    <id>http://wongchen.github.io/2016/10/12/xx-md/</id>
+    <published>2016-10-12T13:21:44.000Z</published>
+    <updated>2016-10-12T13:23:06.000Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="I-love-xx"><a href="#I-love-xx" class="headerlink" title="I love xx!"></a>I love xx!</h2><ul>
+<li>Jxx</li>
+<li>wyc</li>
+<li>www</li>
+</ul>
+<p><a href="wongchen.github.io">jxx</a></p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;I-love-xx&quot;&gt;&lt;a href=&quot;#I-love-xx&quot; class=&quot;headerlink&quot; title=&quot;I love xx!&quot;&gt;&lt;/a&gt;I love xx!&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;Jxx&lt;/li&gt;
+&lt;li&gt;wyc&lt;/li&gt;
+&lt;li&gt;www&lt;/li&gt;
     
     </summary>
     
