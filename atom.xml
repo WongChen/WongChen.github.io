@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://wongchen.github.io/"/>
-  <updated>2016-10-08T17:08:24.000Z</updated>
+  <updated>2016-11-11T12:57:15.000Z</updated>
   <id>http://wongchen.github.io/</id>
   
   <author>
@@ -14,6 +14,39 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>mac安装Matlab2014a</title>
+    <link href="http://wongchen.github.io/2016/11/11/mac%E5%AE%89%E8%A3%85Matlab2014a/"/>
+    <id>http://wongchen.github.io/2016/11/11/mac安装Matlab2014a/</id>
+    <published>2016-11-11T12:26:01.000Z</published>
+    <updated>2016-11-11T12:57:15.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>安装Matlab 2014a后，打开时，遇到一些Java错误信息，解决方法：<br>到<strong>官网</strong>下载<a href="https://www.mathworks.com/support/bugreports/1098655" target="_blank" rel="external">R2014a_patch_1098655</a>补丁，一定要去官网下载，找到对应的版本号，运行下载的程序，选择要patch的程序Matlab，OK。</p>
+<p>对于带有Retina Display的mac，打开进去后会发现分辨率很低，这是由于安装的matlab内建的jre所导致。解决方法：<br><br></p>
+<ol>
+<li>安装JDK，去<a href="http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html" target="_blank" rel="external">官网</a>哦，若已安装，忽略。<br></li>
+<li>修改Matlab的JAVA环境变量,终端执行<br><code>echo &quot;MATLAB_JAVA=/Library/Java/JavaVirtualMachines/jdkXX_XX.jdk/Contents/Home/jre&quot; &gt;&gt; ~/.bash_profile</code></li>
+<li>Matlab内建的jre目录为<code>/Applications/MATLAB_R2014a.app/sys/java/jre/maci64</code>，备份或删除其jre,之后创建软链接</li>
+</ol>
+   <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">ln -s /Library/Internet\ Plug-Ins/JavaAppletPlugin.plugin/Contents/Home/ jre</div></pre></td></tr></table></figure>
+<p>   没啥多说的，只是网上找的好些都有错误。</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;安装Matlab 2014a后，打开时，遇到一些Java错误信息，解决方法：&lt;br&gt;到&lt;strong&gt;官网&lt;/strong&gt;下载&lt;a href=&quot;https://www.mathworks.com/support/bugreports/1098655&quot; target=&quot;_b
+    
+    </summary>
+    
+      <category term="Apps" scheme="http://wongchen.github.io/categories/Apps/"/>
+    
+    
+      <category term="matlab" scheme="http://wongchen.github.io/tags/matlab/"/>
+    
+      <category term="mac" scheme="http://wongchen.github.io/tags/mac/"/>
+    
+  </entry>
   
   <entry>
     <title>如何去掉Hexo博客底部页脚</title>

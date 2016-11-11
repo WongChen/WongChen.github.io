@@ -312,6 +312,143 @@
             
               
                 
+                <a class="post-title-link" href="/2016/11/11/mac安装Matlab2014a/" itemprop="url">
+                  mac安装Matlab2014a
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-11-11T20:26:01+08:00" content="2016-11-11">
+              2016-11-11
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/Apps/" itemprop="url" rel="index">
+                    <span itemprop="name">Apps</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2016/11/11/mac安装Matlab2014a/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count fb-comments-count" data-href="http://wongchen.github.io/2016/11/11/mac安装Matlab2014a/" itemprop="commentsCount">0</span> comments
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+             <span id="/2016/11/11/mac安装Matlab2014a/" class="leancloud_visitors" data-flag-title="mac安装Matlab2014a">
+               &nbsp; | &nbsp;
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               <span class="post-meta-item-text">阅读次数 </span>
+               <span class="leancloud-visitors-count"></span>
+              </span>
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>安装Matlab 2014a后，打开时，遇到一些Java错误信息，解决方法：<br>到<strong>官网</strong>下载<a href="https://www.mathworks.com/support/bugreports/1098655" target="_blank" rel="external">R2014a_patch_1098655</a>补丁，一定要去官网下载，找到对应的版本号，运行下载的程序，选择要patch的程序Matlab，OK。</p>
+<p>对于带有Retina Display的mac，打开进去后会发现分辨率很低，这是由于安装的matlab内建的jre所导致。解决方法：<br><br></p>
+<ol>
+<li>安装JDK，去<a href="http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html" target="_blank" rel="external">官网</a>哦，若已安装，忽略。<br></li>
+<li>修改Matlab的JAVA环境变量,终端执行<br><code>echo &quot;MATLAB_JAVA=/Library/Java/JavaVirtualMachines/jdkXX_XX.jdk/Contents/Home/jre&quot; &gt;&gt; ~/.bash_profile</code></li>
+<li>Matlab内建的jre目录为<code>/Applications/MATLAB_R2014a.app/sys/java/jre/maci64</code>，备份或删除其jre,之后创建软链接</li>
+</ol>
+   <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">ln -s /Library/Internet\ Plug-Ins/JavaAppletPlugin.plugin/Contents/Home/ jre</div></pre></td></tr></table></figure>
+<p>   没啥多说的，只是网上找的好些都有错误。</p>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
                 <a class="post-title-link" href="/2016/10/06/remove_footer/" itemprop="url">
                   如何去掉Hexo博客底部页脚
                 </a>
@@ -470,7 +607,7 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">1</span>
+              <span class="site-state-item-count">2</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
@@ -478,7 +615,7 @@
           
             <div class="site-state-item site-state-categories">
               <a href="/categories">
-                <span class="site-state-item-count">1</span>
+                <span class="site-state-item-count">2</span>
                 <span class="site-state-item-name">分类</span>
               </a>
             </div>
@@ -487,7 +624,7 @@
           
             <div class="site-state-item site-state-tags">
               <a href="/tags">
-                <span class="site-state-item-count">2</span>
+                <span class="site-state-item-count">4</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
