@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://wongchen.github.io/"/>
-  <updated>2016-11-13T06:57:36.000Z</updated>
+  <updated>2016-11-13T09:04:32.000Z</updated>
   <id>http://wongchen.github.io/</id>
   
   <author>
@@ -16,11 +16,31 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>withoutchinese</title>
+    <link href="http://wongchen.github.io/2016/11/13/withoutchinese/"/>
+    <id>http://wongchen.github.io/2016/11/13/withoutchinese/</id>
+    <published>2016-11-13T09:04:11.000Z</published>
+    <updated>2016-11-13T09:04:32.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>sjasjas</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;sjasjas&lt;/p&gt;
+
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
     <title>我的MacVim配置</title>
     <link href="http://wongchen.github.io/2016/11/13/%E6%88%91%E7%9A%84MacVim%E9%85%8D%E7%BD%AE/"/>
     <id>http://wongchen.github.io/2016/11/13/我的MacVim配置/</id>
     <published>2016-11-13T05:14:35.000Z</published>
-    <updated>2016-11-13T06:57:36.000Z</updated>
+    <updated>2016-11-13T07:01:13.000Z</updated>
     
     <content type="html"><![CDATA[<p>网上关于Vim配置的讲很多，一键配置也很多。但是我们使用Vim不是因为它的插件实现的功能，自动补全，提示有多厉害，而是它自身的逻辑，自身的快速定位，格式化代码。</p>
 <p>所以自己使用方便，好用的配置才是最好的！</p>
@@ -124,9 +144,9 @@
       <category term="Apps" scheme="http://wongchen.github.io/categories/Apps/"/>
     
     
-      <category term="matlab" scheme="http://wongchen.github.io/tags/matlab/"/>
-    
       <category term="mac" scheme="http://wongchen.github.io/tags/mac/"/>
+    
+      <category term="matlab" scheme="http://wongchen.github.io/tags/matlab/"/>
     
   </entry>
   
