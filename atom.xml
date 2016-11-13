@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://wongchen.github.io/"/>
-  <updated>2016-11-13T09:04:32.000Z</updated>
+  <updated>2016-11-13T07:01:13.000Z</updated>
   <id>http://wongchen.github.io/</id>
   
   <author>
@@ -14,26 +14,6 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
-  
-  <entry>
-    <title>withoutchinese</title>
-    <link href="http://wongchen.github.io/2016/11/13/withoutchinese/"/>
-    <id>http://wongchen.github.io/2016/11/13/withoutchinese/</id>
-    <published>2016-11-13T09:04:11.000Z</published>
-    <updated>2016-11-13T09:04:32.000Z</updated>
-    
-    <content type="html"><![CDATA[<p>sjasjas</p>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;sjasjas&lt;/p&gt;
-
-    
-    </summary>
-    
-    
-  </entry>
   
   <entry>
     <title>我的MacVim配置</title>
