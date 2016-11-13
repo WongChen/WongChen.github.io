@@ -4,6 +4,28 @@
 
     
   <url>
+    <loc>http://wongchen.github.io/2016/11/13/gae-proxy-ipv6/</loc>
+    <lastmod>2016-11-13T15:36:26.000Z</lastmod>
+    <data>
+        <display>
+        <title>IPv6环境使用Goagent代理免校园网流量</title>
+        <pubTime>2016-11-13T14:49:58.000Z</pubTime>
+        
+        <tag>IPv6</tag>
+         
+        <tag>GAE</tag>
+         
+         
+           
+             
+              <breadCrumb title="Mac配置" url="http://wongchen.github.io/categories/Mac%E9%85%8D%E7%BD%AE/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://wongchen.github.io/2016/11/13/%E6%88%91%E7%9A%84MacVim%E9%85%8D%E7%BD%AE/</loc>
     <lastmod>2016-11-13T07:01:13.000Z</lastmod>
     <data>
@@ -33,9 +55,9 @@
         <title>mac安装Matlab2014a</title>
         <pubTime>2016-11-11T12:26:01.000Z</pubTime>
         
-        <tag>mac</tag>
-         
         <tag>matlab</tag>
+         
+        <tag>mac</tag>
          
          
            

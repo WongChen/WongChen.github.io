@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://wongchen.github.io/"/>
-  <updated>2016-11-13T07:01:13.000Z</updated>
+  <updated>2016-11-13T15:36:26.000Z</updated>
   <id>http://wongchen.github.io/</id>
   
   <author>
@@ -14,6 +14,59 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>IPv6环境使用Goagent代理免校园网流量</title>
+    <link href="http://wongchen.github.io/2016/11/13/gae-proxy-ipv6/"/>
+    <id>http://wongchen.github.io/2016/11/13/gae-proxy-ipv6/</id>
+    <published>2016-11-13T14:49:58.000Z</published>
+    <updated>2016-11-13T15:36:26.000Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="ipv6"><a href="#ipv6" class="headerlink" title="ipv6"></a>ipv6</h2><p>If you ask Google “What is ipv6 ?”, the first entry it will display says that</p>
+<blockquote>
+<p>Internet Protocol Version 6 (IPv6) is a network layer protocol that enables data communications over a packet switched network. Packet switching involves the sending and receiving of data in packets between two nodes in a network. </p>
+</blockquote>
+<p>用中文讲,就是</p>
+<blockquote>
+<p>互联网通信协议第6版（英文：Internet Protocol version 6，缩写：IPv6）是互联网协议的最新版本，用于分组交换互联网络的网络层协议，旨在解决IPv4地址枯竭问题。<br>  IPv6意图替换IPv4，而IPv4在2014年5月仍然在网络交通上占有96%。[1][2][3]在2014年10月，通过IPv6使用Google服务的用户百分率首次超过5%。</p>
+</blockquote>
+<p>  教育网由于采用IPv6,有它固有的优势</p>
+<ul>
+<li>地址容量大大扩展，由原来的32位扩充到128位，彻底解决IPv4地址不足的问题；支持分层地址结构，从而更易于寻址；扩展支持组播和任意播地址，这使得数据包可以发送给任何一个或一组节点；</li>
+<li>大容量的地址空间能够真正的实现无状态地址自动配置，使IPv6终端能够快速连接到网络上，无需人工配置，实现了真正的即插即用；</li>
+<li>…… 其实我是不懂的</li>
+</ul>
+<h2 id="GoAgent"><a href="#GoAgent" class="headerlink" title="GoAgent"></a>GoAgent</h2><p>From <a href="https://zh.wikipedia.org/wiki/GoAgent" target="_blank" rel="external">Wikepidia</a>,</p>
+<blockquote>
+<p>GoAgent是使用跨平台语言Python开发、基于GPL自由软件协议的代理软件。它利用Google App Engine（GAE）的服务器充当代理。从2015年8月以后，GoAgent已停止维护，并被开发者删除。不过，GoAgent作者phuslu于2015年3月开始开发的另一个翻墙软件GoProxy仍处于活跃维护状态。</p>
+</blockquote>
+<p>虽然那会儿停止维护了,但是我发现虽然IPv4的IP不能使了,IPv6还是OK的.于是我就大部分时间一直都在用它,用到现在.</p>
+<p>具体怎么用就不说了,BTW,需要开启IPv6,在<code>local/proxy.ini</code>配置文件中,修改<code>ipv6=1</code><br><img src="/images/ipv6.png" alt="ipv6"></p>
+<h3 id="浏览器使用"><a href="#浏览器使用" class="headerlink" title="浏览器使用"></a>浏览器使用</h3><p><code>chrome</code> 配合插件 <code>SwitchyOmega</code>,修改规则<br>代理类型<em>HTTP</em>,服务器 <em>127.0.0.1</em> ,端口 <em>8087</em>,也可以使用备份文件恢复.<br>需要注意的是,完了需要信任其证书.</p>
+<p>在线看YouTube还是很快的,经常看Apple/Google 发布会 Live stream,还有NBA 的Live,还有Udacity和Coursera上面的课程……资源还是很多的,速度也基本ok.<br><img src="/images/youtube.png" alt="youtube"></p>
+<h3 id="Terminal使用"><a href="#Terminal使用" class="headerlink" title="Terminal使用"></a>Terminal使用</h3><p>修改变量<code>http_proxy</code>和<code>https_proxy</code>即可,如下</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">export http_proxy=&apos;http://localhost:8087&apos;                                                    </div><div class="line">export https_proxy=&apos;http://localhost:8087&apos;</div></pre></td></tr></table></figure>
+<p>总之,在Terminal下,代理后速度比不用代理要<strong>快了</strong>几倍,还是很可以的.</p>
+<p>在用<code>wget</code>下载时需要添加<code>--no-check-certificate</code>,否则会<br><code>ERROR: cannot verify github.com&#39;s certificate, issued by ‘CN=GoAgent,OU=GoAgent,O=GoAgent,L=Cernet,ST=Internet,C=CN’:
+  Unable to locally verify the issuer&#39;s authority.</code>   </p>
+<p>  之后找到解决办法再来更新</p>
+<p>其他app也是可以,像迅雷,百度云,spotify这些,很省流量啊</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;ipv6&quot;&gt;&lt;a href=&quot;#ipv6&quot; class=&quot;headerlink&quot; title=&quot;ipv6&quot;&gt;&lt;/a&gt;ipv6&lt;/h2&gt;&lt;p&gt;If you ask Google “What is ipv6 ?”, the first entry it will di
+    
+    </summary>
+    
+      <category term="Mac配置" scheme="http://wongchen.github.io/categories/Mac%E9%85%8D%E7%BD%AE/"/>
+    
+    
+      <category term="IPv6" scheme="http://wongchen.github.io/tags/IPv6/"/>
+    
+      <category term="GAE" scheme="http://wongchen.github.io/tags/GAE/"/>
+    
+  </entry>
   
   <entry>
     <title>我的MacVim配置</title>
@@ -124,9 +177,9 @@
       <category term="Apps" scheme="http://wongchen.github.io/categories/Apps/"/>
     
     
-      <category term="mac" scheme="http://wongchen.github.io/tags/mac/"/>
-    
       <category term="matlab" scheme="http://wongchen.github.io/tags/matlab/"/>
+    
+      <category term="mac" scheme="http://wongchen.github.io/tags/mac/"/>
     
   </entry>
   
