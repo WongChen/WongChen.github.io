@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://wongchen.github.io/2016/11/22/mac-uninstall-pip-packages/</loc>
+    
+    <lastmod>2016-11-22T02:50:36.000Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://wongchen.github.io/2016/11/13/%E6%88%91%E7%9A%84MacVim%E9%85%8D%E7%BD%AE/</loc>
     
     <lastmod>2016-11-14T14:12:30.000Z</lastmod>
@@ -44,14 +51,14 @@
   </url>
   
   <url>
-    <loc>http://wongchen.github.io/tags/index.html</loc>
+    <loc>http://wongchen.github.io/categories/index.html</loc>
     
     <lastmod>2016-10-08T17:08:24.000Z</lastmod>
     
   </url>
   
   <url>
-    <loc>http://wongchen.github.io/categories/index.html</loc>
+    <loc>http://wongchen.github.io/tags/index.html</loc>
     
     <lastmod>2016-10-08T17:08:24.000Z</lastmod>
     
