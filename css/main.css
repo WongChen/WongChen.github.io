@@ -562,6 +562,12 @@ pre code {
 .highlight .line {
   height: 20px;
 }
+.gutter {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
 .gist table {
   width: auto;
 }
@@ -1548,7 +1554,7 @@ pre .javascript .function {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #53ff73;
+  background: #8c26af;
 }
 .links-of-blogroll {
   font-size: 13px;
