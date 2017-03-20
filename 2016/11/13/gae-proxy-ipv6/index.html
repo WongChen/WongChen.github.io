@@ -98,7 +98,7 @@ Internet Protocol Version 6 (IPv6) is a network layer protocol that enables data
 Internet Protocol Version 6 (IPv6) is a network layer protocol that enables data communications over a packet switche">
 <meta property="og:image" content="http://wongchen.github.io/images/ipv6.png">
 <meta property="og:image" content="http://wongchen.github.io/images/youtube.png">
-<meta property="og:updated_time" content="2016-11-13T15:36:26.000Z">
+<meta property="og:updated_time" content="2017-03-20T05:22:41.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="IPv6环境使用Goagent代理免校园网流量">
 <meta name="twitter:description" content="ipv6If you ask Google “What is ipv6 ?”, the first entry it will display says that
@@ -409,6 +409,7 @@ Internet Protocol Version 6 (IPv6) is a network layer protocol that enables data
 <h3 id="Terminal使用"><a href="#Terminal使用" class="headerlink" title="Terminal使用"></a>Terminal使用</h3><p>修改变量<code>http_proxy</code>和<code>https_proxy</code>即可,如下</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">export http_proxy=&apos;http://localhost:8087&apos;                                                    </div><div class="line">export https_proxy=&apos;http://localhost:8087&apos;</div></pre></td></tr></table></figure>
 <p>总之,在Terminal下,代理后速度比不用代理要<strong>快了</strong>几倍,还是很可以的.</p>
+<p>此外,还可以设置git代理, clone不再慢~<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">git config --global http.proxy &apos;http://127.0.0.1:8087&apos;</div><div class="line">git config --global https.proxy &apos;http://127.0.0.1:8087&apos;</div></pre></td></tr></table></figure></p>
 <p>在用<code>wget</code>下载时需要添加<code>--no-check-certificate</code>,否则会<br><code>ERROR: cannot verify github.com&#39;s certificate, issued by ‘CN=GoAgent,OU=GoAgent,O=GoAgent,L=Cernet,ST=Internet,C=CN’:
   Unable to locally verify the issuer&#39;s authority.</code>   </p>
 <p>  之后找到解决办法再来更新</p>
