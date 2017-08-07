@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://wongchen.github.io/"/>
-  <updated>2017-03-02T14:04:33.000Z</updated>
+  <updated>2016-12-17T05:50:07.000Z</updated>
   <id>http://wongchen.github.io/</id>
   
   <author>
@@ -14,34 +14,6 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
-  
-  <entry>
-    <title>close_finder</title>
-    <link href="http://wongchen.github.io/2017/03/02/close-finder/"/>
-    <id>http://wongchen.github.io/2017/03/02/close-finder/</id>
-    <published>2017-03-02T13:39:06.000Z</published>
-    <updated>2017-03-02T14:04:33.000Z</updated>
-    
-    <content type="html"><![CDATA[<p>用Mac都会发现,Dock永远去不掉的,关不掉一个软件就是 Finder.<br>无意间发现通过 Keyboard Maestro这个软件可以关闭Finder全部窗口.</p>
-<h2 id="Keyboard-Maestro宏"><a href="#Keyboard-Maestro宏" class="headerlink" title="Keyboard Maestro宏"></a>Keyboard Maestro宏</h2><p><img src="/images/km.png" alt="KM宏设置"></p>
-<p>KM如图,本来是为了防止误触 <code>⌘</code>+<code>Q</code>,退出某些不想退出的应用程序,像 chrome, 微信.</p>
-<p>在最后一个<code>action</code>可以看到, KM强制, quit front application,因此,当Finder in front时候,按下  <code>⌘</code>+<code>Q</code>,Finder窗口会全部关闭.</p>
-<p>Keyboard Maestro还有很多强大的功能,有时间要学习下它支持的scripts.<br>爱折腾的年纪不要选择了安逸😀.</p>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;用Mac都会发现,Dock永远去不掉的,关不掉一个软件就是 Finder.&lt;br&gt;无意间发现通过 Keyboard Maestro这个软件可以关闭Finder全部窗口.&lt;/p&gt;
-&lt;h2 id=&quot;Keyboard-Maestro宏&quot;&gt;&lt;a href=&quot;#Keyboard-Ma
-    
-    </summary>
-    
-      <category term="Mac配置" scheme="http://wongchen.github.io/categories/Mac%E9%85%8D%E7%BD%AE/"/>
-    
-    
-      <category term="Keyboard Maestro" scheme="http://wongchen.github.io/tags/Keyboard-Maestro/"/>
-    
-  </entry>
   
   <entry>
     <title>myKeyboardMaestroActions</title>

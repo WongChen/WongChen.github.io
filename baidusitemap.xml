@@ -26,26 +26,6 @@
 
     
   <url>
-    <loc>http://wongchen.github.io/2017/03/02/close-finder/</loc>
-    <lastmod>2017-03-02T14:04:33.000Z</lastmod>
-    <data>
-        <display>
-        <title>close_finder</title>
-        <pubTime>2017-03-02T13:39:06.000Z</pubTime>
-        
-        <tag>Keyboard Maestro</tag>
-         
-         
-           
-             
-              <breadCrumb title="Mac配置" url="http://wongchen.github.io/categories/Mac%E9%85%8D%E7%BD%AE/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
     <loc>http://wongchen.github.io/2016/12/09/myKeyboardMaestroActions/</loc>
     <lastmod>2016-12-17T05:50:07.000Z</lastmod>
     <data>
@@ -135,10 +115,6 @@
     </url>
 
     
-    
-    
-    
-    
   <url>
     <loc>http://wongchen.github.io/2016/10/06/remove_footer/</loc>
     <lastmod>2016-10-08T17:08:24.000Z</lastmod>
@@ -160,4 +136,8 @@
     </data>
     </url>
 
+    
+    
+    
+    
 </urlset>
