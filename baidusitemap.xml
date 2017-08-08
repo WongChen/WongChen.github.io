@@ -4,6 +4,26 @@
 
     
   <url>
+    <loc>http://wongchen.github.io/2016/12/09/myKeyboardMaestroActions/</loc>
+    <lastmod>2017-08-08T15:15:45.000Z</lastmod>
+    <data>
+        <display>
+        <title>我的KeyboardMaestro宏</title>
+        <pubTime>2016-12-09T08:16:00.000Z</pubTime>
+        
+        <tag>Keyboard Maestro</tag>
+         
+         
+           
+             
+              <breadCrumb title="Mac配置" url="http://wongchen.github.io/categories/Mac%E9%85%8D%E7%BD%AE/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://wongchen.github.io/2016/11/22/mac-uninstall-pip-packages/</loc>
     <lastmod>2017-08-08T14:23:59.000Z</lastmod>
     <data>
@@ -40,26 +60,6 @@
         <tag>IPv6</tag>
          
         <tag>GAE</tag>
-         
-         
-           
-             
-              <breadCrumb title="Mac配置" url="http://wongchen.github.io/categories/Mac%E9%85%8D%E7%BD%AE/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://wongchen.github.io/2016/12/09/myKeyboardMaestroActions/</loc>
-    <lastmod>2016-12-17T05:50:07.000Z</lastmod>
-    <data>
-        <display>
-        <title>myKeyboardMaestroActions</title>
-        <pubTime>2016-12-09T08:16:00.000Z</pubTime>
-        
-        <tag>Keyboard Maestro</tag>
          
          
            
