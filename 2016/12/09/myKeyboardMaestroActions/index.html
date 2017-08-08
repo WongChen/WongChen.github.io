@@ -99,11 +99,12 @@ Whether you are a power user or a grandparent (or both!), your time is precious.
 
 Whether you are a power user or a grandparent (or both!), your time is precious. So why waste it wh">
 <meta property="og:image" content="http://wongchen.github.io/images/palette.png">
+<meta property="og:image" content="http://wongchen.github.io/iimages/finder_palette.png">
 <meta property="og:image" content="http://wongchen.github.io/images/finder_terminal.png">
-<meta property="og:image" content="http://wongchen.github.io/images/finder_new_file.png">
-<meta property="og:image" content="http://wongchen.github.io/iimages/launch_app_lists.png">
+<meta property="og:image" content="http://wongchen.github.io/images/fider_new_file.png">
+<meta property="og:image" content="http://wongchen.github.io/images/launch_app_lists.png">
 <meta property="og:image" content="http://wongchen.github.io/images/screeshots_finder.png">
-<meta property="og:updated_time" content="2017-08-08T15:15:45.000Z">
+<meta property="og:updated_time" content="2017-08-08T15:23:04.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="我的KeyboardMaestro宏">
 <meta name="twitter:description" content="Keyboard Maestro作为Mac下出名的效率软件,有着不菲的名声,是Winner of a Macworld Editors’ Choice Award for 2013.
@@ -399,32 +400,33 @@ Whether you are a power user or a grandparent (or both!), your time is precious.
 <p>然后在这里简单介绍我常用的一些宏(<strong>常更新哦</strong>)</p>
 <h2 id="Finder"><a href="#Finder" class="headerlink" title="Finder"></a>Finder</h2><p>Finder作为使用率最高的软件之一,首先介绍Finder相关的宏.由于快捷键太难记忆而决定采用Palette,Finder不会占据太大的空间,因此Palette也不会出现遮挡Finder窗口的问题.</p>
 <p><img src="/images/palette.png" alt="finder palette"></p>
-<ol>
-<li><p>在Finder中显示”在terminal中打开”,很简单如下图实现</p>
+<p><img src="/iimages/finder_palette.png" alt="finder palette display"></p>
+<ul>
+<li>在Finder中显示”在terminal中打开”,很简单如下图实现</li>
+</ul>
 <p><img src="/images/finder_terminal.png" alt="finder terminal"></p>
-</li>
-<li><p>新建文件(<strong>文件名自行输入</strong>)</p>
-</li>
-</ol>
+<ul>
+<li>新建文件(<strong>文件名自行输入</strong>)</li>
+</ul>
 <p>由于Keyboard Maestro支持Apple Script,因此可以通过如下代码实现:</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">tell application &quot;Finder&quot;</div><div class="line">	set annoying_path to the target of the front window as text</div><div class="line">	set actual_path to POSIX path of annoying_path</div><div class="line">	set something to display dialog &quot;File name?&quot; default answer &quot;&quot;</div><div class="line">	set textReturned to text returned of something</div><div class="line">	set newFileName to actual_path &amp; textReturned</div><div class="line">	set accessNum to open for access newFileName with write permission</div><div class="line">end tell</div></pre></td></tr></table></figure>
 <p>点击<code>&quot;新建文件&quot;</code>时,会提示窗口输入文件名</p>
-<p><img src="/images/finder_new_file.png" alt="new file"></p>
-<ol>
+<p><img src="/images/fider_new_file.png" alt="new file"></p>
+<ul>
 <li>复制文件名</li>
-</ol>
+</ul>
 <p>只需如下脚本:</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">tell application &quot;Finder&quot;</div><div class="line">	set theFile to the selection</div><div class="line">	set fileName to name of item 1 of theFile</div><div class="line">	set the clipboard to fileName</div><div class="line">end tell</div></pre></td></tr></table></figure>
 <p>另外Mac自带的<strong>脚本编辑器</strong>,可以编写运行Apple Script,在写脚本时可以用它写完测试ok后再复制到Keyboard Maestro中.</p>
-<ol>
+<ul>
 <li>复制文件绝对路径</li>
-</ol>
+</ul>
 <p>有时在终端下工作时,或者其他环境中需要某一文件的路径,这时候使用绝对路径会是有效可靠且方便的,同样脚本为:</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">tell application &quot;Finder&quot;</div><div class="line">	set sel to the selection</div><div class="line">	set the clipboard to POSIX path of (sel as text)</div><div class="line">end tell</div></pre></td></tr></table></figure>
 <p>结合Apple Script, Keyboard Maestro可以发挥更加强大的功能,慢慢通过不断的需求和学习可以开发出更多新的功能</p>
 <h2 id="Launch-Apps"><a href="#Launch-Apps" class="headerlink" title="Launch Apps"></a>Launch Apps</h2><p>对于一些常用的应用程序可以设定某些快捷键,方便快速启动,就像在Linux下面,<code>Alt</code> <code>+</code> <code>control</code> <code>+</code>  <code>T</code> 开启终端,win下面, <code>win</code> <code>+</code> <code>D</code>开启文件管理器.</p>
 <p>我常用的如:</p>
-<p><img src="/iimages/launch_app_lists.png" alt="launch apps"></p>
+<p><img src="/images/launch_app_lists.png" alt="launch apps"></p>
 <p>设定自己习惯,容易记忆的快捷键即可.</p>
 <p>另外,发现每次截图之后想要寻找截图照片变得繁杂,因此每次截图后主动在Finder下显示截图目录</p>
 <p><img src="/images/screeshots_finder.png" alt="截图 弹窗"></p>
