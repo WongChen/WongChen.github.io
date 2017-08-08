@@ -38,7 +38,7 @@
     <link href="http://wongchen.github.io/2016/11/22/mac-uninstall-pip-packages/"/>
     <id>http://wongchen.github.io/2016/11/22/mac-uninstall-pip-packages/</id>
     <published>2016-11-21T16:30:37.000Z</published>
-    <updated>2016-11-22T02:56:39.000Z</updated>
+    <updated>2017-08-08T14:23:59.000Z</updated>
     
     <content type="html"><![CDATA[<p>最近在装一些软件包的时候,总遇到一些很难解决的错误,总结下:</p>
 <h2 id="scipy-seaborn"><a href="#scipy-seaborn" class="headerlink" title="scipy, seaborn"></a>scipy, seaborn</h2><p>Python的包我都是采用pip来安装的</p>
@@ -76,10 +76,11 @@
 <p><a href="https://www.zhihu.com/question/35169072" target="_blank" rel="external">知乎</a><br><a href="http://stackoverflow.com/questions/2512225/matplotlib-not-showing-up-in-mac-osx" target="_blank" rel="external">stack<strong>overflow</strong></a></p>
 <p>都这么长时间了,真是的,尝试了下面的所有方法,只有<code>plt.show()</code>这个方法能使.但是,这个”小火箭”,便退不出去了<img src="/images/python_sns.png" alt="python sns"><br>不过<code>sns.plt</code>倒是有很多功能,应该能够实现我们想要的.</p>
 <h2 id="VTK"><a href="#VTK" class="headerlink" title="VTK"></a>VTK</h2><p>全称是<strong>The Visulition ToolKit</strong>, 有<a href="http://www.vtk.org/Wiki/Main_Page" target="_blank" rel="external">wiki</a>.</p>
-<p>安装完遇到的第一个问题便是几个examples的cxx版本,几乎什么都没有<br><img src="http://g.recordit.co/TWfNFkfk2y.gif" alt="NoneVtk"><br>似乎是VTK版本更新后,出现了这些问题,我不知道了.不过还是有其他例子可以显示的.<br>目前发现添加<code>vtkRenderWindowInteractor</code>即VTK交互渲染窗口便能显示,好奇怪.</p>
-<p>后来我便用Py去实现,在make VTK时,修改<code>PYTHON_WRAP=ON</code>,但还是发现<code>No module named vtk</code>,尝试多种方法无解,但是有<code>vtkpython</code>这个解释器可以使</p>
-<p><img src="/images/vtk_good.png" alt="good"><br><img src="/images/vtk_bad.png" alt="bad"></p>
-<p>而且必须得用<strong>绝对路径</strong>才能使,可能跟导入包有关吧,这么就算解决了.</p>
+<p>安装完遇到的第一个问题便是几个examples的cxx版本,几乎什么都没有<br><img src="http://g.recordit.co/TWfNFkfk2y.gif" alt="NoneVtk"><br>似乎是VTK版本更新后,出现了这些问题,我不知道了.不过还是有其他例子可以显示的.</p>
+<p>有些例子中包含vtkRenderWindowInteractor`即VTK交互渲染窗口是可以正常显示的,但是其他就不行了.</p>
+<p>后来发现解决方法:</p>
+<p>举例来说,如这个<a href="https://github.com/Kitware/VTK/blob/master/Examples/Tutorial/Step1/Cxx/Cone.cxx" target="_blank" rel="external">例子</a>是VTK官方的Toturial中的step1,在cxx源代码中加入</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">#include &lt;unistd.h&gt;</div><div class="line">// &lt;...step1 code...&gt;</div><div class="line"> for (i = 0; i &lt; 360; ++i) //每次渲染窗口时通过usleep函数,可以让窗口保留显示一段时间</div><div class="line">  &#123;</div><div class="line">    usleep(microseconds);</div><div class="line"></div><div class="line">    // render the image</div><div class="line">    renWin-&gt;Render();</div><div class="line">    // rotate the active camera by one degree</div><div class="line">    ren1-&gt;GetActiveCamera()-&gt;Azimuth( 1 );</div><div class="line">  &#125;</div></pre></td></tr></table></figure>
 <h2 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h2><ul>
 <li>安装MITK时,用Cmake编译好久,错误好多,无法解决</li>
 <li>安装Qt5,遇到错误</li>
@@ -242,77 +243,6 @@
       <category term="mac" scheme="http://wongchen.github.io/tags/mac/"/>
     
       <category term="vim" scheme="http://wongchen.github.io/tags/vim/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>mac安装Matlab2014a</title>
-    <link href="http://wongchen.github.io/2016/11/11/mac%E5%AE%89%E8%A3%85Matlab2014a/"/>
-    <id>http://wongchen.github.io/2016/11/11/mac安装Matlab2014a/</id>
-    <published>2016-11-11T12:26:01.000Z</published>
-    <updated>2016-11-11T12:57:15.000Z</updated>
-    
-    <content type="html"><![CDATA[<p>安装Matlab 2014a后，打开时，遇到一些Java错误信息，解决方法：<br>到<strong>官网</strong>下载<a href="https://www.mathworks.com/support/bugreports/1098655" target="_blank" rel="external">R2014a_patch_1098655</a>补丁，一定要去官网下载，找到对应的版本号，运行下载的程序，选择要patch的程序Matlab，OK。</p>
-<p>对于带有Retina Display的mac，打开进去后会发现分辨率很低，这是由于安装的matlab内建的jre所导致。解决方法：<br><br></p>
-<ol>
-<li>安装JDK，去<a href="http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html" target="_blank" rel="external">官网</a>哦，若已安装，忽略。<br></li>
-<li>修改Matlab的JAVA环境变量,终端执行<br><code>echo &quot;MATLAB_JAVA=/Library/Java/JavaVirtualMachines/jdkXX_XX.jdk/Contents/Home/jre&quot; &gt;&gt; ~/.bash_profile</code></li>
-<li>Matlab内建的jre目录为<code>/Applications/MATLAB_R2014a.app/sys/java/jre/maci64</code>，备份或删除其jre,之后创建软链接</li>
-</ol>
-   <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">ln -s /Library/Internet\ Plug-Ins/JavaAppletPlugin.plugin/Contents/Home/ jre</div></pre></td></tr></table></figure>
-<p>   没啥多说的，只是网上找的好些都有错误。</p>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;安装Matlab 2014a后，打开时，遇到一些Java错误信息，解决方法：&lt;br&gt;到&lt;strong&gt;官网&lt;/strong&gt;下载&lt;a href=&quot;https://www.mathworks.com/support/bugreports/1098655&quot; target=&quot;_b
-    
-    </summary>
-    
-      <category term="Apps" scheme="http://wongchen.github.io/categories/Apps/"/>
-    
-    
-      <category term="matlab" scheme="http://wongchen.github.io/tags/matlab/"/>
-    
-      <category term="mac" scheme="http://wongchen.github.io/tags/mac/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>如何去掉Hexo博客底部页脚</title>
-    <link href="http://wongchen.github.io/2016/10/06/remove_footer/"/>
-    <id>http://wongchen.github.io/2016/10/06/remove_footer/</id>
-    <published>2016-10-06T07:31:33.000Z</published>
-    <updated>2016-10-08T17:08:24.000Z</updated>
-    
-    <content type="html"><![CDATA[<p>昨天参照网上的参考,利用<code>Hexo</code>和<code>Git Pages</code>,搭建了自己的博客,强迫症的我,发现最下面的</p>
-<blockquote>
-<p>由Hexo强力驱动</p>
-</blockquote>
-<p>遂想删之,不过自己也不懂这些语言,只能想到这样一种办法了</p>
-<h2 id="查找"><a href="#查找" class="headerlink" title="查找"></a>查找</h2><p>到<code>git pages site</code>目录,<br>    <figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">grep <span class="string">"强力驱动"</span> -r *</div></pre></td></tr></table></figure></p>
-<p>输出<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">public/tags/index.html:  由 &lt;a class=<span class="string">"theme-link"</span> href=<span class="string">"https://hexo.io"</span>&gt;Hexo&lt;/a&gt; 强力驱动</div><div class="line">public/2016/10/03/hello-world/index.html:  由 &lt;a class=<span class="string">"theme-link"</span> href=<span class="string">"https://hexo.io"</span>&gt;Hexo&lt;/a&gt; 强力驱动</div><div class="line">public/2016/10/06/post-second-md/index.html:  由 &lt;a class=<span class="string">"theme-link"</span> href=<span class="string">"https://hexo.io"</span>&gt;Hexo&lt;/a&gt; 强力驱动</div><div class="line">public/index.html:  由 &lt;a class=<span class="string">"theme-link"</span> href=<span class="string">"https://hexo.io"</span>&gt;Hexo&lt;/a&gt; 强力驱动</div><div class="line">public/categories/index.html:  由 &lt;a class=<span class="string">"theme-link"</span> href=<span class="string">"https://hexo.io"</span>&gt;Hexo&lt;/a&gt; 强力驱动</div><div class="line">public/archives/2016/index.html:  由 &lt;a class=<span class="string">"theme-link"</span> href=<span class="string">"https://hexo.io"</span>&gt;Hexo&lt;/a&gt; 强力驱动</div><div class="line">public/archives/2016/10/index.html:  由 &lt;a class=<span class="string">"theme-link"</span> href=<span class="string">"https://hexo.io"</span>&gt;Hexo&lt;/a&gt; 强力驱动</div><div class="line">public/archives/index.html:  由 &lt;a class=<span class="string">"theme-link"</span> href=<span class="string">"https://hexo.io"</span>&gt;Hexo&lt;/a&gt; 强力驱动</div><div class="line">themes/next/languages/zh-Hans.yml:  powered: <span class="string">"由 %s 强力驱动"</span></div></pre></td></tr></table></figure></p>
-<p>跟着路径,从<code>themes</code>中的 <code>zh-Hans.yml</code>文件中找到<code>footer</code></p>
-<p>so,next<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line">grep <span class="string">"powered"</span> -r themes/next <span class="comment">#next 是我使用的主题</span></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line">languages/pt-BR.yml:  powered: <span class="string">"Feito com %s"</span></div><div class="line">languages/de.yml:  powered: <span class="string">"Erstellt mit  %s"</span></div><div class="line">languages/default.yml:  powered: <span class="string">"Powered by %s"</span></div><div class="line">languages/fr-FR.yml:  powered: <span class="string">"Powered by %s"</span></div><div class="line">layout/_partials/comments.swig:          &lt;a href=<span class="string">"//disqus.com/?ref_noscript"</span>&gt;comments powered by Disqus.&lt;/a&gt;</div><div class="line">layout/_partials/footer.swig:&lt;div class=<span class="string">"powered-by"</span>&gt;</div><div class="line">layout/_partials/footer.swig:  &#123;&#123; __(<span class="string">'footer.powered'</span>, <span class="string">'&lt;a class="theme-link" href="https://hexo.io"&gt;Hexo&lt;/a&gt;'</span>)  &#125;&#125;</div><div class="line"><span class="built_in">source</span>/css/_common/components/footer/footer.styl:.powered-by,</div><div class="line">    <span class="built_in">source</span>/css/_common/components/footer/footer.styl:.powered-by &#123;</div><div class="line"></div><div class="line">    &#125;</div></pre></td></tr></table></figure></p>
-<p>languages目录下自不必理会,将layout下的<code>footer.swig</code>中的带有<code>powered-by</code> 的<code>div</code>标签删除即可</p>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;昨天参照网上的参考,利用&lt;code&gt;Hexo&lt;/code&gt;和&lt;code&gt;Git Pages&lt;/code&gt;,搭建了自己的博客,强迫症的我,发现最下面的&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;由Hexo强力驱动&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;遂想删之,不过自己也不
-    
-    </summary>
-    
-      <category term="Blog" scheme="http://wongchen.github.io/categories/Blog/"/>
-    
-    
-      <category term="blog" scheme="http://wongchen.github.io/tags/blog/"/>
-    
-      <category term="hexo" scheme="http://wongchen.github.io/tags/hexo/"/>
     
   </entry>
   
