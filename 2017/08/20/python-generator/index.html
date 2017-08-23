@@ -68,7 +68,7 @@
 <link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="python,generator," />
 
 
 
@@ -86,16 +86,21 @@
 
 
 
-<meta name="description" content="若你喜欢怪人,其实我很美">
+<meta name="description" content="动机先看一个问题: 假设我们遇到一个需要长时间响应才能得到返回值的情境,比如深度学习中的大计算或者网络较长时间的响应等(这里我们用sleep()函数来代替),每次需要较长时间的计算才能得到结果.
+1234567from time import sleepdef long_time_compute():  rv = list()  for i in range(10):    sleep(2)">
 <meta property="og:type" content="article">
 <meta property="og:title" content="python之generator学习">
 <meta property="og:url" content="http://wongchen.github.io/2017/08/20/python-generator/index.html">
 <meta property="og:site_name" content="印第安老斑鸠">
-<meta property="og:description" content="若你喜欢怪人,其实我很美">
-<meta property="og:updated_time" content="2017-08-19T16:44:12.000Z">
+<meta property="og:description" content="动机先看一个问题: 假设我们遇到一个需要长时间响应才能得到返回值的情境,比如深度学习中的大计算或者网络较长时间的响应等(这里我们用sleep()函数来代替),每次需要较长时间的计算才能得到结果.
+1234567from time import sleepdef long_time_compute():  rv = list()  for i in range(10):    sleep(2)">
+<meta property="og:image" content="http://wongchen.github.io/Users/yachenwang/Documents/screenshots/Screenshot2017-08-23_下午10.27.24.png">
+<meta property="og:updated_time" content="2017-08-23T14:44:24.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="python之generator学习">
-<meta name="twitter:description" content="若你喜欢怪人,其实我很美">
+<meta name="twitter:description" content="动机先看一个问题: 假设我们遇到一个需要长时间响应才能得到返回值的情境,比如深度学习中的大计算或者网络较长时间的响应等(这里我们用sleep()函数来代替),每次需要较长时间的计算才能得到结果.
+1234567from time import sleepdef long_time_compute():  rv = list()  for i in range(10):    sleep(2)">
+<meta name="twitter:image" content="http://wongchen.github.io/Users/yachenwang/Documents/screenshots/Screenshot2017-08-23_下午10.27.24.png">
 
 
 
@@ -318,6 +323,25 @@
           </span>
 
           
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/python/" itemprop="url" rel="index">
+                    <span itemprop="name">python</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
 
           
             
@@ -356,7 +380,43 @@
       
 
       
-        
+        <h2 id="动机"><a href="#动机" class="headerlink" title="动机"></a>动机</h2><p>先看一个问题: 假设我们遇到一个需要长时间响应才能得到返回值的情境,比如深度学习中的大计算或者网络较长时间的响应等(这里我们用<code>sleep()</code>函数来代替),每次需要较长时间的计算才能得到结果.</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">from</span> time <span class="keyword">import</span> sleep</div><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">long_time_compute</span><span class="params">()</span>:</span></div><div class="line">  rv = list()</div><div class="line">  <span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">10</span>):</div><div class="line">    sleep(<span class="number">2</span>)</div><div class="line">    rv.append(i)</div><div class="line">  <span class="keyword">return</span> rv</div></pre></td></tr></table></figure>
+<p>如上面所述,假如我想得到的最终结果含10个值,我需要20秒才能观察到最后结果,但是假如包含更长的值(如100呢)而且我想观察前几个值呢? 因为从前几个值就能发现一些有意义的东西,我不需要观察全部的值就能得到我想要的,怎么办?</p>
+<p>明显要等到全部值计算完都返回是不符合逻辑的,如果我们只是观察结果不用到返回值的情况可以每次都<code>print</code>打印出每次的结果,但是这也不能解决所有的情况. 幸运的是我们可以通过<code>generator</code>来解决这种问题.</p>
+<h2 id="What-is-python-Generator"><a href="#What-is-python-Generator" class="headerlink" title="What is python Generator?"></a>What is python Generator?</h2><blockquote>
+<p>Introduced in Python 2.2 as an optional feature and finalized in version 2.3, <a href="https://en.wikipedia.org/wiki/Generator_(computer_science" target="_blank" rel="external">generators</a>) are Python’s mechanism for <a href="https://en.wikipedia.org/wiki/Lazy_evaluation" target="_blank" rel="external">lazy evaluation</a> of a function that would otherwise return a space-prohibitive or computationally intensive list.</p>
+<p>A Python <em>generator</em> is a function which returns a <em>generator iterator</em> (just an object we can iterate over) by calling <code>yield</code>. <code>yield</code> may be called with a value, in which case that value is treated as the “generated” value. The <em>next time</em><code>next()</code> is called on the <em>generator iterator</em> (i.e. in the next step in a <code>for</code> loop, for example),the generator resumes execution <em>from where it called yield</em>, not from the beginning of the function. All of the state, like the values of local variables, is recovered and the generator contiues to execute until the next call to <code>yield</code>.</p>
+</blockquote>
+<p>generator可以不像一般的函数那样,一次返回一个值,下一次还在上次执行的地方继续运行程序返回下一个值,可以说是返回一系列值(One at a time). </p>
+<h3 id="Generator-expressions"><a href="#Generator-expressions" class="headerlink" title="Generator expressions"></a>Generator expressions</h3><blockquote>
+<p>Introduced in Python 2.4, generator expressions are the lazy evaluation equivalent of list comprehensions. </p>
+</blockquote>
+<p>不同于生成器,生成器表达式是<code>list comprehensions</code>的generator形式表达.与<code>list comprehensions</code>长得很像,但是返回一个generator而不是list.</p>
+<p>此外,generator不能用下标来索引.</p>
+<p>如下, 详细后面叙述.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">&gt;&gt;&gt; a = (x for x in range(8))</div><div class="line">&gt;&gt;&gt; a</div><div class="line">&lt;generator object &lt;genexpr&gt; at 0x104684960&gt;</div><div class="line">&gt;&gt;&gt; a[2]</div><div class="line">Traceback (most recent call last):</div><div class="line">  File &quot;&lt;stdin&gt;&quot;, line 1, in &lt;module&gt;</div><div class="line">TypeError: &apos;generator&apos; object has no attribute &apos;__getitem__&apos;</div></pre></td></tr></table></figure>
+<h2 id="如何"><a href="#如何" class="headerlink" title="如何"></a>如何</h2><p>对于开始提出的问题,如何使用generator来解决呢?</p>
+<p>我们最后想要的是一个可以迭代的对象,大致为</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">x = iter(rv)</div><div class="line">next_value = next(x)</div></pre></td></tr></table></figure>
+<p>我们知道python中许多方法和属性都是有对应的double underscore属性和方法的(如<code>__add__</code>).上面的对应为<code>__iter__</code>(python2中是<code>next()</code>)和<code>__next__</code>方法.</p>
+<p>于是我们可以使用一个类,实现上述两种方法来实现generator.</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">ComputerLong</span>:</span></div><div class="line">  <span class="function"><span class="keyword">def</span> <span class="title">__iter__</span><span class="params">(self)</span>:</span></div><div class="line">    self.last = <span class="number">0</span></div><div class="line">    <span class="keyword">return</span> self</div><div class="line">  <span class="function"><span class="keyword">def</span> <span class="title">__next__</span><span class="params">(self)</span>:</span></div><div class="line">    rv = self.last</div><div class="line">    self.last += <span class="number">1</span></div><div class="line">    <span class="keyword">if</span> self.last &gt; <span class="number">10</span>:</div><div class="line">      <span class="keyword">raise</span> StopIteration()</div><div class="line">    sleep(<span class="number">2</span>)</div><div class="line">    <span class="keyword">return</span> rv</div></pre></td></tr></table></figure>
+<p>但是这样读起来太费劲了,正常点的写法还是应该像上面函数那样. 更Generator的写法应该使用<code>yield</code>.</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">from</span> time <span class="keyword">import</span> sleep</div><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">long_time_compute</span><span class="params">()</span>:</span></div><div class="line">  rv = list()</div><div class="line">  <span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">10</span>):</div><div class="line">    sleep(<span class="number">2</span>)</div><div class="line">    <span class="keyword">yield</span> i</div><div class="line"> <span class="comment">#   rv.append(i)</span></div><div class="line"> <span class="comment"># return rv</span></div></pre></td></tr></table></figure>
+<p>Generator每次生成一个新的值时,采用<code>yield</code>关键字代替原来return的位置,相当于返回一个需要即可取的值.</p>
+<p>Generator返回是一个可迭代的对象,因此可以使用<code>for</code>循环:</p>
+<p>每次<code>for</code>循环中需要一个值时,便会调用generator对象的next()方法,取回一个值.</p>
+<h2 id="generator结束"><a href="#generator结束" class="headerlink" title="generator结束"></a>generator结束</h2><p>当generator函数中使用return或者generator迭代到最后,将会返回一个<code>StopIteration</code> exception,当next到最后一个值时将会报错,因此generator只能够循环一次.</p>
+<p><img src="/Users/yachenwang/Documents/screenshots/Screenshot2017-08-23_下午10.27.24.png" alt=""></p>
+<p>最后:</p>
+<ul>
+<li>generator可以用来返回一个迭代器,可以返回一个序列(每次一个值而不是直接全部的返回值).</li>
+<li>yield可以看做next()方法return一个值并记住这个位置,下次在这个位置利用next()方法仍旧如此.</li>
+<li>python2中generator next()方法为<code>g.next()</code>,而python3为<code>g.__next__()</code></li>
+</ul>
+<p>s</p>
+
       
     </div>
 
@@ -376,13 +436,21 @@
 
     <footer class="post-footer">
       
+        <div class="post-tags">
+          
+            <a href="/tags/python/" rel="tag">#python</a>
+          
+            <a href="/tags/generator/" rel="tag">#generator</a>
+          
+        </div>
+      
 
       
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/08/19/python-decorator/" rel="next" title="python之Decorator学习">
-                <i class="fa fa-chevron-left"></i> python之Decorator学习
+              <a href="/2017/08/19/python-decorator/" rel="next" title="学习python中的Decorator">
+                <i class="fa fa-chevron-left"></i> 学习python中的Decorator
               </a>
             
           </div>
@@ -502,7 +570,7 @@
           
             <div class="site-state-item site-state-tags">
               <a href="/tags">
-                <span class="site-state-item-count">10</span>
+                <span class="site-state-item-count">11</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
@@ -585,7 +653,7 @@
               
             
             
-              <p class="post-toc-empty">此文章未包含目录</p>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#动机"><span class="nav-number">1.</span> <span class="nav-text">动机</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#What-is-python-Generator"><span class="nav-number">2.</span> <span class="nav-text">What is python Generator?</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Generator-expressions"><span class="nav-number">2.1.</span> <span class="nav-text">Generator expressions</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#如何"><span class="nav-number">3.</span> <span class="nav-text">如何</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#generator结束"><span class="nav-number">4.</span> <span class="nav-text">generator结束</span></a></li></ol></div>
             
           </div>
         </section>

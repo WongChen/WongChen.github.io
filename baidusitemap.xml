@@ -4,27 +4,12 @@
 
     
   <url>
-    <loc>http://wwongchen.coding.me/2017/08/20/python-generator/</loc>
-    <lastmod>2017-08-19T16:44:12.000Z</lastmod>
+    <loc>http://wongchen.github.io/2017/08/20/python-generator/</loc>
+    <lastmod>2017-08-23T14:44:24.000Z</lastmod>
     <data>
         <display>
         <title>python之generator学习</title>
         <pubTime>2017-08-19T16:43:18.000Z</pubTime>
-        
-         
-           
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://wwongchen.coding.me/2017/08/19/python-decorator/</loc>
-    <lastmod>2017-08-19T15:58:31.000Z</lastmod>
-    <data>
-        <display>
-        <title>python之Decorator学习</title>
-        <pubTime>2017-08-19T12:28:27.000Z</pubTime>
         
         <tag>python</tag>
          
@@ -33,7 +18,7 @@
          
            
              
-              <breadCrumb title="python" url="http://wwongchen.coding.me/categories/python/"/>
+              <breadCrumb title="python" url="http://wongchen.github.io/categories/python/"/>
           
         </display>
     </data>
@@ -41,7 +26,29 @@
 
     
   <url>
-    <loc>http://wwongchen.coding.me/2016/11/13/%E6%88%91%E7%9A%84MacVim%E9%85%8D%E7%BD%AE/</loc>
+    <loc>http://wongchen.github.io/2017/08/19/python-decorator/</loc>
+    <lastmod>2017-08-23T13:10:37.000Z</lastmod>
+    <data>
+        <display>
+        <title>学习python中的Decorator</title>
+        <pubTime>2017-08-19T12:28:27.000Z</pubTime>
+        
+        <tag>python</tag>
+         
+        <tag>decorator</tag>
+         
+         
+           
+             
+              <breadCrumb title="python" url="http://wongchen.github.io/categories/python/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://wongchen.github.io/2016/11/13/%E6%88%91%E7%9A%84MacVim%E9%85%8D%E7%BD%AE/</loc>
     <lastmod>2017-08-09T11:50:21.000Z</lastmod>
     <data>
         <display>
@@ -55,7 +62,7 @@
          
            
              
-              <breadCrumb title="Mac配置" url="http://wwongchen.coding.me/categories/Mac%E9%85%8D%E7%BD%AE/"/>
+              <breadCrumb title="Mac配置" url="http://wongchen.github.io/categories/Mac%E9%85%8D%E7%BD%AE/"/>
           
         </display>
     </data>
@@ -63,7 +70,7 @@
 
     
   <url>
-    <loc>http://wwongchen.coding.me/2016/12/09/myKeyboardMaestroActions/</loc>
+    <loc>http://wongchen.github.io/2016/12/09/myKeyboardMaestroActions/</loc>
     <lastmod>2017-08-08T15:27:41.000Z</lastmod>
     <data>
         <display>
@@ -75,7 +82,7 @@
          
            
              
-              <breadCrumb title="Mac配置" url="http://wwongchen.coding.me/categories/Mac%E9%85%8D%E7%BD%AE/"/>
+              <breadCrumb title="Mac配置" url="http://wongchen.github.io/categories/Mac%E9%85%8D%E7%BD%AE/"/>
           
         </display>
     </data>
@@ -83,7 +90,7 @@
 
     
   <url>
-    <loc>http://wwongchen.coding.me/2016/11/22/mac-uninstall-pip-packages/</loc>
+    <loc>http://wongchen.github.io/2016/11/22/mac-uninstall-pip-packages/</loc>
     <lastmod>2017-08-08T14:23:59.000Z</lastmod>
     <data>
         <display>
@@ -101,7 +108,7 @@
          
            
              
-              <breadCrumb title="Mac配置" url="http://wwongchen.coding.me/categories/Mac%E9%85%8D%E7%BD%AE/"/>
+              <breadCrumb title="Mac配置" url="http://wongchen.github.io/categories/Mac%E9%85%8D%E7%BD%AE/"/>
           
         </display>
     </data>
@@ -109,7 +116,7 @@
 
     
   <url>
-    <loc>http://wwongchen.coding.me/2016/11/13/gae-proxy-ipv6/</loc>
+    <loc>http://wongchen.github.io/2016/11/13/gae-proxy-ipv6/</loc>
     <lastmod>2017-03-20T05:22:41.000Z</lastmod>
     <data>
         <display>
@@ -123,7 +130,7 @@
          
            
              
-              <breadCrumb title="Mac配置" url="http://wwongchen.coding.me/categories/Mac%E9%85%8D%E7%BD%AE/"/>
+              <breadCrumb title="Mac配置" url="http://wongchen.github.io/categories/Mac%E9%85%8D%E7%BD%AE/"/>
           
         </display>
     </data>
