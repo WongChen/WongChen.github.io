@@ -94,13 +94,13 @@
 <meta property="og:site_name" content="印第安老斑鸠">
 <meta property="og:description" content="动机先看一个问题: 假设我们遇到一个需要长时间响应才能得到返回值的情境,比如深度学习中的大计算或者网络较长时间的响应等(这里我们用sleep()函数来代替),每次需要较长时间的计算才能得到结果.
 1234567from time import sleepdef long_time_compute():  rv = list()  for i in range(10):    sleep(2)">
-<meta property="og:image" content="http://wongchen.github.io/Users/yachenwang/Documents/screenshots/Screenshot2017-08-23_下午10.27.24.png">
-<meta property="og:updated_time" content="2017-08-23T14:44:24.000Z">
+<meta property="og:image" content="http://wongchen.github.io/images/Screenshot2017-08-23_下午10.27.24.png">
+<meta property="og:updated_time" content="2017-08-23T14:48:23.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="python之generator学习">
 <meta name="twitter:description" content="动机先看一个问题: 假设我们遇到一个需要长时间响应才能得到返回值的情境,比如深度学习中的大计算或者网络较长时间的响应等(这里我们用sleep()函数来代替),每次需要较长时间的计算才能得到结果.
 1234567from time import sleepdef long_time_compute():  rv = list()  for i in range(10):    sleep(2)">
-<meta name="twitter:image" content="http://wongchen.github.io/Users/yachenwang/Documents/screenshots/Screenshot2017-08-23_下午10.27.24.png">
+<meta name="twitter:image" content="http://wongchen.github.io/images/Screenshot2017-08-23_下午10.27.24.png">
 
 
 
@@ -408,7 +408,7 @@
 <p>Generator返回是一个可迭代的对象,因此可以使用<code>for</code>循环:</p>
 <p>每次<code>for</code>循环中需要一个值时,便会调用generator对象的next()方法,取回一个值.</p>
 <h2 id="generator结束"><a href="#generator结束" class="headerlink" title="generator结束"></a>generator结束</h2><p>当generator函数中使用return或者generator迭代到最后,将会返回一个<code>StopIteration</code> exception,当next到最后一个值时将会报错,因此generator只能够循环一次.</p>
-<p><img src="/Users/yachenwang/Documents/screenshots/Screenshot2017-08-23_下午10.27.24.png" alt=""></p>
+<p><img src="images/Screenshot2017-08-23_下午10.27.24.png" alt=""></p>
 <p>最后:</p>
 <ul>
 <li>generator可以用来返回一个迭代器,可以返回一个序列(每次一个值而不是直接全部的返回值).</li>
