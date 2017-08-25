@@ -4,6 +4,28 @@
 
     
   <url>
+    <loc>http://wongchen.github.io/2016/11/13/%E6%88%91%E7%9A%84MacVim%E9%85%8D%E7%BD%AE/</loc>
+    <lastmod>2017-08-25T16:23:45.000Z</lastmod>
+    <data>
+        <display>
+        <title>我的Vim配置</title>
+        <pubTime>2016-11-13T05:14:35.000Z</pubTime>
+        
+        <tag>mac</tag>
+         
+        <tag>vim</tag>
+         
+         
+           
+             
+              <breadCrumb title="Mac配置" url="http://wongchen.github.io/categories/Mac%E9%85%8D%E7%BD%AE/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://wongchen.github.io/2017/08/20/python-generator/</loc>
     <lastmod>2017-08-23T14:49:52.000Z</lastmod>
     <data>
@@ -41,28 +63,6 @@
            
              
               <breadCrumb title="python" url="http://wongchen.github.io/categories/python/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://wongchen.github.io/2016/11/13/%E6%88%91%E7%9A%84MacVim%E9%85%8D%E7%BD%AE/</loc>
-    <lastmod>2017-08-09T11:50:21.000Z</lastmod>
-    <data>
-        <display>
-        <title>我的Vim配置</title>
-        <pubTime>2016-11-13T05:14:35.000Z</pubTime>
-        
-        <tag>mac</tag>
-         
-        <tag>vim</tag>
-         
-         
-           
-             
-              <breadCrumb title="Mac配置" url="http://wongchen.github.io/categories/Mac%E9%85%8D%E7%BD%AE/"/>
           
         </display>
     </data>
