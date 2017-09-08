@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://wongchen.github.io/"/>
-  <updated>2017-09-08T09:08:20.000Z</updated>
+  <updated>2017-09-08T09:12:35.000Z</updated>
   <id>http://wongchen.github.io/</id>
   
   <author>
@@ -16,18 +16,13 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
-    <title></title>
-    <link href="http://wongchen.github.io/2017/09/08/python-context-manager/"/>
-    <id>http://wongchen.github.io/2017/09/08/python-context-manager/</id>
-    <published>2017-09-08T03:10:01.000Z</published>
-    <updated>2017-09-08T09:08:20.000Z</updated>
+    <title>python之context manager学习</title>
+    <link href="http://wongchen.github.io/2017/09/09/python-context-manager/"/>
+    <id>http://wongchen.github.io/2017/09/09/python-context-manager/</id>
+    <published>2017-09-08T16:43:18.000Z</published>
+    <updated>2017-09-08T09:12:35.000Z</updated>
     
-    <content type="html"><![CDATA[<p>title: 学习python中的Context Manager<br>date: 2017-09-8 20:28:27<br>tags:</p>
-<ul>
-<li>python</li>
-<li>decorator<br>categories: python</li>
-</ul>
-<h2 id="What-is-context-manager"><a href="#What-is-context-manager" class="headerlink" title="What is context manager?"></a>What is context manager?</h2><blockquote>
+    <content type="html"><![CDATA[<h2 id="What-is-context-manager"><a href="#What-is-context-manager" class="headerlink" title="What is context manager?"></a>What is context manager?</h2><blockquote>
 <p>A basic issue in programming is <a href="https://en.wikipedia.org/wiki/Resource_management_(computing" target="_blank" rel="external">resource management</a>): a <a href="https://en.wikipedia.org/wiki/Resource_(computing" target="_blank" rel="external">resource</a>) is anything in limited supply, notably file handles, <a href="https://en.wikipedia.org/wiki/network_socket" target="_blank" rel="external">network sockets</a>, locks, etc., and a key problem is making sure these are <em>released</em> after they are <em>acquired.</em> If they are not released, you have a <a href="https://en.wikipedia.org/wiki/resource_leak" target="_blank" rel="external">resource leak</a>, and the system may slow down or crash. More generally, you may want cleanup actions to always be done, other than simply releasing resources.</p>
 </blockquote>
 <p>就像其名字一样,context manager负责管理一定的上下文环境,按照你的设定,及时<strong>分配</strong>一定的资源,在完成相应的工作之后,及时<strong>释放</strong>这些资源. 而且不止是释放资源,你还可以做其他你想的事情……</p>
@@ -60,14 +55,16 @@
     
     <summary type="html">
     
-      &lt;p&gt;title: 学习python中的Context Manager&lt;br&gt;date: 2017-09-8 20:28:27&lt;br&gt;tags:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;python&lt;/li&gt;
-&lt;li&gt;decorator&lt;br&gt;categories: python&lt;/li&gt;
-&lt;
+      &lt;h2 id=&quot;What-is-context-manager&quot;&gt;&lt;a href=&quot;#What-is-context-manager&quot; class=&quot;headerlink&quot; title=&quot;What is context manager?&quot;&gt;&lt;/a&gt;What is context 
     
     </summary>
     
+      <category term="python" scheme="http://wongchen.github.io/categories/python/"/>
+    
+    
+      <category term="python" scheme="http://wongchen.github.io/tags/python/"/>
+    
+      <category term="content manager" scheme="http://wongchen.github.io/tags/content-manager/"/>
     
   </entry>
   
