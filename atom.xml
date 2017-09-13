@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://wongchen.github.io/"/>
-  <updated>2017-09-08T09:12:35.000Z</updated>
+  <updated>2017-09-13T11:05:13.000Z</updated>
   <id>http://wongchen.github.io/</id>
   
   <author>
@@ -14,6 +14,59 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>TensorFlow 数据输入方式</title>
+    <link href="http://wongchen.github.io/2017/09/11/tf-datareader/"/>
+    <id>http://wongchen.github.io/2017/09/11/tf-datareader/</id>
+    <published>2017-09-11T10:00:53.000Z</published>
+    <updated>2017-09-13T11:05:13.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>最近使用TensorFlow时候发现读入图片数据的时候很难受,自己写的一些代码又感觉很蹩脚,官方的文档易读性太低,太费劲了.<br>打算好好整理一下数据输入这部分代码.</p>
+<h2 id="方式"><a href="#方式" class="headerlink" title="方式"></a>方式</h2><h3 id="直接加载到内存中"><a href="#直接加载到内存中" class="headerlink" title="直接加载到内存中"></a>直接加载到内存中</h3><p>这种方式简直暴力,老早之前我数据没有很多,就是这么做的,把数据先用<code>pickle</code>,将其保存下来,运行的时候直接从保存的文件中获取,这种方式只适合一些小型的文本文件数据,图片数据还是算了,电脑会卡死的.</p>
+<h3 id="动态输入placeholder"><a href="#动态输入placeholder" class="headerlink" title="动态输入placeholder"></a>动态输入placeholder</h3><p>在每次训练时加载一些数据到内存当中,以placeholder的形式feed到graph当中.<br>这种方式需要自己写一些代码,比如<br><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">ImageData</span>:</span></div><div class="line">  <span class="function"><span class="keyword">def</span> <span class="title">___init__</span><span class="params">(self, batch_size)</span>:</span></div><div class="line">	<span class="comment"># define some attr</span></div><div class="line">    self.batch_size = batch_size</div><div class="line">  <span class="function"><span class="keyword">def</span> <span class="title">next_batch</span><span class="params">(self)</span>:</span></div><div class="line">    ....</div><div class="line">	<span class="keyword">return</span> np.array([imread(<span class="string">'name%s.png'</span>%i <span class="keyword">for</span> i <span class="keyword">in</span> range(self.batch_seze))]), labels</div><div class="line">  ...</div><div class="line">  </div><div class="line">image_reader = ImageData(batch_size)</div><div class="line"><span class="keyword">for</span> step <span class="keyword">in</span> range(<span class="number">10001</span>):</div><div class="line">  batch = image_reader.next_batch()</div><div class="line">  sess.run(batch, feed_dict=&#123;x: batch[<span class="number">0</span>], y: batch[<span class="number">1</span>]&#125;)</div><div class="line">  ...</div></pre></td></tr></table></figure></p>
+<p>在训练时实例化相应的类, 每次运行加载一次,需要说明的是,这样需要大量地重复读写多个小文件,所以把这些文件放到固态硬盘下面对提升读取速度是个不错的选择.</p>
+<p>这个方法是比较类似于pytorch的<code>dataset</code>和<code>dataloader</code>的,同时采用pytorch的这两个类来实现TF中的数据输入也是很可行的.</p>
+<p>详情见<a href="http://pytorch.org/tutorials/beginner/data_loading_tutorial.html" target="_blank" rel="external">Data Loading and Processing Tutorial</a>.</p>
+<h3 id="tfrecord"><a href="#tfrecord" class="headerlink" title="tfrecord"></a>tfrecord</h3><p>TF推荐的一种文件格式为tfrecord,把多个零碎的原始文件编码为一个较大的tfrecord文件,运行时通过解码器将其转化为<code>Tensors</code>, <a href="https://www.tensorflow.org/api_guides/python/reading_data" target="_blank" rel="external">这篇tutorial</a>解释了TF中读入数据的方法,这里代码已经写得很好了,但读完发现还是不会……</p>
+<p>可能用到的TF对象和方法, (先大致看名字了解一下,详细后面会涉及到):</p>
+<ul>
+<li><a href="https://www.tensorflow.org/api_docs/python/tf/TFRecordReader" target="_blank" rel="external"><code>tf.TFRecordReader</code></a></li>
+<li><code>tf.train.string_input_producer</code></li>
+<li><code>tf.decode_raw()</code></li>
+<li><code>tf.train.shuffle_batch()</code></li>
+<li><a href="https://www.tensorflow.org/api_docs/python/tf/parse_single_example" target="_blank" rel="external"><code>tf.parse_single_example</code></a></li>
+<li><code>tf.train.Coordinator()</code></li>
+<li><code>tf.train.start_queue_runners</code></li>
+</ul>
+<h3 id="数据转化"><a href="#数据转化" class="headerlink" title="数据转化"></a>数据转化</h3><p>首先通过一个<code>tf.TFRecordWriter</code>对象将原始零碎小文件转化为tfrecord格式文件,代码参考某个地方的:</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">writer = tf.python_io.TFRecordWriter(<span class="string">'./data/test_deepmatching.tfrecords'</span>) <span class="comment"># 初始化TFRecordWriter对象</span></div><div class="line"></div><div class="line"><span class="comment"># write exanple</span></div><div class="line">img_raw = img.tobytes()</div><div class="line">example = tf.train.Example(features=tf.train.Features(feature=&#123;</div><div class="line">           <span class="string">'label'</span>: tf.train.Feature(int64_list=tf.train.Int64List(value=[<span class="number">1</span>])),</div><div class="line">           <span class="string">'img_raw'</span>: tf.train.Feature(bytes_list=tf.train.BytesList(value=[img_raw]))</div><div class="line">                    &#125;))</div><div class="line">writer.write(example.SerializeToString())</div><div class="line"></div><div class="line">....</div><div class="line">writer.close()</div></pre></td></tr></table></figure>
+<h3 id="读入tfrecord"><a href="#读入tfrecord" class="headerlink" title="读入tfrecord"></a>读入tfrecord</h3><p>TF将文件名生成队列,并行解码读取里面的Tensors.</p>
+<p><img src="https://www.tensorflow.org/images/AnimatedFileQueues.gif" alt=""></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">read_and_decode</span><span class="params">(filename)</span>:</span></div><div class="line">    filename_queue = tf.train.string_input_producer([filename])</div><div class="line">    reader = tf.TFRecordReader()</div><div class="line">    _, serialized_example = reader.read(filename_queue)  </div><div class="line">    features = tf.parse_single_example(serialized_example,</div><div class="line">               features=&#123;</div><div class="line">                   <span class="string">'label'</span>: tf.FixedLenFeature([], tf.int64),</div><div class="line">                   <span class="string">'img_raw'</span> : tf.FixedLenFeature([], tf.string),</div><div class="line">               &#125;)</div><div class="line"></div><div class="line">    img = tf.decode_raw(features[<span class="string">'img_raw'</span>], tf.uint8)</div><div class="line">    <span class="keyword">print</span> img.shape</div><div class="line">    img = tf.reshape(img, [<span class="number">65</span>, <span class="number">130</span>, <span class="number">1</span>])</div><div class="line">    <span class="comment"># img = tf.cast(img, tf.float32) * (1. / 255) - 0.5</span></div><div class="line">    <span class="comment"># pre-processing</span></div><div class="line">    label = tf.cast(features[<span class="string">'label'</span>], tf.int32)</div><div class="line">    <span class="keyword">return</span> img, label</div></pre></td></tr></table></figure>
+<p>上述函数返回我们的img 和label <code>ops</code>,运行时候还需要run一下这几个ops.</p>
+<p>为了实现并行读取,我们需要创建多个线程,使用<code>QueueRunner</code>兑现来运行.</p>
+<p>需要一个<code>Coordnator</code>对象来管理这些线程.</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">coord = tf.train.Coordinator()</div><div class="line">threads = tf.train.start_queue_runners(sess=sess, coord=coord)</div></pre></td></tr></table></figure>
+<p>训练时,</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">for step in range(10001):</div><div class="line">  batch = sess.run([img_batch, label_batch])</div><div class="line">  sess.run(train_op, feed_dict=&#123;x: batch[0], y: batch[1]&#125;)</div><div class="line">  ...</div><div class="line">  </div><div class="line">coord.request_stop()</div></pre></td></tr></table></figure>
+<p>上面这种读取不是很好,可能会遇到一些错误,导致线程无法正常关闭,还在等待读取队列,必须强行kill掉才可以,可以采用官方的代码:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line">try:</div><div class="line">    while not coord.should_stop():</div><div class="line">        # Run training steps or whatever</div><div class="line">        sess.run(train_op)</div><div class="line"></div><div class="line">except tf.errors.OutOfRangeError:</div><div class="line">    print(&apos;Done training -- epoch limit reached&apos;)</div><div class="line">finally:</div><div class="line">    # When done, ask the threads to stop.</div><div class="line">    coord.request_stop()</div><div class="line"></div><div class="line"># Wait for threads to finish.</div><div class="line">coord.join(threads)</div><div class="line">sess.close()</div></pre></td></tr></table></figure>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;最近使用TensorFlow时候发现读入图片数据的时候很难受,自己写的一些代码又感觉很蹩脚,官方的文档易读性太低,太费劲了.&lt;br&gt;打算好好整理一下数据输入这部分代码.&lt;/p&gt;
+&lt;h2 id=&quot;方式&quot;&gt;&lt;a href=&quot;#方式&quot; class=&quot;headerlink&quot; tit
+    
+    </summary>
+    
+      <category term="Deep Learning" scheme="http://wongchen.github.io/categories/Deep-Learning/"/>
+    
+    
+      <category term="TensorFlow" scheme="http://wongchen.github.io/tags/TensorFlow/"/>
+    
+  </entry>
   
   <entry>
     <title>python之context manager学习</title>
@@ -73,7 +126,7 @@
     <link href="http://wongchen.github.io/2017/08/20/python-generator/"/>
     <id>http://wongchen.github.io/2017/08/20/python-generator/</id>
     <published>2017-08-19T16:43:18.000Z</published>
-    <updated>2017-08-23T14:49:52.000Z</updated>
+    <updated>2017-09-08T09:13:44.000Z</updated>
     
     <content type="html"><![CDATA[<h2 id="动机"><a href="#动机" class="headerlink" title="动机"></a>动机</h2><p>先看一个问题: 假设我们遇到一个需要长时间响应才能得到返回值的情境,比如深度学习中的大计算或者网络较长时间的响应等(这里我们用<code>sleep()</code>函数来代替),每次需要较长时间的计算才能得到结果.</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">from</span> time <span class="keyword">import</span> sleep</div><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">long_time_compute</span><span class="params">()</span>:</span></div><div class="line">  rv = list()</div><div class="line">  <span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">10</span>):</div><div class="line">    sleep(<span class="number">2</span>)</div><div class="line">    rv.append(i)</div><div class="line">  <span class="keyword">return</span> rv</div></pre></td></tr></table></figure>
