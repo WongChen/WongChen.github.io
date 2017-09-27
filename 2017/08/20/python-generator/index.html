@@ -94,13 +94,13 @@
 <meta property="og:site_name" content="印第安老斑鸠">
 <meta property="og:description" content="动机先看一个问题: 假设我们遇到一个需要长时间响应才能得到返回值的情境,比如深度学习中的大计算或者网络较长时间的响应等(这里我们用sleep()函数来代替),每次需要较长时间的计算才能得到结果.
 1234567from time import sleepdef long_time_compute():  rv = list()  for i in range(10):    sleep(2)">
-<meta property="og:image" content="http://wongchen.github.io/images/Screenshot2017-08-23_下午10.27.24.png">
-<meta property="og:updated_time" content="2017-09-08T09:13:44.000Z">
+<meta property="og:image" content="http://wongchen.github.io/images/Screenshot2017-08-23_%E4%B8%8B%E5%8D%8810.27.24.png">
+<meta property="og:updated_time" content="2017-09-14T16:57:21.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="python之generator学习">
 <meta name="twitter:description" content="动机先看一个问题: 假设我们遇到一个需要长时间响应才能得到返回值的情境,比如深度学习中的大计算或者网络较长时间的响应等(这里我们用sleep()函数来代替),每次需要较长时间的计算才能得到结果.
 1234567from time import sleepdef long_time_compute():  rv = list()  for i in range(10):    sleep(2)">
-<meta name="twitter:image" content="http://wongchen.github.io/images/Screenshot2017-08-23_下午10.27.24.png">
+<meta name="twitter:image" content="http://wongchen.github.io/images/Screenshot2017-08-23_%E4%B8%8B%E5%8D%8810.27.24.png">
 
 
 
@@ -385,7 +385,7 @@
 <p>如上面所述,假如我想得到的最终结果含10个值,我需要20秒才能观察到最后结果,但是假如包含更长的值(如100呢)而且我想观察前几个值呢? 因为从前几个值就能发现一些有意义的东西,我不需要观察全部的值就能得到我想要的,怎么办?</p>
 <p>明显要等到全部值计算完都返回是不符合逻辑的,如果我们只是观察结果不用到返回值的情况可以每次都<code>print</code>打印出每次的结果,但是这也不能解决所有的情况. 幸运的是我们可以通过<code>generator</code>来解决这种问题.</p>
 <h2 id="What-is-python-Generator"><a href="#What-is-python-Generator" class="headerlink" title="What is python Generator?"></a>What is python Generator?</h2><blockquote>
-<p>Introduced in Python 2.2 as an optional feature and finalized in version 2.3, <a href="https://en.wikipedia.org/wiki/Generator_(computer_science" target="_blank" rel="external">generators</a>) are Python’s mechanism for <a href="https://en.wikipedia.org/wiki/Lazy_evaluation" target="_blank" rel="external">lazy evaluation</a> of a function that would otherwise return a space-prohibitive or computationally intensive list.</p>
+<p>Introduced in Python 2.2 as an optional feature and finalized in version 2.3, <a href="https://en.wikipedia.org/wiki/Generator_(computer_science)" target="_blank" rel="external">generators</a> are Python’s mechanism for <a href="https://en.wikipedia.org/wiki/Lazy_evaluation" target="_blank" rel="external">lazy evaluation</a> of a function that would otherwise return a space-prohibitive or computationally intensive list.</p>
 <p>A Python <em>generator</em> is a function which returns a <em>generator iterator</em> (just an object we can iterate over) by calling <code>yield</code>. <code>yield</code> may be called with a value, in which case that value is treated as the “generated” value. The <em>next time</em><code>next()</code> is called on the <em>generator iterator</em> (i.e. in the next step in a <code>for</code> loop, for example),the generator resumes execution <em>from where it called yield</em>, not from the beginning of the function. All of the state, like the values of local variables, is recovered and the generator contiues to execute until the next call to <code>yield</code>.</p>
 </blockquote>
 <p>generator可以不像一般的函数那样,一次返回一个值,下一次还在上次执行的地方继续运行程序返回下一个值,可以说是返回一系列值(One at a time). </p>
@@ -408,14 +408,13 @@
 <p>Generator返回是一个可迭代的对象,因此可以使用<code>for</code>循环:</p>
 <p>每次<code>for</code>循环中需要一个值时,便会调用generator对象的next()方法,取回一个值.</p>
 <h2 id="generator结束"><a href="#generator结束" class="headerlink" title="generator结束"></a>generator结束</h2><p>当generator函数中使用return或者generator迭代到最后,将会返回一个<code>StopIteration</code> exception,当next到最后一个值时将会报错,因此generator只能够循环一次.</p>
-<p><img src="/images/Screenshot2017-08-23_下午10.27.24.png" alt=""></p>
+<p><img src="/images/Screenshot2017-08-23_%E4%B8%8B%E5%8D%8810.27.24.png" alt=""></p>
 <p>最后:</p>
 <ul>
 <li>generator可以用来返回一个迭代器,可以返回一个序列(每次一个值而不是直接全部的返回值).</li>
 <li>yield可以看做next()方法return一个值并记住这个位置,下次在这个位置利用next()方法仍旧如此.</li>
 <li>python2中generator next()方法为<code>g.next()</code>,而python3为<code>g.__next__()</code></li>
 </ul>
-<p>s</p>
 
       
     </div>

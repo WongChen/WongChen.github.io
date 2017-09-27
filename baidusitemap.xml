@@ -4,8 +4,56 @@
 
     
   <url>
+    <loc>http://wongchen.github.io/2016/11/22/mac-uninstall-pip-packages/</loc>
+    <lastmod>2017-09-14T17:06:51.000Z</lastmod>
+    <data>
+        <display>
+        <title>Mac下安装软件包遇到的错误总结</title>
+        <pubTime>2016-11-21T16:30:37.000Z</pubTime>
+        
+        <tag>mac</tag>
+         
+        <tag>pip</tag>
+         
+        <tag>vtk</tag>
+         
+        <tag>seaborn</tag>
+         
+         
+           
+             
+              <breadCrumb title="Mac配置" url="http://wongchen.github.io/categories/Mac%E9%85%8D%E7%BD%AE/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://wongchen.github.io/2017/08/20/python-generator/</loc>
+    <lastmod>2017-09-14T16:57:21.000Z</lastmod>
+    <data>
+        <display>
+        <title>python之generator学习</title>
+        <pubTime>2017-08-19T16:43:18.000Z</pubTime>
+        
+        <tag>python</tag>
+         
+        <tag>generator</tag>
+         
+         
+           
+             
+              <breadCrumb title="python" url="http://wongchen.github.io/categories/python/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://wongchen.github.io/2017/09/11/tf-datareader/</loc>
-    <lastmod>2017-09-13T12:07:11.000Z</lastmod>
+    <lastmod>2017-09-14T16:51:02.000Z</lastmod>
     <data>
         <display>
         <title>TensorFlow 数据输入方式</title>
@@ -24,21 +72,21 @@
 
     
   <url>
-    <loc>http://wongchen.github.io/2017/08/20/python-generator/</loc>
-    <lastmod>2017-09-08T09:13:44.000Z</lastmod>
+    <loc>http://wongchen.github.io/2016/11/13/gae-proxy-ipv6/</loc>
+    <lastmod>2017-09-14T08:01:16.000Z</lastmod>
     <data>
         <display>
-        <title>python之generator学习</title>
-        <pubTime>2017-08-19T16:43:18.000Z</pubTime>
+        <title>IPv6环境使用Goagent代理免校园网流量</title>
+        <pubTime>2016-11-13T14:49:58.000Z</pubTime>
         
-        <tag>python</tag>
+        <tag>IPv6</tag>
          
-        <tag>generator</tag>
+        <tag>GAE</tag>
          
          
            
              
-              <breadCrumb title="python" url="http://wongchen.github.io/categories/python/"/>
+              <breadCrumb title="Mac配置" url="http://wongchen.github.io/categories/Mac%E9%85%8D%E7%BD%AE/"/>
           
         </display>
     </data>
@@ -121,54 +169,6 @@
         <pubTime>2016-12-09T08:16:00.000Z</pubTime>
         
         <tag>Keyboard Maestro</tag>
-         
-         
-           
-             
-              <breadCrumb title="Mac配置" url="http://wongchen.github.io/categories/Mac%E9%85%8D%E7%BD%AE/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://wongchen.github.io/2016/11/22/mac-uninstall-pip-packages/</loc>
-    <lastmod>2017-08-08T14:23:59.000Z</lastmod>
-    <data>
-        <display>
-        <title>Mac下安装软件包遇到的错误总结</title>
-        <pubTime>2016-11-21T16:30:37.000Z</pubTime>
-        
-        <tag>mac</tag>
-         
-        <tag>pip</tag>
-         
-        <tag>vtk</tag>
-         
-        <tag>seaborn</tag>
-         
-         
-           
-             
-              <breadCrumb title="Mac配置" url="http://wongchen.github.io/categories/Mac%E9%85%8D%E7%BD%AE/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://wongchen.github.io/2016/11/13/gae-proxy-ipv6/</loc>
-    <lastmod>2017-03-20T05:22:41.000Z</lastmod>
-    <data>
-        <display>
-        <title>IPv6环境使用Goagent代理免校园网流量</title>
-        <pubTime>2016-11-13T14:49:58.000Z</pubTime>
-        
-        <tag>IPv6</tag>
-         
-        <tag>GAE</tag>
          
          
            
