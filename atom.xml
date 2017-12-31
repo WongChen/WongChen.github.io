@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://wongchen.github.io/"/>
-  <updated>2017-11-09T03:17:07.000Z</updated>
+  <updated>2017-12-31T08:26:05.000Z</updated>
   <id>http://wongchen.github.io/</id>
   
   <author>
@@ -14,6 +14,118 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>summary2017</title>
+    <link href="http://wongchen.github.io/2017/12/31/summary2017/"/>
+    <id>http://wongchen.github.io/2017/12/31/summary2017/</id>
+    <published>2017-12-31T07:26:51.000Z</published>
+    <updated>2017-12-31T08:26:05.000Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="读书"><a href="#读书" class="headerlink" title="读书"></a>读书</h2><p>不得不说kindle真的是个好东西,现在看书除了理工科的一些书都在kindle下看,对眼睛好也方便,其他书籍公式较多或者代码较多还的在电脑上看</p>
+<h3 id="文学"><a href="#文学" class="headerlink" title="文学"></a>文学</h3><ol>
+<li>人类简史</li>
+</ol>
+<p><img src="https://img3.doubanio.com/lpic/s27814883.jpg" alt=""></p>
+<p>起源是在Ted上看了一篇作者的演讲,兴起就打算看这两本书:人类简史与未来简史.结果只看了一篇,还是跳着看的,其中的观点还是很新颖的,不能同意更多.</p>
+<ol>
+<li>拉普拉斯的魔女</li>
+</ol>
+<p><img src="https://img3.doubanio.com/lpic/s29195703.jpg" alt=""></p>
+<p>一直都很喜欢看东野的推理小说,之前也看过了嫌疑人, 放学后, 幻夜……白夜行看的电视剧是个遗憾,书确实太长了啊!</p>
+<p>这本书在我看的时候还是很入胜的,不过更多的还是关于人性跟情感以及AI, 少了些许推理的部分,难怪知乎豆瓣评论一致不高.</p>
+<ol>
+<li>追风筝的人</li>
+</ol>
+<p><img src="https://img3.doubanio.com/lpic/s1727290.jpg" alt=""></p>
+<blockquote>
+<p>为你,千千万万遍~</p>
+</blockquote>
+<p>读完不禁感慨战争难民的不幸,美丽又残忍的故事,经典~</p>
+<p>已经几乎忘记它带给我的最深的感受了,读过~</p>
+<h3 id="DL-Programming"><a href="#DL-Programming" class="headerlink" title="DL/Programming"></a>DL/Programming</h3><ol>
+<li>Deep Learning (50%)</li>
+</ol>
+<p><img src="https://img3.doubanio.com/lpic/s29133163.jpg" alt=""></p>
+<p>传说中的花书,还没读完,读到后面感觉知识储备有些不足,就先暂停下来了,书涉及的范围比较广,刚开始英文一章一章读的,还是有些吃力,后来又读了一遍中文,现在还落着好几章的总结没有做~  :fire:</p>
+<ol>
+<li>PRML(in progress…. ) 🚲🚲</li>
+</ol>
+<p><img src="https://img1.doubanio.com/lpic/s4254558.jpg" alt=""></p>
+<p>经典式教科书,读起来还是有点难,打算每天想起来,闲下来的时候拿起来读一读就好……慢慢啃吧☠️☠️</p>
+<p>目前中英文混着读</p>
+<ol>
+<li>PGM (in progress)🚲🚲</li>
+</ol>
+<p><img src="https://img3.doubanio.com/lpic/s28057016.jpg" alt=""></p>
+<p>读这本书是跟着coursera上的一个课程同步学习的,可惜还没读多少,明年继续….👊👊</p>
+<ol>
+<li>Cocoa Programming for OS X (5th Edition)</li>
+</ol>
+<p><img src="https://img3.doubanio.com/lpic/s28041282.jpg" alt=""></p>
+<p>暑假放假回家呆了两周,断断续续看了那么些时间,跟着学了一些简单的操作,应该差不多读了50%吧,跟着书操作还是比较简单的,就是版本稍微有点旧了,许多操作及api需要改一下💪💪</p>
+<ol>
+<li>Python 源码剖析</li>
+</ol>
+<p><img src="https://img3.doubanio.com/lpic/s3435132.jpg" alt=""></p>
+<p>我觉得这本书很棒,可以让我理解到python的内部的一些很好的设计,我没有仔细读C的部分,没必要,需要的时候会再认真读一遍.</p>
+<ol>
+<li>流畅的Python(90%)</li>
+</ol>
+<p><img src="https://img3.doubanio.com/lpic/s29434304.jpg" alt=""></p>
+<p>可以说是2017年最佳Python进阶书目, 多个技术大咖强烈推荐,从我菜鸡的角度来看还是要花些时间去读的,豆瓣上那些花70小时读完的简直了,读书还要以小时来计时吗~~🙈🙈</p>
+<p>明年准备都换到Python3下去工作,正式放弃Python2</p>
+<blockquote>
+<p>把相关的主题与java比较可以体会到更多乐趣</p>
+</blockquote>
+<p>可惜我还不会java</p>
+<p>其他应该没了,读书工具一般就是kindle for mobi, iBook for epub, pdf expert for pdf.</p>
+<h2 id="公开课"><a href="#公开课" class="headerlink" title="公开课"></a>公开课</h2><p>coursera 上看了几门</p>
+<ol>
+<li>第一个就是Ng的深度学习系列课程,分为五个部分,学起来还是比较简单的,但是没有仔细做记录也无所谓了.</li>
+</ol>
+<p><img src="https://ws3.sinaimg.cn/large/006tNc79ly1fn00pu433cj30m609u0tw.jpg" alt=""></p>
+<ol>
+<li>PGM/RL,CS249-112/CS231n2017</li>
+</ol>
+<ul>
+<li>[ ] 还没学完,有点难,又堆到明年了</li>
+<li>[ ] 概率图模型</li>
+<li>[ ] 强化学习</li>
+</ul>
+<h2 id="学术"><a href="#学术" class="headerlink" title="学术"></a>学术</h2><p>读了许多论文,差不多100篇吧~,这里就不多说了</p>
+<ul>
+<li>[ ] 明年争取努力发篇论文</li>
+</ul>
+<h3 id="🔑🔗📌"><a href="#🔑🔗📌" class="headerlink" title="🔑🔗📌"></a>🔑🔗📌</h3><ul>
+<li>加深了TensorFlow的学习</li>
+<li>简单使用caffe, chainer和MXNet,</li>
+<li>熟练pytorch</li>
+<li>换了pixel手机❌📱</li>
+<li>管理实验室Linux计算服务器</li>
+</ul>
+<h3 id="🔜🔜🔜"><a href="#🔜🔜🔜" class="headerlink" title="🔜🔜🔜"></a>🔜🔜🔜</h3><p>明年还有许多东西要做,压力更大了,加油</p>
+<ul>
+<li>[ ] 学习kotlin语言(Android 官方钦定)</li>
+<li>[ ] 多读书,多看报,多打球</li>
+<li>[ ] TensorFlow mobile</li>
+<li>[ ] golang, Ruby, Haskell, Docker</li>
+<li>[ ] python2 ⏩python3</li>
+</ul>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;读书&quot;&gt;&lt;a href=&quot;#读书&quot; class=&quot;headerlink&quot; title=&quot;读书&quot;&gt;&lt;/a&gt;读书&lt;/h2&gt;&lt;p&gt;不得不说kindle真的是个好东西,现在看书除了理工科的一些书都在kindle下看,对眼睛好也方便,其他书籍公式较多或者代码较多还的在电脑上
+    
+    </summary>
+    
+    
+      <category term="2017" scheme="http://wongchen.github.io/tags/2017/"/>
+    
+      <category term="总结" scheme="http://wongchen.github.io/tags/%E6%80%BB%E7%BB%93/"/>
+    
+  </entry>
   
   <entry>
     <title></title>
