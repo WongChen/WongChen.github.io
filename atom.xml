@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://wongchen.github.io/"/>
-  <updated>2017-09-14T16:51:02.000Z</updated>
+  <updated>2017-11-09T03:17:07.000Z</updated>
   <id>http://wongchen.github.io/</id>
   
   <author>
@@ -14,6 +14,25 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title></title>
+    <link href="http://wongchen.github.io/2017/11/09/english%20course%20paper%20introduction/"/>
+    <id>http://wongchen.github.io/2017/11/09/english course paper introduction/</id>
+    <published>2017-11-09T01:59:33.000Z</published>
+    <updated>2017-11-09T03:17:07.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>Coronary artery  vessels are of much diagnostic signiﬁcance, as as they are commonly examined to evaluate and monitor various angiocardiopathy. However, many conventional segmentation methods both inaccurate and time-consuming. To assist with this task, many approaches have been introduced in the past few years to segment coronary artery automatically and accurately.<br>One impactful way is to apply the CNN(convolutional neural networks) and there has been extensive research regarding the segmentation of nature images and medical images. For example, Liskowski et al. proposed to use CNN to segment a image patch ie. one pixel at a time. Prasoon et al. apply the CNN pixel classification method to the 3D knee cartilage images.<br>However, a drawback of this naive ‘sliding-window’ approach is that input patches from neighboring pixels have huge overlap and the same convolutions are computed many times.<br>We combine the Siamese network considering the coronary artery mask and live images and FCN(Fully Convolutional Networks) which produces a likelihood map instead of a classification probability.  The combination of the two architectures utilize that the mask images and live images have same background pixels but different vessels so it is more accurate. Moreover,  the FCN design can be applied to arbitrary size of input. Therefore the proposed method can segment the coronary artery more efficiently and automatically. </p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;Coronary artery  vessels are of much diagnostic signiﬁcance, as as they are commonly examined to evaluate and monitor various angiocardio
+    
+    </summary>
+    
+    
+  </entry>
   
   <entry>
     <title>TensorFlow 数据输入方式</title>
