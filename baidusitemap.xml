@@ -4,6 +4,70 @@
 
     
   <url>
+    <loc>http://wongchen.github.io/2018/01/17/pytorch-dynamic-sampling/</loc>
+    <lastmod>2018-01-17T13:09:13.000Z</lastmod>
+    <data>
+        <display>
+        <title>深度学习中动态加载样本</title>
+        <pubTime>2018-01-17T12:48:34.000Z</pubTime>
+        
+        <tag>pytorch</tag>
+         
+        <tag>deep learning</tag>
+         
+         
+           
+             
+              <breadCrumb title="Deep Learning" url="http://wongchen.github.io/categories/Deep-Learning/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://wongchen.github.io/2018/01/17/cuda9-cudnn7/</loc>
+    <lastmod>2018-01-17T12:50:35.000Z</lastmod>
+    <data>
+        <display>
+        <title>安装TensorFlow1.5+cuda9.0+cudnn7.0</title>
+        <pubTime>2018-01-17T12:17:11.000Z</pubTime>
+        
+        <tag>cuda</tag>
+         
+        <tag>TensorFlow</tag>
+         
+         
+           
+             
+              <breadCrumb title="TensorFlow" url="http://wongchen.github.io/categories/TensorFlow/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://wongchen.github.io/2017/09/11/tf-datareader/</loc>
+    <lastmod>2018-01-17T12:50:20.000Z</lastmod>
+    <data>
+        <display>
+        <title>TensorFlow 数据输入方式</title>
+        <pubTime>2017-09-11T10:00:53.000Z</pubTime>
+        
+        <tag>TensorFlow</tag>
+         
+         
+           
+             
+              <breadCrumb title="TensorFlow" url="http://wongchen.github.io/categories/TensorFlow/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://wongchen.github.io/2017/12/31/summary2017/</loc>
     <lastmod>2017-12-31T08:26:05.000Z</lastmod>
     <data>
@@ -15,21 +79,6 @@
          
         <tag>总结</tag>
          
-         
-           
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://wongchen.github.io/2017/11/09/english%20course%20paper%20introduction/</loc>
-    <lastmod>2017-11-09T03:17:07.000Z</lastmod>
-    <data>
-        <display>
-        <title></title>
-        <pubTime>2017-11-09T01:59:33.000Z</pubTime>
-        
          
            
         </display>
@@ -79,26 +128,6 @@
            
              
               <breadCrumb title="python" url="http://wongchen.github.io/categories/python/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://wongchen.github.io/2017/09/11/tf-datareader/</loc>
-    <lastmod>2017-09-14T16:51:02.000Z</lastmod>
-    <data>
-        <display>
-        <title>TensorFlow 数据输入方式</title>
-        <pubTime>2017-09-11T10:00:53.000Z</pubTime>
-        
-        <tag>TensorFlow</tag>
-         
-         
-           
-             
-              <breadCrumb title="Deep Learning" url="http://wongchen.github.io/categories/Deep-Learning/"/>
           
         </display>
     </data>

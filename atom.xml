@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://wongchen.github.io/"/>
-  <updated>2017-12-31T08:26:05.000Z</updated>
+  <updated>2018-01-17T13:09:13.000Z</updated>
   <id>http://wongchen.github.io/</id>
   
   <author>
@@ -14,6 +14,85 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>深度学习中动态加载样本</title>
+    <link href="http://wongchen.github.io/2018/01/17/pytorch-dynamic-sampling/"/>
+    <id>http://wongchen.github.io/2018/01/17/pytorch-dynamic-sampling/</id>
+    <published>2018-01-17T12:48:34.000Z</published>
+    <updated>2018-01-17T13:09:13.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>在用CNN处理图像的时候,经常我们不是用一整张完整的图像去训练,而是经常会采用取一个图像块也就是patch来输入网络进行训练,构成我们的训练集样本和测试集样本.</p>
+<p>一种常用的方法就是先把他们保存到本地硬盘中,然后每次训练时一张张去读取(或者将他们转换为<code>tfrecord</code>格式使用TensorFlow中的队列读取这些文件),最近在做3D图像的操作,直接对3D图像进行卷积,卷积核也是3维的,因此图像尺寸不可能取到很大,也是voxel patch.</p>
+<p>但是3D数据是较大的,硬盘空间有时候没那么大,尤其是固态,因为固态下的文件读取速度要比机械盘快很多,所以能放到固态下的话是个不错的选择,但是对于这个问题来说,完全不够,只能放到机械盘下面.</p>
+<p>还有一种想法就是: “把鸡蛋放到一个篮子里.🥚🥚🥚”</p>
+<p>就是在训练时把所有数据一次性读取加载到内存中,然后训练的时候从这些图片中随机取样本,要求就是这些图片可以被同时读取到内存中,需要一定大小的内存,尤其是在一些用来跑程序的主机上,内存占用很低.</p>
+<h2 id="Example"><a href="#Example" class="headerlink" title="Example"></a>Example</h2><p>例如可以把要提取的patch的点以pickle文件保存为list对象,用pytorch实现为:</p>
+<p>将所有的读取到图像以及要提取样本的关键点传入MyDataset类, 在<code>__getitem__</code>方法中对已有的图像进行切片就能得到需要的样本.</p>
+<p>这样的好处就是节省硬盘空间,从内存获取数据速度较快.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line">from torch.utils.data import Dataset</div><div class="line">import numpy as np</div><div class="line">import pickle</div><div class="line"></div><div class="line">class MyDataset(Dataset):</div><div class="line">	def __init__(self, src_img_list, std_img_list, points_pickle):	</div><div class="line">    	self.src_img_list = src_img_list</div><div class="line">        self.std_img_list = std_img_list</div><div class="line">        with open(points_pickle, &apos;rb&apos;) as f:</div><div class="line">              self.points = pickle.load(f)</div><div class="line">  </div><div class="line">    def __len__(self):</div><div class="line">        return len(self.points)</div><div class="line">  </div><div class="line">    def __getitem__(self, idx):</div><div class="line">        i, c, h, w = self.points[idx]</div><div class="line">        data = self.src_img_list[i][c-64:c+64, h-64:h+64, w-64:w+64].reshape([1, 128, , 128]).</div><div class="line">        target = self.std_img_list[i][c-64:c+64, h-64:h+64, w-64:w+64].reshape([1, , 128, 128]</div><div class="line">        return data, target</div></pre></td></tr></table></figure>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;在用CNN处理图像的时候,经常我们不是用一整张完整的图像去训练,而是经常会采用取一个图像块也就是patch来输入网络进行训练,构成我们的训练集样本和测试集样本.&lt;/p&gt;
+&lt;p&gt;一种常用的方法就是先把他们保存到本地硬盘中,然后每次训练时一张张去读取(或者将他们转换为&lt;code
+    
+    </summary>
+    
+      <category term="Deep Learning" scheme="http://wongchen.github.io/categories/Deep-Learning/"/>
+    
+    
+      <category term="pytorch" scheme="http://wongchen.github.io/tags/pytorch/"/>
+    
+      <category term="deep learning" scheme="http://wongchen.github.io/tags/deep-learning/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>安装TensorFlow1.5+cuda9.0+cudnn7.0</title>
+    <link href="http://wongchen.github.io/2018/01/17/cuda9-cudnn7/"/>
+    <id>http://wongchen.github.io/2018/01/17/cuda9-cudnn7/</id>
+    <published>2018-01-17T12:17:11.000Z</published>
+    <updated>2018-01-17T12:50:35.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>之前使用的一直是python2.7+TensorFlow1.1+cuda8.0+cudnn6.0,用了有一段时间了,python3是一直打算换过来的,毕竟py3比2增加了许多实用性的功能,而且py2逐渐不被许多库所支持,官方也声明在2020年放弃对py2的维护.</p>
+<p>今天看到TensorFlow1.5版本的发布以及cuda9的发布想更新一波.</p>
+<h2 id="py"><a href="#py" class="headerlink" title="py"></a>py</h2><p>由于目前还会短暂使用py2,所以需要在一台电脑上同时使用py2和py3.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">ps -aux | grep python</div></pre></td></tr></table></figure>
+<p>可以看到系统当前调用python的进程,看到python和python3都有.</p>
+<p>可行的方法包括:</p>
+<ol>
+<li>virtualenv,不过暂时不想用这个.</li>
+<li>最简单就是在用3的时候后面加3就好了, <code>python3</code>, <code>pip3</code></li>
+<li>也可以去<a href="https://github.com/pyenv/pyenv" target="_blank" rel="external">pyenv</a>看看</li>
+</ol>
+<h2 id="CUDA-amp-CUDNN"><a href="#CUDA-amp-CUDNN" class="headerlink" title="CUDA &amp; CUDNN"></a>CUDA &amp; CUDNN</h2><p>官网下载cuda时选择9.0的版本,当前最新为9.1,刚开始安装了9.1的cuda toolkit,发现还是不支持,后来换到9.0版本就好了.</p>
+<p>CUDNN也是官网下载deb包安装就可以.</p>
+<p>驱动需要384以上,一个经验就是当电脑驱动出问题的时候,(经常登录界面无线循环,低分辨率等问题),最简单的解决办法就是把原来的使用linux apt安装的驱动包都卸载掉</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sudo apt-get remove nvidia*</div></pre></td></tr></table></figure>
+<p>然后<a href="http://www.nvidia.com/Download/index.aspx?lang=cn" target="_blank" rel="external">官网</a>下载相应版本的driver, <code>.run</code>文件,用它来安装,一般可以解决驱动的问题.</p>
+<h2 id="TensorFlow1-5"><a href="#TensorFlow1-5" class="headerlink" title="TensorFlow1.5"></a>TensorFlow1.5</h2><p>本来打算源码安装的,进行到<code>bazel build</code>这一步的时候一个跟网络和bazel有关的问题解决不了,也没必要这么装了.</p>
+<p>索性还是pip:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">pip install tensorflow-gpu==1.5rc1 --user</div></pre></td></tr></table></figure>
+<p>这样原来的python2也是还可以继续用的,新的python3也ok.</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;之前使用的一直是python2.7+TensorFlow1.1+cuda8.0+cudnn6.0,用了有一段时间了,python3是一直打算换过来的,毕竟py3比2增加了许多实用性的功能,而且py2逐渐不被许多库所支持,官方也声明在2020年放弃对py2的维护.&lt;/p&gt;
+&lt;
+    
+    </summary>
+    
+      <category term="TensorFlow" scheme="http://wongchen.github.io/categories/TensorFlow/"/>
+    
+    
+      <category term="cuda" scheme="http://wongchen.github.io/tags/cuda/"/>
+    
+      <category term="TensorFlow" scheme="http://wongchen.github.io/tags/TensorFlow/"/>
+    
+  </entry>
   
   <entry>
     <title>summary2017</title>
@@ -128,30 +207,11 @@
   </entry>
   
   <entry>
-    <title></title>
-    <link href="http://wongchen.github.io/2017/11/09/english%20course%20paper%20introduction/"/>
-    <id>http://wongchen.github.io/2017/11/09/english course paper introduction/</id>
-    <published>2017-11-09T01:59:33.000Z</published>
-    <updated>2017-11-09T03:17:07.000Z</updated>
-    
-    <content type="html"><![CDATA[<p>Coronary artery  vessels are of much diagnostic signiﬁcance, as as they are commonly examined to evaluate and monitor various angiocardiopathy. However, many conventional segmentation methods both inaccurate and time-consuming. To assist with this task, many approaches have been introduced in the past few years to segment coronary artery automatically and accurately.<br>One impactful way is to apply the CNN(convolutional neural networks) and there has been extensive research regarding the segmentation of nature images and medical images. For example, Liskowski et al. proposed to use CNN to segment a image patch ie. one pixel at a time. Prasoon et al. apply the CNN pixel classification method to the 3D knee cartilage images.<br>However, a drawback of this naive ‘sliding-window’ approach is that input patches from neighboring pixels have huge overlap and the same convolutions are computed many times.<br>We combine the Siamese network considering the coronary artery mask and live images and FCN(Fully Convolutional Networks) which produces a likelihood map instead of a classification probability.  The combination of the two architectures utilize that the mask images and live images have same background pixels but different vessels so it is more accurate. Moreover,  the FCN design can be applied to arbitrary size of input. Therefore the proposed method can segment the coronary artery more efficiently and automatically. </p>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;Coronary artery  vessels are of much diagnostic signiﬁcance, as as they are commonly examined to evaluate and monitor various angiocardio
-    
-    </summary>
-    
-    
-  </entry>
-  
-  <entry>
     <title>TensorFlow 数据输入方式</title>
     <link href="http://wongchen.github.io/2017/09/11/tf-datareader/"/>
     <id>http://wongchen.github.io/2017/09/11/tf-datareader/</id>
     <published>2017-09-11T10:00:53.000Z</published>
-    <updated>2017-09-14T16:51:02.000Z</updated>
+    <updated>2018-01-17T12:50:20.000Z</updated>
     
     <content type="html"><![CDATA[<p>最近使用TensorFlow时候发现读入图片数据的时候很难受,自己写的一些代码又感觉很蹩脚,官方的文档易读性太低,太费劲了.<br>打算好好整理一下数据输入这部分代码.</p>
 <h2 id="方式"><a href="#方式" class="headerlink" title="方式"></a>方式</h2><h3 id="直接加载到内存中"><a href="#直接加载到内存中" class="headerlink" title="直接加载到内存中"></a>直接加载到内存中</h3><p>这种方式简直暴力,老早之前我数据没有很多,就是这么做的,把数据先用<code>pickle</code>,将其保存下来,运行的时候直接从保存的文件中获取,这种方式只适合一些小型的文本文件数据,图片数据还是算了,电脑会卡死的.</p>
@@ -192,7 +252,7 @@
     
     </summary>
     
-      <category term="Deep Learning" scheme="http://wongchen.github.io/categories/Deep-Learning/"/>
+      <category term="TensorFlow" scheme="http://wongchen.github.io/categories/TensorFlow/"/>
     
     
       <category term="TensorFlow" scheme="http://wongchen.github.io/tags/TensorFlow/"/>
