@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://wongchen.github.io/"/>
-  <updated>2018-01-17T13:09:13.000Z</updated>
+  <updated>2018-01-17T13:20:31.000Z</updated>
   <id>http://wongchen.github.io/</id>
   
   <author>
@@ -20,7 +20,7 @@
     <link href="http://wongchen.github.io/2018/01/17/pytorch-dynamic-sampling/"/>
     <id>http://wongchen.github.io/2018/01/17/pytorch-dynamic-sampling/</id>
     <published>2018-01-17T12:48:34.000Z</published>
-    <updated>2018-01-17T13:09:13.000Z</updated>
+    <updated>2018-01-17T13:20:31.000Z</updated>
     
     <content type="html"><![CDATA[<p>在用CNN处理图像的时候,经常我们不是用一整张完整的图像去训练,而是经常会采用取一个图像块也就是patch来输入网络进行训练,构成我们的训练集样本和测试集样本.</p>
 <p>一种常用的方法就是先把他们保存到本地硬盘中,然后每次训练时一张张去读取(或者将他们转换为<code>tfrecord</code>格式使用TensorFlow中的队列读取这些文件),最近在做3D图像的操作,直接对3D图像进行卷积,卷积核也是3维的,因此图像尺寸不可能取到很大,也是voxel patch.</p>
