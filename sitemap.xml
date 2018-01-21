@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://wongchen.github.io/2018/01/21/tf-dynamic-dataset/</loc>
+    
+    <lastmod>2018-01-21T07:13:13.000Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://wongchen.github.io/2018/01/17/pytorch-dynamic-sampling/</loc>
     
     <lastmod>2018-01-17T13:20:31.000Z</lastmod>

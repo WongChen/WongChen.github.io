@@ -68,7 +68,7 @@
 <link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="mac,vim," />
+  <meta name="keywords" content="TensorFlow,Dataset," />
 
 
 
@@ -86,28 +86,27 @@
 
 
 
-<meta name="description" content="网上关于Vim配置的讲很多，一键配置也很多。但是我们使用Vim不是因为它的插件实现的功能，自动补全，提示有多厉害，而是它自身的逻辑，自身的快速定位，格式化代码。
-所以自己使用方便，好用的配置才是最好的！
-我起初就是写python，所以主要配置围绕python。首先，在~目录新建.vimrc文件，添加一些配置：
-vimrc文件在这.
-123456789101112131415161718192021">
+<meta name="description" content="上一篇说了pytorch下利用其Dataset和DataLoaderapi可以很方便地实现动态读取数据,不需要将图片保存到本地也可以快速取样本.
+在TensorFlow下之前写过常用的数据读取方式,在TF1.3版本新添加了Dataset模块,1.3版本中其位于
+tf.contrib.data.Dataset,1.4版本后移到了’tf.data.Dataset’.
+之前的tfrecord队列读取数据">
 <meta property="og:type" content="article">
-<meta property="og:title" content="我的Vim配置">
-<meta property="og:url" content="http://wongchen.github.io/2016/11/13/我的MacVim配置/index.html">
+<meta property="og:title" content="tf-dynamic-dataset">
+<meta property="og:url" content="http://wongchen.github.io/2018/01/21/tf-dynamic-dataset/index.html">
 <meta property="og:site_name" content="印第安老斑鸠">
-<meta property="og:description" content="网上关于Vim配置的讲很多，一键配置也很多。但是我们使用Vim不是因为它的插件实现的功能，自动补全，提示有多厉害，而是它自身的逻辑，自身的快速定位，格式化代码。
-所以自己使用方便，好用的配置才是最好的！
-我起初就是写python，所以主要配置围绕python。首先，在~目录新建.vimrc文件，添加一些配置：
-vimrc文件在这.
-123456789101112131415161718192021">
-<meta property="og:updated_time" content="2017-08-25T16:23:45.000Z">
+<meta property="og:description" content="上一篇说了pytorch下利用其Dataset和DataLoaderapi可以很方便地实现动态读取数据,不需要将图片保存到本地也可以快速取样本.
+在TensorFlow下之前写过常用的数据读取方式,在TF1.3版本新添加了Dataset模块,1.3版本中其位于
+tf.contrib.data.Dataset,1.4版本后移到了’tf.data.Dataset’.
+之前的tfrecord队列读取数据">
+<meta property="og:image" content="https://4.bp.blogspot.com/-Av_QQUdRvZI/WbfwxtE0cjI/AAAAAAAAD1s/bjWNV9siuoI92Qo3TaeFaumb2s5BVfYgwCLcBGAs/s1600/image7.jpg">
+<meta property="og:updated_time" content="2018-01-21T07:13:13.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="我的Vim配置">
-<meta name="twitter:description" content="网上关于Vim配置的讲很多，一键配置也很多。但是我们使用Vim不是因为它的插件实现的功能，自动补全，提示有多厉害，而是它自身的逻辑，自身的快速定位，格式化代码。
-所以自己使用方便，好用的配置才是最好的！
-我起初就是写python，所以主要配置围绕python。首先，在~目录新建.vimrc文件，添加一些配置：
-vimrc文件在这.
-123456789101112131415161718192021">
+<meta name="twitter:title" content="tf-dynamic-dataset">
+<meta name="twitter:description" content="上一篇说了pytorch下利用其Dataset和DataLoaderapi可以很方便地实现动态读取数据,不需要将图片保存到本地也可以快速取样本.
+在TensorFlow下之前写过常用的数据读取方式,在TF1.3版本新添加了Dataset模块,1.3版本中其位于
+tf.contrib.data.Dataset,1.4版本后移到了’tf.data.Dataset’.
+之前的tfrecord队列读取数据">
+<meta name="twitter:image" content="https://4.bp.blogspot.com/-Av_QQUdRvZI/WbfwxtE0cjI/AAAAAAAAD1s/bjWNV9siuoI92Qo3TaeFaumb2s5BVfYgwCLcBGAs/s1600/image7.jpg">
 
 
 
@@ -128,9 +127,9 @@ vimrc文件在这.
 
 
 
-  <link rel="canonical" href="http://wongchen.github.io/2016/11/13/我的MacVim配置/"/>
+  <link rel="canonical" href="http://wongchen.github.io/2018/01/21/tf-dynamic-dataset/"/>
 
-  <title> 我的Vim配置 | 印第安老斑鸠 </title>
+  <title> tf-dynamic-dataset | 印第安老斑鸠 </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -312,7 +311,7 @@ vimrc文件在这.
             
             
               
-                我的Vim配置
+                tf-dynamic-dataset
               
             
           </h1>
@@ -324,8 +323,8 @@ vimrc文件在这.
               <i class="fa fa-calendar-o"></i>
             </span>
             <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-11-13T13:14:35+08:00" content="2016-11-13">
-              2016-11-13
+            <time itemprop="dateCreated" datetime="2018-01-21T14:40:43+08:00" content="2018-01-21">
+              2018-01-21
             </time>
           </span>
 
@@ -338,8 +337,8 @@ vimrc文件在这.
               <span class="post-meta-item-text">分类于</span>
               
                 <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/Mac配置/" itemprop="url" rel="index">
-                    <span itemprop="name">Mac配置</span>
+                  <a href="/categories/TensorFlow/" itemprop="url" rel="index">
+                    <span itemprop="name">TensorFlow</span>
                   </a>
                 </span>
 
@@ -354,8 +353,8 @@ vimrc文件在这.
             
               <span class="post-comments-count">
                 &nbsp; | &nbsp;
-                <a href="/2016/11/13/我的MacVim配置/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count fb-comments-count" data-href="http://wongchen.github.io/2016/11/13/我的MacVim配置/" itemprop="commentsCount">0</span> comments
+                <a href="/2018/01/21/tf-dynamic-dataset/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count fb-comments-count" data-href="http://wongchen.github.io/2018/01/21/tf-dynamic-dataset/" itemprop="commentsCount">0</span> comments
                 </a>
               </span>
             
@@ -365,7 +364,7 @@ vimrc文件在这.
 
           
           
-             <span id="/2016/11/13/我的MacVim配置/" class="leancloud_visitors" data-flag-title="我的Vim配置">
+             <span id="/2018/01/21/tf-dynamic-dataset/" class="leancloud_visitors" data-flag-title="tf-dynamic-dataset">
                &nbsp; | &nbsp;
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -387,66 +386,35 @@ vimrc文件在这.
       
 
       
-        <p>网上关于Vim配置的讲很多，一键配置也很多。但是我们使用Vim不是因为它的插件实现的功能，自动补全，提示有多厉害，而是它自身的逻辑，自身的快速定位，格式化代码。</p>
-<p>所以自己使用方便，好用的配置才是最好的！</p>
-<p>我起初就是写<code>python</code>，所以主要配置围绕<code>python</code>。首先，在<code>~</code>目录新建<code>.vimrc</code>文件，添加一些配置：</p>
-<p><a href="https://github.com/WongChen/.vim/blob/master/.vimrc" target="_blank" rel="external">vimrc</a>文件在这.</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div></pre></td><td class="code"><pre><div class="line">&quot;去掉vi的一致性</div><div class="line">set nocompatible</div><div class="line">&quot;文件类型</div><div class="line">filetype on</div><div class="line">自动补全</div><div class="line">set autoindent</div><div class="line">智能补全</div><div class="line">set smartindent</div><div class="line">&quot;显示行号</div><div class="line">set nu!</div><div class="line">&quot;高亮搜索</div><div class="line">set hlsearch</div><div class="line">&quot; 相对行</div><div class="line">set relativenumber</div><div class="line"></div><div class="line">&quot; tab size</div><div class="line">set tabstop=4</div><div class="line">&quot;不折叠</div><div class="line">set unwrap</div><div class="line">&quot;指示当前行</div><div class="line">set cursorline</div><div class="line">&quot;指示当前列</div><div class="line">set cursorcolumn</div><div class="line">&quot;语法</div><div class="line">syntax enable</div><div class="line">&quot;根据文件类型缩进</div><div class="line">filetype indent on</div><div class="line"></div><div class="line">syntax on</div><div class="line">&quot;python 缩进4</div><div class="line">au FileType python set cindent shiftwidth=4</div><div class="line"></div><div class="line">&quot; 绑定jk为ESC按键,操作更方便</div><div class="line">inoremap jk &lt;ESC&gt;</div><div class="line">&quot; 设置Control a左删除, Control d又删除</div><div class="line">inoremap &lt;C-a&gt; &lt;backspace&gt;</div><div class="line">inoremap &lt;C-d&gt; &lt;Right&gt;&lt;backspace&gt;</div><div class="line"></div><div class="line">&quot; 回车 visual line mode</div><div class="line">map &lt;CR&gt; &lt;S-v&gt;</div><div class="line">`</div><div class="line">&quot; 设置 leader key 为空格键</div><div class="line">let mapleader = &quot;\&lt;Space&gt;&quot;</div><div class="line"></div><div class="line">&quot;设置在插入模式下, xz为下行输入, zx为上行输入</div><div class="line">imap xz &lt;ESC&gt;o</div><div class="line">imap zx &lt;Up&gt;&lt;ESC&gt;o</div><div class="line"></div><div class="line">&quot;结合leader key设置  空格加w 保存, 空格加zz 保存退出,也是为了快捷操作&quot;</div><div class="line">nnoremap &lt;Leader&gt;zz :wq&lt;CR&gt;</div><div class="line">nnoremap &lt;Leader&gt;w :w&lt;CR&gt;</div></pre></td></tr></table></figure>
-<p>之后安装插件:</p>
-<h2 id="vundle插件管理工具"><a href="#vundle插件管理工具" class="headerlink" title="vundle插件管理工具"></a>vundle插件管理工具</h2><ul>
-<li>安装</li>
-</ul>
-<p><code>git clone https://github.com/gmarik/vundle.git ~/.vim/bundle/vundle</code></p>
+        <p>上一篇说了pytorch下利用其<code>Dataset</code>和<code>DataLoader</code>api可以很方便地实现动态读取数据,不需要将图片保存到本地也可以快速取样本.</p>
+<p>在TensorFlow下之前写过常用的数据读取方式,在TF1.3版本新添加了<code>Dataset</code>模块,1.3版本中其位于</p>
+<p><code>tf.contrib.data.Dataset</code>,1.4版本后移到了’tf.data.Dataset’.</p>
+<p>之前的tfrecord队列读取数据的方式有一些不足:</p>
 <ul>
-<li>配置</li>
+<li>需要保存为tfrecord文件格式,官方doc有些晦涩难懂=,学习成本较高(相比于pytorch dataset的实现)</li>
+<li>需要保存为tfrecord文件,占用一定硬盘空间</li>
+<li>其内部机制有些难懂,最后如果结果不对,不能保证是不是样本读取代码这里出了问题</li>
 </ul>
-<p>在<code>.vimrc</code>中添加</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">set rtp+=~/.vim/bundle/vundle/</div><div class="line">call vundle#rc()</div></pre></td></tr></table></figure>
+<h2 id="构建一个Dataset"><a href="#构建一个Dataset" class="headerlink" title="构建一个Dataset"></a>构建一个Dataset</h2><p>首先,Dataset结构:</p>
+<p>从这里也可以看到,跟pytorch下的很像,一个好处就是相比之前的队列或者feed_dict来说要简单,简介许多,代码易读性也增加了.</p>
 <ul>
-<li>插件安装</li>
+<li>Dataset模块: 包含基本的方法,如创建dataset, 随机(shuffle), 变换(transformation), 批处理(batch)等</li>
+<li>子类: 针对特定数据的一些方便的子类,就像pytorch中的labeledImageDataset等</li>
+<li>Dataset的方法就是实例化一个Iterator对象,保证每次取到一个dataset中的一个/批样本.</li>
 </ul>
-<p>目前我用的插件,之后再更新.</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">&quot;目前我使用的插件</div><div class="line"></div><div class="line">Bundle &apos;gmarik/vundle&apos;</div><div class="line"></div><div class="line">Bundle &apos;davidhalter/jedi&apos;</div><div class="line"></div><div class="line">Bundle &apos;Valloric/YouCompleteMe&apos;</div><div class="line"></div><div class="line">Bundle &apos;jiangmiao/auto-pairs&apos;</div><div class="line"></div><div class="line">Bundle &apos;scrooloose/nerdcommenter&apos;</div></pre></td></tr></table></figure>
-<p>安装插件,只需在任一vim窗口<code>normal</code>模式下执行<code>BundleInstall</code>即可.</p>
-<h2 id="jedi"><a href="#jedi" class="headerlink" title="jedi"></a>jedi</h2><p>Python补全强力插件.</p>
-<h3 id="YouCompleteMe"><a href="#YouCompleteMe" class="headerlink" title="YouCompleteMe"></a>YouCompleteMe</h3><h4 id="介绍"><a href="#介绍" class="headerlink" title="介绍"></a>介绍</h4><blockquote>
-<p><a href="http://valloric.github.io/YouCompleteMe/#intro" target="_blank" rel="external">YouCompleteMe</a> is a fast, as-you-type, fuzzy-search code completion engine for Vim.</p>
+<p><img src="https://4.bp.blogspot.com/-Av_QQUdRvZI/WbfwxtE0cjI/AAAAAAAAD1s/bjWNV9siuoI92Qo3TaeFaumb2s5BVfYgwCLcBGAs/s1600/image7.jpg" alt=""></p>
+<p>从<a href="https://www.tensorflow.org/api_docs/python/tf/data/Dataset" target="_blank" rel="external">官方doc</a>我们可以看到,构建一个Dataset的大致的几个方法有:</p>
+<ul>
+<li><code>from_generator</code>:调用了<code>py_func</code>方法,可以将任意的python代码转化为tf图中的operation节点;使用指定生成器中的每个元素作为dataset中的元素</li>
+<li><code>from_sparse_tensor_slices</code></li>
+<li><code>from_tensor_slices</code></li>
+</ul>
+<h2 id="example"><a href="#example" class="headerlink" title="example"></a>example</h2><p>利用<code>from_generator</code>方法来实现之前的动态生成训练和测试样本.</p>
+<blockquote>
+<p>从一些3D图片中随机取一些[128, 128, 128]大小的样本, 原图和金标准图index要一致,每个样本包含(data, target), 为了方便,提前保存好了这些样本的行列坐标.</p>
 </blockquote>
-<p>特点:</p>
-<ul>
-<li>识别every language</li>
-<li>支持C-family languages(C/C++/Objective-C/Objective-C++)</li>
-<li>对于Python2/3附带Jedi-based补全(尴尬,另外的jedi卸载了也没关系),使用jediHttp wrapper</li>
-<li>an OmniSharp-based completion engine for C#(不懂C#)</li>
-<li>a Tern-based completion engine for JavaScript</li>
-<li>…</li>
-</ul>
-<p>此外还有<a href="a Tern-based completion engine for JavaScript">semantic IDE-like features</a>,像goto declarations, definitions, usages, etc这种,根据语意重命名变量(rename variables)等等,使用体验试试吧</p>
-<h4 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h4><ul>
-<li>使用mvim(Vim binary that is inside the MacVim.app package )更好体验,将vim链接到mvim</li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">ln -s /usr/local/bin/mvim vim</div></pre></td></tr></table></figure>
-<ul>
-<li>vundle cloneYCM后,到YCM目录编译,需要用到<a href="https://cmake.org/download/" target="_blank" rel="external">Cmake</a></li>
-<li>编译</li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">cd ~/.vim/bundle/YouCompleteMe</div><div class="line">./install.py --[xxx]</div></pre></td></tr></table></figure>
-<p>可选参数有:</p>
-<ul>
-<li>–clang-completer,添加C-family支持</li>
-<li>–all, everything</li>
-</ul>
-<h3 id="auto-pairs"><a href="#auto-pairs" class="headerlink" title="auto-pairs"></a>auto-pairs</h3><p>添加引号,括号配对补全,不多说了.</p>
-<h2 id="nerdcommenter"><a href="#nerdcommenter" class="headerlink" title="nerdcommenter"></a>nerdcommenter</h2><p>添加/解除注释,支持多种语言,默认操作为:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">&lt;leader&gt;cc   加注释</div><div class="line">&lt;leader&gt;cu   解开注释</div></pre></td></tr></table></figure>
-<h2 id="vim学习"><a href="#vim学习" class="headerlink" title="vim学习"></a>vim学习</h2><ul>
-<li><code>vimtutor</code>是最基础的老师了.</li>
-<li>在推荐一个<a href="https://getpocket.com/a/read/43816131" target="_blank" rel="external">vim 学习的链接</a>,看完这个应该能学到好多</li>
-<li>话说新MacBook Pro with TouchBar取消了<code>esc</code>键后,vim使用便比较尴尬</li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">inoremap jk &lt;ESC&gt;</div></pre></td></tr></table></figure>
-<p>环境搭建好之后,强迫自己多使用学习到的vim高端操作,逐渐熟悉,尤其是在远程CLI环境中,vim很有用,慢慢你会熟悉掌握并爱上vim.</p>
-<p>映射到自己喜欢的按键吧.<br>等等.</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> tensorflow <span class="keyword">as</span> tf</div><div class="line"><span class="keyword">import</span> os</div><div class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</div><div class="line"><span class="keyword">import</span> SimpleITK <span class="keyword">as</span> sitk</div><div class="line"><span class="keyword">import</span> pickle <span class="keyword">as</span> pk</div><div class="line"></div><div class="line"><span class="comment"># 实现生成器,这里由于生成器需要接受几个参数,from_generator中gen参数对象需要callable而且返回一个可迭代对象,</span></div><div class="line"><span class="comment"># 可以写成闭包的形式如下,也可以写成一个类(支持callable)或者lambda也是可以的</span></div><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">gen</span><span class="params">(src_list, std_list, pickle_file)</span>:</span></div><div class="line">  <span class="string">'''</span></div><div class="line">  src_list,std_list 图像array数据</div><div class="line">  返回一个生成器函数</div><div class="line">  '''</div><div class="line">    <span class="keyword">with</span> open(pickle_file, <span class="string">'rb'</span>) <span class="keyword">as</span> f:</div><div class="line">        points = pk.load(f)</div><div class="line">    <span class="function"><span class="keyword">def</span> <span class="title">func</span><span class="params">()</span>:</span></div><div class="line">        <span class="keyword">for</span> j <span class="keyword">in</span> range(len(points)):</div><div class="line">            i, c, h, w = points[j]</div><div class="line">            src = src_list[i][c<span class="number">-64</span>:c+<span class="number">64</span>, h<span class="number">-64</span>:h+<span class="number">64</span>, w<span class="number">-64</span>:w+<span class="number">64</span>] </div><div class="line">            std = std_list[i][c<span class="number">-64</span>:c+<span class="number">64</span>, h<span class="number">-64</span>:h+<span class="number">64</span>, w<span class="number">-64</span>:w+<span class="number">64</span>] </div><div class="line">            <span class="keyword">yield</span> (src, std)</div><div class="line">    <span class="keyword">return</span> func</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">main</span><span class="params">()</span>:</span></div><div class="line">    .....</div><div class="line">    </div><div class="line">    ds = tf.data.Dataset.from_generator(gen(src_list, std_list, pickle_file), \</div><div class="line">            (tf.int16, tf.int16)).batch(<span class="number">2</span>)</div><div class="line">    ge = gen(src_list, std_list, pickle_file)</div><div class="line">    value = ds.make_one_shot_iterator().get_next()</div><div class="line">    sess = tf.Session()</div><div class="line">    <span class="keyword">for</span> _ <span class="keyword">in</span> range(<span class="number">9</span>):</div><div class="line">        <span class="keyword">print</span> sess.run(value)[<span class="number">0</span>].shape  <span class="comment"># [2, 128, 128, 128]</span></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"><span class="keyword">if</span> __name__ == <span class="string">"__main__"</span>:</div><div class="line">    main()</div></pre></td></tr></table></figure>
+<p>之后可以从时间较多对比下~,其实之前做过一些测试,发现tfrecord和pytorch下Dataset&amp;DataLoader时间相差无几.</p>
 
       
     </div>
@@ -469,9 +437,9 @@ vimrc文件在这.
       
         <div class="post-tags">
           
-            <a href="/tags/mac/" rel="tag">#mac</a>
+            <a href="/tags/TensorFlow/" rel="tag">#TensorFlow</a>
           
-            <a href="/tags/vim/" rel="tag">#vim</a>
+            <a href="/tags/Dataset/" rel="tag">#Dataset</a>
           
         </div>
       
@@ -480,13 +448,13 @@ vimrc文件在这.
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
+              <a href="/2018/01/17/pytorch-dynamic-sampling/" rel="next" title="深度学习中动态加载样本">
+                <i class="fa fa-chevron-left"></i> 深度学习中动态加载样本
+              </a>
+            
           </div>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2016/11/13/gae-proxy-ipv6/" rel="prev" title="IPv6环境使用Goagent代理免校园网流量">
-                IPv6环境使用Goagent代理免校园网流量 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -684,7 +652,7 @@ vimrc文件在这.
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#vundle插件管理工具"><span class="nav-number">1.</span> <span class="nav-text">vundle插件管理工具</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#jedi"><span class="nav-number">2.</span> <span class="nav-text">jedi</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#YouCompleteMe"><span class="nav-number">2.1.</span> <span class="nav-text">YouCompleteMe</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#介绍"><span class="nav-number">2.1.1.</span> <span class="nav-text">介绍</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#安装"><span class="nav-number">2.1.2.</span> <span class="nav-text">安装</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#auto-pairs"><span class="nav-number">2.2.</span> <span class="nav-text">auto-pairs</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#nerdcommenter"><span class="nav-number">3.</span> <span class="nav-text">nerdcommenter</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#vim学习"><span class="nav-number">4.</span> <span class="nav-text">vim学习</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#构建一个Dataset"><span class="nav-number">1.</span> <span class="nav-text">构建一个Dataset</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#example"><span class="nav-number">2.</span> <span class="nav-text">example</span></a></li></ol></div>
             
           </div>
         </section>
@@ -794,9 +762,9 @@ vimrc文件在这.
 
     <script type="text/javascript">
       var disqus_shortname = 'blog-ygkmqaokul';
-      var disqus_identifier = '2016/11/13/我的MacVim配置/';
-      var disqus_title = "我的Vim配置";
-      var disqus_url = 'http://wongchen.github.io/2016/11/13/我的MacVim配置/';
+      var disqus_identifier = '2018/01/21/tf-dynamic-dataset/';
+      var disqus_title = "tf-dynamic-dataset";
+      var disqus_url = 'http://wongchen.github.io/2018/01/21/tf-dynamic-dataset/';
 
       function run_disqus_script(disqus_script){
         var dsq = document.createElement('script');

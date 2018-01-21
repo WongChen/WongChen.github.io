@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://wongchen.github.io/"/>
-  <updated>2018-01-17T13:20:31.000Z</updated>
+  <updated>2018-01-21T07:13:13.000Z</updated>
   <id>http://wongchen.github.io/</id>
   
   <author>
@@ -14,6 +14,60 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>tf-dynamic-dataset</title>
+    <link href="http://wongchen.github.io/2018/01/21/tf-dynamic-dataset/"/>
+    <id>http://wongchen.github.io/2018/01/21/tf-dynamic-dataset/</id>
+    <published>2018-01-21T06:40:43.000Z</published>
+    <updated>2018-01-21T07:13:13.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>上一篇说了pytorch下利用其<code>Dataset</code>和<code>DataLoader</code>api可以很方便地实现动态读取数据,不需要将图片保存到本地也可以快速取样本.</p>
+<p>在TensorFlow下之前写过常用的数据读取方式,在TF1.3版本新添加了<code>Dataset</code>模块,1.3版本中其位于</p>
+<p><code>tf.contrib.data.Dataset</code>,1.4版本后移到了’tf.data.Dataset’.</p>
+<p>之前的tfrecord队列读取数据的方式有一些不足:</p>
+<ul>
+<li>需要保存为tfrecord文件格式,官方doc有些晦涩难懂=,学习成本较高(相比于pytorch dataset的实现)</li>
+<li>需要保存为tfrecord文件,占用一定硬盘空间</li>
+<li>其内部机制有些难懂,最后如果结果不对,不能保证是不是样本读取代码这里出了问题</li>
+</ul>
+<h2 id="构建一个Dataset"><a href="#构建一个Dataset" class="headerlink" title="构建一个Dataset"></a>构建一个Dataset</h2><p>首先,Dataset结构:</p>
+<p>从这里也可以看到,跟pytorch下的很像,一个好处就是相比之前的队列或者feed_dict来说要简单,简介许多,代码易读性也增加了.</p>
+<ul>
+<li>Dataset模块: 包含基本的方法,如创建dataset, 随机(shuffle), 变换(transformation), 批处理(batch)等</li>
+<li>子类: 针对特定数据的一些方便的子类,就像pytorch中的labeledImageDataset等</li>
+<li>Dataset的方法就是实例化一个Iterator对象,保证每次取到一个dataset中的一个/批样本.</li>
+</ul>
+<p><img src="https://4.bp.blogspot.com/-Av_QQUdRvZI/WbfwxtE0cjI/AAAAAAAAD1s/bjWNV9siuoI92Qo3TaeFaumb2s5BVfYgwCLcBGAs/s1600/image7.jpg" alt=""></p>
+<p>从<a href="https://www.tensorflow.org/api_docs/python/tf/data/Dataset" target="_blank" rel="external">官方doc</a>我们可以看到,构建一个Dataset的大致的几个方法有:</p>
+<ul>
+<li><code>from_generator</code>:调用了<code>py_func</code>方法,可以将任意的python代码转化为tf图中的operation节点;使用指定生成器中的每个元素作为dataset中的元素</li>
+<li><code>from_sparse_tensor_slices</code></li>
+<li><code>from_tensor_slices</code></li>
+</ul>
+<h2 id="example"><a href="#example" class="headerlink" title="example"></a>example</h2><p>利用<code>from_generator</code>方法来实现之前的动态生成训练和测试样本.</p>
+<blockquote>
+<p>从一些3D图片中随机取一些[128, 128, 128]大小的样本, 原图和金标准图index要一致,每个样本包含(data, target), 为了方便,提前保存好了这些样本的行列坐标.</p>
+</blockquote>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> tensorflow <span class="keyword">as</span> tf</div><div class="line"><span class="keyword">import</span> os</div><div class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</div><div class="line"><span class="keyword">import</span> SimpleITK <span class="keyword">as</span> sitk</div><div class="line"><span class="keyword">import</span> pickle <span class="keyword">as</span> pk</div><div class="line"></div><div class="line"><span class="comment"># 实现生成器,这里由于生成器需要接受几个参数,from_generator中gen参数对象需要callable而且返回一个可迭代对象,</span></div><div class="line"><span class="comment"># 可以写成闭包的形式如下,也可以写成一个类(支持callable)或者lambda也是可以的</span></div><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">gen</span><span class="params">(src_list, std_list, pickle_file)</span>:</span></div><div class="line">  <span class="string">'''</span></div><div class="line">  src_list,std_list 图像array数据</div><div class="line">  返回一个生成器函数</div><div class="line">  '''</div><div class="line">    <span class="keyword">with</span> open(pickle_file, <span class="string">'rb'</span>) <span class="keyword">as</span> f:</div><div class="line">        points = pk.load(f)</div><div class="line">    <span class="function"><span class="keyword">def</span> <span class="title">func</span><span class="params">()</span>:</span></div><div class="line">        <span class="keyword">for</span> j <span class="keyword">in</span> range(len(points)):</div><div class="line">            i, c, h, w = points[j]</div><div class="line">            src = src_list[i][c<span class="number">-64</span>:c+<span class="number">64</span>, h<span class="number">-64</span>:h+<span class="number">64</span>, w<span class="number">-64</span>:w+<span class="number">64</span>] </div><div class="line">            std = std_list[i][c<span class="number">-64</span>:c+<span class="number">64</span>, h<span class="number">-64</span>:h+<span class="number">64</span>, w<span class="number">-64</span>:w+<span class="number">64</span>] </div><div class="line">            <span class="keyword">yield</span> (src, std)</div><div class="line">    <span class="keyword">return</span> func</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">main</span><span class="params">()</span>:</span></div><div class="line">    .....</div><div class="line">    </div><div class="line">    ds = tf.data.Dataset.from_generator(gen(src_list, std_list, pickle_file), \</div><div class="line">            (tf.int16, tf.int16)).batch(<span class="number">2</span>)</div><div class="line">    ge = gen(src_list, std_list, pickle_file)</div><div class="line">    value = ds.make_one_shot_iterator().get_next()</div><div class="line">    sess = tf.Session()</div><div class="line">    <span class="keyword">for</span> _ <span class="keyword">in</span> range(<span class="number">9</span>):</div><div class="line">        <span class="keyword">print</span> sess.run(value)[<span class="number">0</span>].shape  <span class="comment"># [2, 128, 128, 128]</span></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"><span class="keyword">if</span> __name__ == <span class="string">"__main__"</span>:</div><div class="line">    main()</div></pre></td></tr></table></figure>
+<p>之后可以从时间较多对比下~,其实之前做过一些测试,发现tfrecord和pytorch下Dataset&amp;DataLoader时间相差无几.</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;上一篇说了pytorch下利用其&lt;code&gt;Dataset&lt;/code&gt;和&lt;code&gt;DataLoader&lt;/code&gt;api可以很方便地实现动态读取数据,不需要将图片保存到本地也可以快速取样本.&lt;/p&gt;
+&lt;p&gt;在TensorFlow下之前写过常用的数据读取方式,在TF1.
+    
+    </summary>
+    
+      <category term="TensorFlow" scheme="http://wongchen.github.io/categories/TensorFlow/"/>
+    
+    
+      <category term="TensorFlow" scheme="http://wongchen.github.io/tags/TensorFlow/"/>
+    
+      <category term="Dataset" scheme="http://wongchen.github.io/tags/Dataset/"/>
+    
+  </entry>
   
   <entry>
     <title>深度学习中动态加载样本</title>
