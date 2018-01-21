@@ -5,10 +5,10 @@
     
   <url>
     <loc>http://wongchen.github.io/2018/01/21/tf-dynamic-dataset/</loc>
-    <lastmod>2018-01-21T07:13:13.000Z</lastmod>
+    <lastmod>2018-01-21T07:16:15.000Z</lastmod>
     <data>
         <display>
-        <title>tf-dynamic-dataset</title>
+        <title>TensorFlow 使用Dataset 简单读取数据</title>
         <pubTime>2018-01-21T06:40:43.000Z</pubTime>
         
         <tag>TensorFlow</tag>
