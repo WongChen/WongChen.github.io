@@ -6,15 +6,15 @@
 
 
 <html class="theme-next muse use-motion">
-<head>
-  <meta charset="UTF-8"/>
-<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
 
 
-<meta http-equiv="Cache-Control" content="no-transform" />
-<meta http-equiv="Cache-Control" content="no-siteapp" />
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
 
 
 
@@ -29,7 +29,7 @@
 
   
   
-  <link href="/libs/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+  <link href="/libs/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
 
 
 
@@ -63,42 +63,41 @@
 
 
 
-<link href="/libs/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css" />
+<link href="/libs/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css">
 
-<link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
-
-
-  <meta name="keywords" content="python,content manager," />
+<link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css">
 
 
-
-
-
-  <link rel="alternate" href="/atom.xml" title="印第安老斑鸠" type="application/atom+xml" />
-
-
-
-
-  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.0.1" />
+  <meta name="keywords" content="python,content manager,">
 
 
 
 
 
+  <link rel="alternate" href="/atom.xml" title="印第安老斑鸠" type="application/atom+xml">
 
-<meta name="description" content="What is context manager?
-A basic issue in programming is resource management): a resource) is anything in limited supply, notably file handles, network sockets, locks, etc., and a key problem is makin">
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.0.1">
+
+
+
+
+
+
+<meta name="description" content="What is context manager? A basic issue in programming is resource management): a resource) is anything in limited supply, notably file handles, network sockets, locks, etc., and a key problem is makin">
+<meta name="keywords" content="python,content manager">
 <meta property="og:type" content="article">
 <meta property="og:title" content="python之context manager学习">
 <meta property="og:url" content="http://wongchen.github.io/2017/09/09/python-context-manager/index.html">
 <meta property="og:site_name" content="印第安老斑鸠">
-<meta property="og:description" content="What is context manager?
-A basic issue in programming is resource management): a resource) is anything in limited supply, notably file handles, network sockets, locks, etc., and a key problem is makin">
+<meta property="og:description" content="What is context manager? A basic issue in programming is resource management): a resource) is anything in limited supply, notably file handles, network sockets, locks, etc., and a key problem is makin">
+<meta property="og:locale" content="zh-Hans">
 <meta property="og:updated_time" content="2017-09-08T09:12:35.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="python之context manager学习">
-<meta name="twitter:description" content="What is context manager?
-A basic issue in programming is resource management): a resource) is anything in limited supply, notably file handles, network sockets, locks, etc., and a key problem is makin">
+<meta name="twitter:description" content="What is context manager? A basic issue in programming is resource management): a resource) is anything in limited supply, notably file handles, network sockets, locks, etc., and a key problem is makin">
 
 
 
@@ -119,7 +118,7 @@ A basic issue in programming is resource management): a resource) is anything in
 
 
 
-  <link rel="canonical" href="http://wongchen.github.io/2017/09/09/python-context-manager/"/>
+  <link rel="canonical" href="http://wongchen.github.io/2017/09/09/python-context-manager/">
 
   <title> python之context manager学习 | 印第安老斑鸠 </title>
 </head>
@@ -172,7 +171,7 @@ A basic issue in programming is resource management): a resource) is anything in
   
 
   <div class="custom-logo-site-title">
-    <a href="/"  class="brand" rel="start">
+    <a href="/" class="brand" rel="start">
       <span class="logo-line-before"><i></i></span>
       <span class="site-title">印第安老斑鸠</span>
       <span class="logo-line-after"><i></i></span>
@@ -199,7 +198,7 @@ A basic issue in programming is resource management): a resource) is anything in
         <li class="menu-item menu-item-home">
           <a href="/" rel="section">
             
-              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
             
             首页
           </a>
@@ -209,7 +208,7 @@ A basic issue in programming is resource management): a resource) is anything in
         <li class="menu-item menu-item-categories">
           <a href="/categories" rel="section">
             
-              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
             
             分类
           </a>
@@ -219,7 +218,7 @@ A basic issue in programming is resource management): a resource) is anything in
         <li class="menu-item menu-item-archives">
           <a href="/archives" rel="section">
             
-              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
             
             归档
           </a>
@@ -229,7 +228,7 @@ A basic issue in programming is resource management): a resource) is anything in
         <li class="menu-item menu-item-tags">
           <a href="/tags" rel="section">
             
-              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
             
             标签
           </a>
@@ -242,7 +241,7 @@ A basic issue in programming is resource management): a resource) is anything in
             <a href="javascript:;" class="st-search-show-outputs">
           
             
-              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br>
             
             搜索
           </a>
@@ -255,7 +254,7 @@ A basic issue in programming is resource management): a resource) is anything in
     <div class="site-search">
       
   <form class="site-search-form">
-  <input type="text" id="st-search-input" class="st-search-input st-default-search-input" />
+  <input type="text" id="st-search-input" class="st-search-input st-default-search-input">
 </form>
 
 <script type="text/javascript">
@@ -321,7 +320,7 @@ A basic issue in programming is resource management): a resource) is anything in
           </span>
 
           
-            <span class="post-category" >
+            <span class="post-category">
               &nbsp; | &nbsp;
               <span class="post-meta-item-icon">
                 <i class="fa fa-folder-o"></i>
@@ -379,34 +378,34 @@ A basic issue in programming is resource management): a resource) is anything in
 
       
         <h2 id="What-is-context-manager"><a href="#What-is-context-manager" class="headerlink" title="What is context manager?"></a>What is context manager?</h2><blockquote>
-<p>A basic issue in programming is <a href="https://en.wikipedia.org/wiki/Resource_management_(computing" target="_blank" rel="external">resource management</a>): a <a href="https://en.wikipedia.org/wiki/Resource_(computing" target="_blank" rel="external">resource</a>) is anything in limited supply, notably file handles, <a href="https://en.wikipedia.org/wiki/network_socket" target="_blank" rel="external">network sockets</a>, locks, etc., and a key problem is making sure these are <em>released</em> after they are <em>acquired.</em> If they are not released, you have a <a href="https://en.wikipedia.org/wiki/resource_leak" target="_blank" rel="external">resource leak</a>, and the system may slow down or crash. More generally, you may want cleanup actions to always be done, other than simply releasing resources.</p>
+<p>A basic issue in programming is <a href="https://en.wikipedia.org/wiki/Resource_management_(computing" target="_blank" rel="noopener">resource management</a>): a <a href="https://en.wikipedia.org/wiki/Resource_(computing" target="_blank" rel="noopener">resource</a>) is anything in limited supply, notably file handles, <a href="https://en.wikipedia.org/wiki/network_socket" target="_blank" rel="noopener">network sockets</a>, locks, etc., and a key problem is making sure these are <em>released</em> after they are <em>acquired.</em> If they are not released, you have a <a href="https://en.wikipedia.org/wiki/resource_leak" target="_blank" rel="noopener">resource leak</a>, and the system may slow down or crash. More generally, you may want cleanup actions to always be done, other than simply releasing resources.</p>
 </blockquote>
 <p>就像其名字一样,context manager负责管理一定的上下文环境,按照你的设定,及时<strong>分配</strong>一定的资源,在完成相应的工作之后,及时<strong>释放</strong>这些资源. 而且不止是释放资源,你还可以做其他你想的事情……</p>
 <p>Python提供了一种特定的语法结构可以用来做如此工作,许多类型都支持context text,比如buit-in <code>File</code>对象.</p>
 <p>常用的操作</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">with open(file_name, &apos;rb&apos;) as f:</div><div class="line">	lines = f.readlines()</div><div class="line">	# other opoerations</div><div class="line">	</div><div class="line">print f.closed    # True</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">with open(file_name, &apos;rb&apos;) as f:</span><br><span class="line">	lines = f.readlines()</span><br><span class="line">	# other opoerations</span><br><span class="line">	</span><br><span class="line">print f.closed    # True</span><br></pre></td></tr></table></figure>
 <p>i.e.在这个例子里context manager会自动关闭f文件对象,不需要用户显示地执行代码关闭,更加安全.</p>
 <p>仔细研究会发现,这类对象,需要实现<code>__enter__</code>和<code>__exit__</code>两个方法属性,上面的例子等价于</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">f = open(file_name, <span class="string">'rb'</span>)</div><div class="line">f.__enter__()</div><div class="line"><span class="keyword">try</span>:</div><div class="line">  BLOCK Operations</div><div class="line"><span class="keyword">finally</span>:</div><div class="line">  f.__exit__()</div></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">f = open(file_name, <span class="string">'rb'</span>)</span><br><span class="line">f.__enter__()</span><br><span class="line"><span class="keyword">try</span>:</span><br><span class="line">  BLOCK Operations</span><br><span class="line"><span class="keyword">finally</span>:</span><br><span class="line">  f.__exit__()</span><br></pre></td></tr></table></figure>
 <h2 id="How-to-implement"><a href="#How-to-implement" class="headerlink" title="How to implement?"></a>How to implement?</h2><p>首先,通过实现<code>__enter__</code>和<code>__exit__</code>这两个协议方法,我们可以使用<code>with expre [as var]:</code>语法来使用context manager.如:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">class File(object):</div><div class="line">    def __init__(self, file_name, method):</div><div class="line">        self.file_obj = open(file_name, method)</div><div class="line">    def __enter__(self):</div><div class="line">        return self.file_obj</div><div class="line">    def __exit__(self, type, value, traceback):</div><div class="line">        self.file_obj.close()</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">class File(object):</span><br><span class="line">    def __init__(self, file_name, method):</span><br><span class="line">        self.file_obj = open(file_name, method)</span><br><span class="line">    def __enter__(self):</span><br><span class="line">        return self.file_obj</span><br><span class="line">    def __exit__(self, type, value, traceback):</span><br><span class="line">        self.file_obj.close()</span><br></pre></td></tr></table></figure>
 <p><code>__enter__</code>将返回值传入<code>as</code>后面的<code>var</code>变量,<code>block</code>退出时执行<code>__exit__</code>方法,更通常一些,<code>__exit__</code>方法应该返回一个<code>bool</code>值表示是否发生异常. 基于以上<code>File</code>类的定义可以使用下面的<code>with</code>statement.</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">with File(&apos;demo.txt&apos;, &apos;w&apos;) as opened_file:</div><div class="line">    opened_file.write(&apos;Hola!&apos;)</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">with File(&apos;demo.txt&apos;, &apos;w&apos;) as opened_file:</span><br><span class="line">    opened_file.write(&apos;Hola!&apos;)</span><br></pre></td></tr></table></figure>
 <p>处理异常也基本同理.</p>
-<h2 id="contextlib-Utilities-for-with-statement-contexts"><a href="#contextlib-Utilities-for-with-statement-contexts" class="headerlink" title="contextlib:  Utilities for with-statement contexts"></a>contextlib:  Utilities for <a href="https://docs.python.org/2/reference/compound_stmts.html#with" target="_blank" rel="external"><code>with</code></a>-statement contexts</h2><p>看一下这个built-in moudule<code>contextlib</code></p>
+<h2 id="contextlib-Utilities-for-with-statement-contexts"><a href="#contextlib-Utilities-for-with-statement-contexts" class="headerlink" title="contextlib:  Utilities for with-statement contexts"></a>contextlib:  Utilities for <a href="https://docs.python.org/2/reference/compound_stmts.html#with" target="_blank" rel="noopener"><code>with</code></a>-statement contexts</h2><p>看一下这个built-in moudule<code>contextlib</code></p>
 <blockquote>
-<p>This module provides utilities for common tasks involving the <a href="https://docs.python.org/2/reference/compound_stmts.html#with" target="_blank" rel="external"><code>with</code></a> statement. For more information see also <a href="https://docs.python.org/2/library/stdtypes.html#typecontextmanager" target="_blank" rel="external">Context Manager Types</a> and <a href="https://docs.python.org/2/reference/datamodel.html#context-managers" target="_blank" rel="external">With Statement Context Managers</a>.</p>
+<p>This module provides utilities for common tasks involving the <a href="https://docs.python.org/2/reference/compound_stmts.html#with" target="_blank" rel="noopener"><code>with</code></a> statement. For more information see also <a href="https://docs.python.org/2/library/stdtypes.html#typecontextmanager" target="_blank" rel="noopener">Context Manager Types</a> and <a href="https://docs.python.org/2/reference/datamodel.html#context-managers" target="_blank" rel="noopener">With Statement Context Managers</a>.</p>
 </blockquote>
 <h3 id="contextlib-contextmanager"><a href="#contextlib-contextmanager" class="headerlink" title="contextlib.contextmanager"></a>contextlib.contextmanager</h3><p>官方的例子是:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line">from contextlib import contextmanager</div><div class="line"></div><div class="line">@contextmanager</div><div class="line">def tag(name):</div><div class="line">    print &quot;&lt;%s&gt;&quot; % name</div><div class="line">    yield</div><div class="line">    print &quot;&lt;/%s&gt;&quot; % name</div><div class="line"></div><div class="line">&gt;&gt;&gt; with tag(&quot;h1&quot;):</div><div class="line">...    print &quot;foo&quot;</div><div class="line">...</div><div class="line">&lt;h1&gt;</div><div class="line">foo</div><div class="line">&lt;/h1&gt;</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">from contextlib import contextmanager</span><br><span class="line"></span><br><span class="line">@contextmanager</span><br><span class="line">def tag(name):</span><br><span class="line">    print &quot;&lt;%s&gt;&quot; % name</span><br><span class="line">    yield</span><br><span class="line">    print &quot;&lt;/%s&gt;&quot; % name</span><br><span class="line"></span><br><span class="line">&gt;&gt;&gt; with tag(&quot;h1&quot;):</span><br><span class="line">...    print &quot;foo&quot;</span><br><span class="line">...</span><br><span class="line">&lt;h1&gt;</span><br><span class="line">foo</span><br><span class="line">&lt;/h1&gt;</span><br></pre></td></tr></table></figure>
 <p>这个函数是个decorator函数,参考之前的<a href="https://wongchen.github.io/2017/08/19/python-decorator/">一篇</a>,它可以将函数包装为context manager,无需自己显示为其实现<code>__enter__</code>和<code>__exit__</code>方法.</p>
 <p>这个函数返回一个iterator,可以使用<code>yield</code>关键字</p>
 <blockquote>
-<p>At the point where the generator yields, the block nested in the <a href="https://docs.python.org/2/reference/compound_stmts.html#with" target="_blank" rel="external"><code>with</code></a> statement is executed.</p>
+<p>At the point where the generator yields, the block nested in the <a href="https://docs.python.org/2/reference/compound_stmts.html#with" target="_blank" rel="noopener"><code>with</code></a> statement is executed.</p>
 </blockquote>
 <p>yield之后,便会执行块下的内容.</p>
 <p>改写上面的例子为</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">@contextmanager</div><div class="line">def opened(filename, mode=&quot;r&quot;):</div><div class="line">    f = open(filename, mode)</div><div class="line">    try:</div><div class="line">        yield f</div><div class="line">    finally:</div><div class="line">        f.close()</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">@contextmanager</span><br><span class="line">def opened(filename, mode=&quot;r&quot;):</span><br><span class="line">    f = open(filename, mode)</span><br><span class="line">    try:</span><br><span class="line">        yield f</span><br><span class="line">    finally:</span><br><span class="line">        f.close()</span><br></pre></td></tr></table></figure>
 
       
     </div>
@@ -479,7 +478,7 @@ A basic issue in programming is resource management): a resource) is anything in
   <a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jiathis_separator jtico jtico_jiathis" target="_blank"></a>
   <a class="jiathis_counter_style"></a>
 </div>
-<script type="text/javascript" >
+<script type="text/javascript">
   var jiathis_config={
     hideMore:false
   }
@@ -528,7 +527,7 @@ A basic issue in programming is resource management): a resource) is anything in
 
       
         <ul class="sidebar-nav motion-element">
-          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
             文章目录
           </li>
           <li class="sidebar-nav-overview" data-target="site-overview">
@@ -539,16 +538,14 @@ A basic issue in programming is resource management): a resource) is anything in
 
       <section class="site-overview sidebar-panel ">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
-          <img class="site-author-image" itemprop="image"
-               src="/images/avatar.png"
-               alt="Wong Chen" />
+          <img class="site-author-image" itemprop="image" src="/images/avatar.png" alt="Wong Chen">
           <p class="site-author-name" itemprop="name">Wong Chen</p>
           <p class="site-description motion-element" itemprop="description">若你喜欢怪人,其实我很美</p>
         </div>
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">12</span>
+              <span class="site-state-item-count">13</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
@@ -556,7 +553,7 @@ A basic issue in programming is resource management): a resource) is anything in
           
             <div class="site-state-item site-state-categories">
               <a href="/categories">
-                <span class="site-state-item-count">4</span>
+                <span class="site-state-item-count">5</span>
                 <span class="site-state-item-name">分类</span>
               </a>
             </div>
@@ -664,10 +661,10 @@ A basic issue in programming is resource management): a resource) is anything in
 
     <footer id="footer" class="footer">
       <div class="footer-inner">
-        <div class="copyright" >
+        <div class="copyright">
   
   &copy; 
-  <span itemprop="copyrightYear">2018</span>
+  <span itemprop="copyrightYear">2019</span>
   <span class="with-love">
     <i class="fa fa-heart"></i>
   </span>

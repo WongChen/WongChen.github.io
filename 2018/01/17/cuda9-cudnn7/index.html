@@ -6,15 +6,15 @@
 
 
 <html class="theme-next muse use-motion">
-<head>
-  <meta charset="UTF-8"/>
-<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
 
 
-<meta http-equiv="Cache-Control" content="no-transform" />
-<meta http-equiv="Cache-Control" content="no-siteapp" />
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
 
 
 
@@ -29,7 +29,7 @@
 
   
   
-  <link href="/libs/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+  <link href="/libs/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
 
 
 
@@ -63,45 +63,41 @@
 
 
 
-<link href="/libs/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css" />
+<link href="/libs/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css">
 
-<link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
-
-
-  <meta name="keywords" content="cuda,TensorFlow," />
+<link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css">
 
 
-
-
-
-  <link rel="alternate" href="/atom.xml" title="印第安老斑鸠" type="application/atom+xml" />
-
-
-
-
-  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.0.1" />
+  <meta name="keywords" content="cuda,TensorFlow,">
 
 
 
 
 
+  <link rel="alternate" href="/atom.xml" title="印第安老斑鸠" type="application/atom+xml">
 
-<meta name="description" content="之前使用的一直是python2.7+TensorFlow1.1+cuda8.0+cudnn6.0,用了有一段时间了,python3是一直打算换过来的,毕竟py3比2增加了许多实用性的功能,而且py2逐渐不被许多库所支持,官方也声明在2020年放弃对py2的维护.
-今天看到TensorFlow1.5版本的发布以及cuda9的发布想更新一波.
-py由于目前还会短暂使用py2,所以需要在一台电脑上同时使">
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.0.1">
+
+
+
+
+
+
+<meta name="description" content="之前使用的一直是python2.7+TensorFlow1.1+cuda8.0+cudnn6.0,用了有一段时间了,python3是一直打算换过来的,毕竟py3比2增加了许多实用性的功能,而且py2逐渐不被许多库所支持,官方也声明在2020年放弃对py2的维护. 今天看到TensorFlow1.5版本的发布以及cuda9的发布想更新一波. py由于目前还会短暂使用py2,所以需要在一台电脑上同时使">
+<meta name="keywords" content="cuda,TensorFlow">
 <meta property="og:type" content="article">
 <meta property="og:title" content="安装TensorFlow1.5+cuda9.0+cudnn7.0">
 <meta property="og:url" content="http://wongchen.github.io/2018/01/17/cuda9-cudnn7/index.html">
 <meta property="og:site_name" content="印第安老斑鸠">
-<meta property="og:description" content="之前使用的一直是python2.7+TensorFlow1.1+cuda8.0+cudnn6.0,用了有一段时间了,python3是一直打算换过来的,毕竟py3比2增加了许多实用性的功能,而且py2逐渐不被许多库所支持,官方也声明在2020年放弃对py2的维护.
-今天看到TensorFlow1.5版本的发布以及cuda9的发布想更新一波.
-py由于目前还会短暂使用py2,所以需要在一台电脑上同时使">
+<meta property="og:description" content="之前使用的一直是python2.7+TensorFlow1.1+cuda8.0+cudnn6.0,用了有一段时间了,python3是一直打算换过来的,毕竟py3比2增加了许多实用性的功能,而且py2逐渐不被许多库所支持,官方也声明在2020年放弃对py2的维护. 今天看到TensorFlow1.5版本的发布以及cuda9的发布想更新一波. py由于目前还会短暂使用py2,所以需要在一台电脑上同时使">
+<meta property="og:locale" content="zh-Hans">
 <meta property="og:updated_time" content="2018-01-17T12:50:35.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="安装TensorFlow1.5+cuda9.0+cudnn7.0">
-<meta name="twitter:description" content="之前使用的一直是python2.7+TensorFlow1.1+cuda8.0+cudnn6.0,用了有一段时间了,python3是一直打算换过来的,毕竟py3比2增加了许多实用性的功能,而且py2逐渐不被许多库所支持,官方也声明在2020年放弃对py2的维护.
-今天看到TensorFlow1.5版本的发布以及cuda9的发布想更新一波.
-py由于目前还会短暂使用py2,所以需要在一台电脑上同时使">
+<meta name="twitter:description" content="之前使用的一直是python2.7+TensorFlow1.1+cuda8.0+cudnn6.0,用了有一段时间了,python3是一直打算换过来的,毕竟py3比2增加了许多实用性的功能,而且py2逐渐不被许多库所支持,官方也声明在2020年放弃对py2的维护. 今天看到TensorFlow1.5版本的发布以及cuda9的发布想更新一波. py由于目前还会短暂使用py2,所以需要在一台电脑上同时使">
 
 
 
@@ -122,7 +118,7 @@ py由于目前还会短暂使用py2,所以需要在一台电脑上同时使">
 
 
 
-  <link rel="canonical" href="http://wongchen.github.io/2018/01/17/cuda9-cudnn7/"/>
+  <link rel="canonical" href="http://wongchen.github.io/2018/01/17/cuda9-cudnn7/">
 
   <title> 安装TensorFlow1.5+cuda9.0+cudnn7.0 | 印第安老斑鸠 </title>
 </head>
@@ -175,7 +171,7 @@ py由于目前还会短暂使用py2,所以需要在一台电脑上同时使">
   
 
   <div class="custom-logo-site-title">
-    <a href="/"  class="brand" rel="start">
+    <a href="/" class="brand" rel="start">
       <span class="logo-line-before"><i></i></span>
       <span class="site-title">印第安老斑鸠</span>
       <span class="logo-line-after"><i></i></span>
@@ -202,7 +198,7 @@ py由于目前还会短暂使用py2,所以需要在一台电脑上同时使">
         <li class="menu-item menu-item-home">
           <a href="/" rel="section">
             
-              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
             
             首页
           </a>
@@ -212,7 +208,7 @@ py由于目前还会短暂使用py2,所以需要在一台电脑上同时使">
         <li class="menu-item menu-item-categories">
           <a href="/categories" rel="section">
             
-              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
             
             分类
           </a>
@@ -222,7 +218,7 @@ py由于目前还会短暂使用py2,所以需要在一台电脑上同时使">
         <li class="menu-item menu-item-archives">
           <a href="/archives" rel="section">
             
-              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
             
             归档
           </a>
@@ -232,7 +228,7 @@ py由于目前还会短暂使用py2,所以需要在一台电脑上同时使">
         <li class="menu-item menu-item-tags">
           <a href="/tags" rel="section">
             
-              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
             
             标签
           </a>
@@ -245,7 +241,7 @@ py由于目前还会短暂使用py2,所以需要在一台电脑上同时使">
             <a href="javascript:;" class="st-search-show-outputs">
           
             
-              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br>
             
             搜索
           </a>
@@ -258,7 +254,7 @@ py由于目前还会短暂使用py2,所以需要在一台电脑上同时使">
     <div class="site-search">
       
   <form class="site-search-form">
-  <input type="text" id="st-search-input" class="st-search-input st-default-search-input" />
+  <input type="text" id="st-search-input" class="st-search-input st-default-search-input">
 </form>
 
 <script type="text/javascript">
@@ -324,7 +320,7 @@ py由于目前还会短暂使用py2,所以需要在一台电脑上同时使">
           </span>
 
           
-            <span class="post-category" >
+            <span class="post-category">
               &nbsp; | &nbsp;
               <span class="post-meta-item-icon">
                 <i class="fa fa-folder-o"></i>
@@ -384,22 +380,22 @@ py由于目前还会短暂使用py2,所以需要在一台电脑上同时使">
         <p>之前使用的一直是python2.7+TensorFlow1.1+cuda8.0+cudnn6.0,用了有一段时间了,python3是一直打算换过来的,毕竟py3比2增加了许多实用性的功能,而且py2逐渐不被许多库所支持,官方也声明在2020年放弃对py2的维护.</p>
 <p>今天看到TensorFlow1.5版本的发布以及cuda9的发布想更新一波.</p>
 <h2 id="py"><a href="#py" class="headerlink" title="py"></a>py</h2><p>由于目前还会短暂使用py2,所以需要在一台电脑上同时使用py2和py3.</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">ps -aux | grep python</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ps -aux | grep python</span><br></pre></td></tr></table></figure>
 <p>可以看到系统当前调用python的进程,看到python和python3都有.</p>
 <p>可行的方法包括:</p>
 <ol>
 <li>virtualenv,不过暂时不想用这个.</li>
 <li>最简单就是在用3的时候后面加3就好了, <code>python3</code>, <code>pip3</code></li>
-<li>也可以去<a href="https://github.com/pyenv/pyenv" target="_blank" rel="external">pyenv</a>看看</li>
+<li>也可以去<a href="https://github.com/pyenv/pyenv" target="_blank" rel="noopener">pyenv</a>看看</li>
 </ol>
 <h2 id="CUDA-amp-CUDNN"><a href="#CUDA-amp-CUDNN" class="headerlink" title="CUDA &amp; CUDNN"></a>CUDA &amp; CUDNN</h2><p>官网下载cuda时选择9.0的版本,当前最新为9.1,刚开始安装了9.1的cuda toolkit,发现还是不支持,后来换到9.0版本就好了.</p>
 <p>CUDNN也是官网下载deb包安装就可以.</p>
 <p>驱动需要384以上,一个经验就是当电脑驱动出问题的时候,(经常登录界面无线循环,低分辨率等问题),最简单的解决办法就是把原来的使用linux apt安装的驱动包都卸载掉</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sudo apt-get remove nvidia*</div></pre></td></tr></table></figure>
-<p>然后<a href="http://www.nvidia.com/Download/index.aspx?lang=cn" target="_blank" rel="external">官网</a>下载相应版本的driver, <code>.run</code>文件,用它来安装,一般可以解决驱动的问题.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get remove nvidia*</span><br></pre></td></tr></table></figure>
+<p>然后<a href="http://www.nvidia.com/Download/index.aspx?lang=cn" target="_blank" rel="noopener">官网</a>下载相应版本的driver, <code>.run</code>文件,用它来安装,一般可以解决驱动的问题.</p>
 <h2 id="TensorFlow1-5"><a href="#TensorFlow1-5" class="headerlink" title="TensorFlow1.5"></a>TensorFlow1.5</h2><p>本来打算源码安装的,进行到<code>bazel build</code>这一步的时候一个跟网络和bazel有关的问题解决不了,也没必要这么装了.</p>
 <p>索性还是pip:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">pip install tensorflow-gpu==1.5rc1 --user</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip install tensorflow-gpu==1.5rc1 --user</span><br></pre></td></tr></table></figure>
 <p>这样原来的python2也是还可以继续用的,新的python3也ok.</p>
 
       
@@ -473,7 +469,7 @@ py由于目前还会短暂使用py2,所以需要在一台电脑上同时使">
   <a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jiathis_separator jtico jtico_jiathis" target="_blank"></a>
   <a class="jiathis_counter_style"></a>
 </div>
-<script type="text/javascript" >
+<script type="text/javascript">
   var jiathis_config={
     hideMore:false
   }
@@ -522,7 +518,7 @@ py由于目前还会短暂使用py2,所以需要在一台电脑上同时使">
 
       
         <ul class="sidebar-nav motion-element">
-          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
             文章目录
           </li>
           <li class="sidebar-nav-overview" data-target="site-overview">
@@ -533,16 +529,14 @@ py由于目前还会短暂使用py2,所以需要在一台电脑上同时使">
 
       <section class="site-overview sidebar-panel ">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
-          <img class="site-author-image" itemprop="image"
-               src="/images/avatar.png"
-               alt="Wong Chen" />
+          <img class="site-author-image" itemprop="image" src="/images/avatar.png" alt="Wong Chen">
           <p class="site-author-name" itemprop="name">Wong Chen</p>
           <p class="site-description motion-element" itemprop="description">若你喜欢怪人,其实我很美</p>
         </div>
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">12</span>
+              <span class="site-state-item-count">13</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
@@ -550,7 +544,7 @@ py由于目前还会短暂使用py2,所以需要在一台电脑上同时使">
           
             <div class="site-state-item site-state-categories">
               <a href="/categories">
-                <span class="site-state-item-count">4</span>
+                <span class="site-state-item-count">5</span>
                 <span class="site-state-item-name">分类</span>
               </a>
             </div>
@@ -642,7 +636,7 @@ py由于目前还会短暂使用py2,所以需要在一台电脑上同时使">
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#py"><span class="nav-number">1.</span> <span class="nav-text">py</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#CUDA-amp-CUDNN"><span class="nav-number">2.</span> <span class="nav-text">CUDA & CUDNN</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#TensorFlow1-5"><span class="nav-number">3.</span> <span class="nav-text">TensorFlow1.5</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#py"><span class="nav-number">1.</span> <span class="nav-text">py</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#CUDA-amp-CUDNN"><span class="nav-number">2.</span> <span class="nav-text">CUDA &amp; CUDNN</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#TensorFlow1-5"><span class="nav-number">3.</span> <span class="nav-text">TensorFlow1.5</span></a></li></ol></div>
             
           </div>
         </section>
@@ -658,10 +652,10 @@ py由于目前还会短暂使用py2,所以需要在一台电脑上同时使">
 
     <footer id="footer" class="footer">
       <div class="footer-inner">
-        <div class="copyright" >
+        <div class="copyright">
   
   &copy; 
-  <span itemprop="copyrightYear">2018</span>
+  <span itemprop="copyrightYear">2019</span>
   <span class="with-love">
     <i class="fa fa-heart"></i>
   </span>

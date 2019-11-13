@@ -6,15 +6,15 @@
 
 
 <html class="theme-next muse use-motion">
-<head>
-  <meta charset="UTF-8"/>
-<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
 
 
-<meta http-equiv="Cache-Control" content="no-transform" />
-<meta http-equiv="Cache-Control" content="no-siteapp" />
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
 
 
 
@@ -29,7 +29,7 @@
 
   
   
-  <link href="/libs/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+  <link href="/libs/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
 
 
 
@@ -63,42 +63,41 @@
 
 
 
-<link href="/libs/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css" />
+<link href="/libs/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css">
 
-<link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
-
-
-  <meta name="keywords" content="pytorch,deep learning," />
+<link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css">
 
 
-
-
-
-  <link rel="alternate" href="/atom.xml" title="印第安老斑鸠" type="application/atom+xml" />
-
-
-
-
-  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.0.1" />
+  <meta name="keywords" content="pytorch,deep learning,">
 
 
 
 
 
+  <link rel="alternate" href="/atom.xml" title="印第安老斑鸠" type="application/atom+xml">
 
-<meta name="description" content="在用CNN处理图像的时候,经常我们不是用一整张完整的图像去训练,而是经常会采用取一个图像块也就是patch来输入网络进行训练,构成我们的训练集样本和测试集样本.
-一种常用的方法就是先把他们保存到本地硬盘中,然后每次训练时一张张去读取(或者将他们转换为tfrecord格式使用TensorFlow中的队列读取这些文件),最近在做3D图像的操作,直接对3D图像进行卷积,卷积核也是3维的,因此图像尺寸不可">
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.0.1">
+
+
+
+
+
+
+<meta name="description" content="在用CNN处理图像的时候,经常我们不是用一整张完整的图像去训练,而是经常会采用取一个图像块也就是patch来输入网络进行训练,构成我们的训练集样本和测试集样本. 一种常用的方法就是先把他们保存到本地硬盘中,然后每次训练时一张张去读取(或者将他们转换为tfrecord格式使用TensorFlow中的队列读取这些文件),最近在做3D图像的操作,直接对3D图像进行卷积,卷积核也是3维的,因此图像尺寸不可">
+<meta name="keywords" content="pytorch,deep learning">
 <meta property="og:type" content="article">
 <meta property="og:title" content="深度学习中动态加载样本">
 <meta property="og:url" content="http://wongchen.github.io/2018/01/17/pytorch-dynamic-sampling/index.html">
 <meta property="og:site_name" content="印第安老斑鸠">
-<meta property="og:description" content="在用CNN处理图像的时候,经常我们不是用一整张完整的图像去训练,而是经常会采用取一个图像块也就是patch来输入网络进行训练,构成我们的训练集样本和测试集样本.
-一种常用的方法就是先把他们保存到本地硬盘中,然后每次训练时一张张去读取(或者将他们转换为tfrecord格式使用TensorFlow中的队列读取这些文件),最近在做3D图像的操作,直接对3D图像进行卷积,卷积核也是3维的,因此图像尺寸不可">
+<meta property="og:description" content="在用CNN处理图像的时候,经常我们不是用一整张完整的图像去训练,而是经常会采用取一个图像块也就是patch来输入网络进行训练,构成我们的训练集样本和测试集样本. 一种常用的方法就是先把他们保存到本地硬盘中,然后每次训练时一张张去读取(或者将他们转换为tfrecord格式使用TensorFlow中的队列读取这些文件),最近在做3D图像的操作,直接对3D图像进行卷积,卷积核也是3维的,因此图像尺寸不可">
+<meta property="og:locale" content="zh-Hans">
 <meta property="og:updated_time" content="2018-01-17T13:20:31.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="深度学习中动态加载样本">
-<meta name="twitter:description" content="在用CNN处理图像的时候,经常我们不是用一整张完整的图像去训练,而是经常会采用取一个图像块也就是patch来输入网络进行训练,构成我们的训练集样本和测试集样本.
-一种常用的方法就是先把他们保存到本地硬盘中,然后每次训练时一张张去读取(或者将他们转换为tfrecord格式使用TensorFlow中的队列读取这些文件),最近在做3D图像的操作,直接对3D图像进行卷积,卷积核也是3维的,因此图像尺寸不可">
+<meta name="twitter:description" content="在用CNN处理图像的时候,经常我们不是用一整张完整的图像去训练,而是经常会采用取一个图像块也就是patch来输入网络进行训练,构成我们的训练集样本和测试集样本. 一种常用的方法就是先把他们保存到本地硬盘中,然后每次训练时一张张去读取(或者将他们转换为tfrecord格式使用TensorFlow中的队列读取这些文件),最近在做3D图像的操作,直接对3D图像进行卷积,卷积核也是3维的,因此图像尺寸不可">
 
 
 
@@ -119,7 +118,7 @@
 
 
 
-  <link rel="canonical" href="http://wongchen.github.io/2018/01/17/pytorch-dynamic-sampling/"/>
+  <link rel="canonical" href="http://wongchen.github.io/2018/01/17/pytorch-dynamic-sampling/">
 
   <title> 深度学习中动态加载样本 | 印第安老斑鸠 </title>
 </head>
@@ -172,7 +171,7 @@
   
 
   <div class="custom-logo-site-title">
-    <a href="/"  class="brand" rel="start">
+    <a href="/" class="brand" rel="start">
       <span class="logo-line-before"><i></i></span>
       <span class="site-title">印第安老斑鸠</span>
       <span class="logo-line-after"><i></i></span>
@@ -199,7 +198,7 @@
         <li class="menu-item menu-item-home">
           <a href="/" rel="section">
             
-              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
             
             首页
           </a>
@@ -209,7 +208,7 @@
         <li class="menu-item menu-item-categories">
           <a href="/categories" rel="section">
             
-              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
             
             分类
           </a>
@@ -219,7 +218,7 @@
         <li class="menu-item menu-item-archives">
           <a href="/archives" rel="section">
             
-              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
             
             归档
           </a>
@@ -229,7 +228,7 @@
         <li class="menu-item menu-item-tags">
           <a href="/tags" rel="section">
             
-              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
             
             标签
           </a>
@@ -242,7 +241,7 @@
             <a href="javascript:;" class="st-search-show-outputs">
           
             
-              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br>
             
             搜索
           </a>
@@ -255,7 +254,7 @@
     <div class="site-search">
       
   <form class="site-search-form">
-  <input type="text" id="st-search-input" class="st-search-input st-default-search-input" />
+  <input type="text" id="st-search-input" class="st-search-input st-default-search-input">
 </form>
 
 <script type="text/javascript">
@@ -321,7 +320,7 @@
           </span>
 
           
-            <span class="post-category" >
+            <span class="post-category">
               &nbsp; | &nbsp;
               <span class="post-meta-item-icon">
                 <i class="fa fa-folder-o"></i>
@@ -386,7 +385,7 @@
 <h2 id="Example"><a href="#Example" class="headerlink" title="Example"></a>Example</h2><p>例如可以把要提取的patch的点以pickle文件保存为list对象,用pytorch实现为:</p>
 <p>将所有的读取到图像以及要提取样本的关键点传入MyDataset类, 在<code>__getitem__</code>方法中对已有的图像进行切片就能得到需要的样本.</p>
 <p>这样的好处就是节省硬盘空间,从内存获取数据速度较快.</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line">from torch.utils.data import Dataset</div><div class="line">import numpy as np</div><div class="line">import pickle</div><div class="line"></div><div class="line">class MyDataset(Dataset):</div><div class="line">	def __init__(self, src_img_list, std_img_list, points_pickle):	</div><div class="line">    	self.src_img_list = src_img_list</div><div class="line">        self.std_img_list = std_img_list</div><div class="line">        with open(points_pickle, &apos;rb&apos;) as f:</div><div class="line">              self.points = pickle.load(f)</div><div class="line">  </div><div class="line">    def __len__(self):</div><div class="line">        return len(self.points)</div><div class="line">  </div><div class="line">    def __getitem__(self, idx):</div><div class="line">        i, c, h, w = self.points[idx]</div><div class="line">        data = self.src_img_list[i][c-64:c+64, h-64:h+64, w-64:w+64].reshape([1, 128, , 128]).</div><div class="line">        target = self.std_img_list[i][c-64:c+64, h-64:h+64, w-64:w+64].reshape([1, , 128, 128]</div><div class="line">        return data, target</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">from torch.utils.data import Dataset</span><br><span class="line">import numpy as np</span><br><span class="line">import pickle</span><br><span class="line"></span><br><span class="line">class MyDataset(Dataset):</span><br><span class="line">	def __init__(self, src_img_list, std_img_list, points_pickle):	</span><br><span class="line">    	self.src_img_list = src_img_list</span><br><span class="line">        self.std_img_list = std_img_list</span><br><span class="line">        with open(points_pickle, &apos;rb&apos;) as f:</span><br><span class="line">              self.points = pickle.load(f)</span><br><span class="line">  </span><br><span class="line">    def __len__(self):</span><br><span class="line">        return len(self.points)</span><br><span class="line">  </span><br><span class="line">    def __getitem__(self, idx):</span><br><span class="line">        i, c, h, w = self.points[idx]</span><br><span class="line">        data = self.src_img_list[i][c-64:c+64, h-64:h+64, w-64:w+64].reshape([1, 128, , 128]).</span><br><span class="line">        target = self.std_img_list[i][c-64:c+64, h-64:h+64, w-64:w+64].reshape([1, , 128, 128]</span><br><span class="line">        return data, target</span><br></pre></td></tr></table></figure>
 
       
     </div>
@@ -459,7 +458,7 @@
   <a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jiathis_separator jtico jtico_jiathis" target="_blank"></a>
   <a class="jiathis_counter_style"></a>
 </div>
-<script type="text/javascript" >
+<script type="text/javascript">
   var jiathis_config={
     hideMore:false
   }
@@ -508,7 +507,7 @@
 
       
         <ul class="sidebar-nav motion-element">
-          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
             文章目录
           </li>
           <li class="sidebar-nav-overview" data-target="site-overview">
@@ -519,16 +518,14 @@
 
       <section class="site-overview sidebar-panel ">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
-          <img class="site-author-image" itemprop="image"
-               src="/images/avatar.png"
-               alt="Wong Chen" />
+          <img class="site-author-image" itemprop="image" src="/images/avatar.png" alt="Wong Chen">
           <p class="site-author-name" itemprop="name">Wong Chen</p>
           <p class="site-description motion-element" itemprop="description">若你喜欢怪人,其实我很美</p>
         </div>
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">12</span>
+              <span class="site-state-item-count">13</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
@@ -536,7 +533,7 @@
           
             <div class="site-state-item site-state-categories">
               <a href="/categories">
-                <span class="site-state-item-count">4</span>
+                <span class="site-state-item-count">5</span>
                 <span class="site-state-item-name">分类</span>
               </a>
             </div>
@@ -644,10 +641,10 @@
 
     <footer id="footer" class="footer">
       <div class="footer-inner">
-        <div class="copyright" >
+        <div class="copyright">
   
   &copy; 
-  <span itemprop="copyrightYear">2018</span>
+  <span itemprop="copyrightYear">2019</span>
   <span class="with-love">
     <i class="fa fa-heart"></i>
   </span>

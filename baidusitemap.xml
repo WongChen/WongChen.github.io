@@ -4,6 +4,48 @@
 
     
   <url>
+    <loc>http://wongchen.github.io/2019/11/13/2020-campus-recruitment-1/</loc>
+    <lastmod>2019-11-13T14:05:04.723Z</lastmod>
+    <data>
+        <display>
+        <title>2020算法校招感悟</title>
+        <pubTime>2019-11-13T13:17:20.000Z</pubTime>
+        
+        <tag>总结</tag>
+         
+         
+           
+             
+              <breadCrumb title="总结" url="http://wongchen.github.io/categories/%E6%80%BB%E7%BB%93/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://wongchen.github.io/2017/12/31/summary2017/</loc>
+    <lastmod>2019-11-13T13:19:31.908Z</lastmod>
+    <data>
+        <display>
+        <title>summary2017</title>
+        <pubTime>2017-12-31T07:26:51.000Z</pubTime>
+        
+        <tag>总结</tag>
+         
+        <tag>2017</tag>
+         
+         
+           
+             
+              <breadCrumb title="总结" url="http://wongchen.github.io/categories/%E6%80%BB%E7%BB%93/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://wongchen.github.io/2018/01/21/tf-dynamic-dataset/</loc>
     <lastmod>2018-01-21T07:16:15.000Z</lastmod>
     <data>
@@ -84,25 +126,6 @@
              
               <breadCrumb title="TensorFlow" url="http://wongchen.github.io/categories/TensorFlow/"/>
           
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://wongchen.github.io/2017/12/31/summary2017/</loc>
-    <lastmod>2017-12-31T08:26:05.000Z</lastmod>
-    <data>
-        <display>
-        <title>summary2017</title>
-        <pubTime>2017-12-31T07:26:51.000Z</pubTime>
-        
-        <tag>2017</tag>
-         
-        <tag>总结</tag>
-         
-         
-           
         </display>
     </data>
     </url>

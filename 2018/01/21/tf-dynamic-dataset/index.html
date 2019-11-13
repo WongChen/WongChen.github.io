@@ -6,15 +6,15 @@
 
 
 <html class="theme-next muse use-motion">
-<head>
-  <meta charset="UTF-8"/>
-<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
 
 
-<meta http-equiv="Cache-Control" content="no-transform" />
-<meta http-equiv="Cache-Control" content="no-siteapp" />
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
 
 
 
@@ -29,7 +29,7 @@
 
   
   
-  <link href="/libs/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+  <link href="/libs/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
 
 
 
@@ -63,49 +63,42 @@
 
 
 
-<link href="/libs/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css" />
+<link href="/libs/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css">
 
-<link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
-
-
-  <meta name="keywords" content="TensorFlow,Dataset," />
+<link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css">
 
 
-
-
-
-  <link rel="alternate" href="/atom.xml" title="印第安老斑鸠" type="application/atom+xml" />
-
-
-
-
-  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.0.1" />
+  <meta name="keywords" content="TensorFlow,Dataset,">
 
 
 
 
 
+  <link rel="alternate" href="/atom.xml" title="印第安老斑鸠" type="application/atom+xml">
 
-<meta name="description" content="上一篇说了pytorch下利用其Dataset和DataLoaderapi可以很方便地实现动态读取数据,不需要将图片保存到本地也可以快速取样本.
-在TensorFlow下之前写过常用的数据读取方式,在TF1.3版本新添加了Dataset模块,1.3版本中其位于
-tf.contrib.data.Dataset,1.4版本后移到了’tf.data.Dataset’.
-之前的tfrecord队列读取数据">
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.0.1">
+
+
+
+
+
+
+<meta name="description" content="上一篇说了pytorch下利用其Dataset和DataLoaderapi可以很方便地实现动态读取数据,不需要将图片保存到本地也可以快速取样本. 在TensorFlow下之前写过常用的数据读取方式,在TF1.3版本新添加了Dataset模块,1.3版本中其位于 tf.contrib.data.Dataset,1.4版本后移到了’tf.data.Dataset’. 之前的tfrecord队列读取数据">
+<meta name="keywords" content="TensorFlow,Dataset">
 <meta property="og:type" content="article">
 <meta property="og:title" content="TensorFlow 使用Dataset 简单读取数据">
 <meta property="og:url" content="http://wongchen.github.io/2018/01/21/tf-dynamic-dataset/index.html">
 <meta property="og:site_name" content="印第安老斑鸠">
-<meta property="og:description" content="上一篇说了pytorch下利用其Dataset和DataLoaderapi可以很方便地实现动态读取数据,不需要将图片保存到本地也可以快速取样本.
-在TensorFlow下之前写过常用的数据读取方式,在TF1.3版本新添加了Dataset模块,1.3版本中其位于
-tf.contrib.data.Dataset,1.4版本后移到了’tf.data.Dataset’.
-之前的tfrecord队列读取数据">
+<meta property="og:description" content="上一篇说了pytorch下利用其Dataset和DataLoaderapi可以很方便地实现动态读取数据,不需要将图片保存到本地也可以快速取样本. 在TensorFlow下之前写过常用的数据读取方式,在TF1.3版本新添加了Dataset模块,1.3版本中其位于 tf.contrib.data.Dataset,1.4版本后移到了’tf.data.Dataset’. 之前的tfrecord队列读取数据">
+<meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="https://4.bp.blogspot.com/-Av_QQUdRvZI/WbfwxtE0cjI/AAAAAAAAD1s/bjWNV9siuoI92Qo3TaeFaumb2s5BVfYgwCLcBGAs/s1600/image7.jpg">
 <meta property="og:updated_time" content="2018-01-21T07:16:15.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="TensorFlow 使用Dataset 简单读取数据">
-<meta name="twitter:description" content="上一篇说了pytorch下利用其Dataset和DataLoaderapi可以很方便地实现动态读取数据,不需要将图片保存到本地也可以快速取样本.
-在TensorFlow下之前写过常用的数据读取方式,在TF1.3版本新添加了Dataset模块,1.3版本中其位于
-tf.contrib.data.Dataset,1.4版本后移到了’tf.data.Dataset’.
-之前的tfrecord队列读取数据">
+<meta name="twitter:description" content="上一篇说了pytorch下利用其Dataset和DataLoaderapi可以很方便地实现动态读取数据,不需要将图片保存到本地也可以快速取样本. 在TensorFlow下之前写过常用的数据读取方式,在TF1.3版本新添加了Dataset模块,1.3版本中其位于 tf.contrib.data.Dataset,1.4版本后移到了’tf.data.Dataset’. 之前的tfrecord队列读取数据">
 <meta name="twitter:image" content="https://4.bp.blogspot.com/-Av_QQUdRvZI/WbfwxtE0cjI/AAAAAAAAD1s/bjWNV9siuoI92Qo3TaeFaumb2s5BVfYgwCLcBGAs/s1600/image7.jpg">
 
 
@@ -127,7 +120,7 @@ tf.contrib.data.Dataset,1.4版本后移到了’tf.data.Dataset’.
 
 
 
-  <link rel="canonical" href="http://wongchen.github.io/2018/01/21/tf-dynamic-dataset/"/>
+  <link rel="canonical" href="http://wongchen.github.io/2018/01/21/tf-dynamic-dataset/">
 
   <title> TensorFlow 使用Dataset 简单读取数据 | 印第安老斑鸠 </title>
 </head>
@@ -180,7 +173,7 @@ tf.contrib.data.Dataset,1.4版本后移到了’tf.data.Dataset’.
   
 
   <div class="custom-logo-site-title">
-    <a href="/"  class="brand" rel="start">
+    <a href="/" class="brand" rel="start">
       <span class="logo-line-before"><i></i></span>
       <span class="site-title">印第安老斑鸠</span>
       <span class="logo-line-after"><i></i></span>
@@ -207,7 +200,7 @@ tf.contrib.data.Dataset,1.4版本后移到了’tf.data.Dataset’.
         <li class="menu-item menu-item-home">
           <a href="/" rel="section">
             
-              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
             
             首页
           </a>
@@ -217,7 +210,7 @@ tf.contrib.data.Dataset,1.4版本后移到了’tf.data.Dataset’.
         <li class="menu-item menu-item-categories">
           <a href="/categories" rel="section">
             
-              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
             
             分类
           </a>
@@ -227,7 +220,7 @@ tf.contrib.data.Dataset,1.4版本后移到了’tf.data.Dataset’.
         <li class="menu-item menu-item-archives">
           <a href="/archives" rel="section">
             
-              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
             
             归档
           </a>
@@ -237,7 +230,7 @@ tf.contrib.data.Dataset,1.4版本后移到了’tf.data.Dataset’.
         <li class="menu-item menu-item-tags">
           <a href="/tags" rel="section">
             
-              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
             
             标签
           </a>
@@ -250,7 +243,7 @@ tf.contrib.data.Dataset,1.4版本后移到了’tf.data.Dataset’.
             <a href="javascript:;" class="st-search-show-outputs">
           
             
-              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br>
             
             搜索
           </a>
@@ -263,7 +256,7 @@ tf.contrib.data.Dataset,1.4版本后移到了’tf.data.Dataset’.
     <div class="site-search">
       
   <form class="site-search-form">
-  <input type="text" id="st-search-input" class="st-search-input st-default-search-input" />
+  <input type="text" id="st-search-input" class="st-search-input st-default-search-input">
 </form>
 
 <script type="text/javascript">
@@ -329,7 +322,7 @@ tf.contrib.data.Dataset,1.4版本后移到了’tf.data.Dataset’.
           </span>
 
           
-            <span class="post-category" >
+            <span class="post-category">
               &nbsp; | &nbsp;
               <span class="post-meta-item-icon">
                 <i class="fa fa-folder-o"></i>
@@ -402,8 +395,8 @@ tf.contrib.data.Dataset,1.4版本后移到了’tf.data.Dataset’.
 <li>子类: 针对特定数据的一些方便的子类,就像pytorch中的labeledImageDataset等</li>
 <li>Dataset的方法就是实例化一个Iterator对象,保证每次取到一个dataset中的一个/批样本.</li>
 </ul>
-<p><img src="https://4.bp.blogspot.com/-Av_QQUdRvZI/WbfwxtE0cjI/AAAAAAAAD1s/bjWNV9siuoI92Qo3TaeFaumb2s5BVfYgwCLcBGAs/s1600/image7.jpg" alt=""></p>
-<p>从<a href="https://www.tensorflow.org/api_docs/python/tf/data/Dataset" target="_blank" rel="external">官方doc</a>我们可以看到,构建一个Dataset的大致的几个方法有:</p>
+<p><img src="https://4.bp.blogspot.com/-Av_QQUdRvZI/WbfwxtE0cjI/AAAAAAAAD1s/bjWNV9siuoI92Qo3TaeFaumb2s5BVfYgwCLcBGAs/s1600/image7.jpg" alt></p>
+<p>从<a href="https://www.tensorflow.org/api_docs/python/tf/data/Dataset" target="_blank" rel="noopener">官方doc</a>我们可以看到,构建一个Dataset的大致的几个方法有:</p>
 <ul>
 <li><code>from_generator</code>:调用了<code>py_func</code>方法,可以将任意的python代码转化为tf图中的operation节点;使用指定生成器中的每个元素作为dataset中的元素</li>
 <li><code>from_sparse_tensor_slices</code></li>
@@ -413,7 +406,7 @@ tf.contrib.data.Dataset,1.4版本后移到了’tf.data.Dataset’.
 <blockquote>
 <p>从一些3D图片中随机取一些[128, 128, 128]大小的样本, 原图和金标准图index要一致,每个样本包含(data, target), 为了方便,提前保存好了这些样本的行列坐标.</p>
 </blockquote>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> tensorflow <span class="keyword">as</span> tf</div><div class="line"><span class="keyword">import</span> os</div><div class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</div><div class="line"><span class="keyword">import</span> SimpleITK <span class="keyword">as</span> sitk</div><div class="line"><span class="keyword">import</span> pickle <span class="keyword">as</span> pk</div><div class="line"></div><div class="line"><span class="comment"># 实现生成器,这里由于生成器需要接受几个参数,from_generator中gen参数对象需要callable而且返回一个可迭代对象,</span></div><div class="line"><span class="comment"># 可以写成闭包的形式如下,也可以写成一个类(支持callable)或者lambda也是可以的</span></div><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">gen</span><span class="params">(src_list, std_list, pickle_file)</span>:</span></div><div class="line">  <span class="string">'''</span></div><div class="line">  src_list,std_list 图像array数据</div><div class="line">  返回一个生成器函数</div><div class="line">  '''</div><div class="line">    <span class="keyword">with</span> open(pickle_file, <span class="string">'rb'</span>) <span class="keyword">as</span> f:</div><div class="line">        points = pk.load(f)</div><div class="line">    <span class="function"><span class="keyword">def</span> <span class="title">func</span><span class="params">()</span>:</span></div><div class="line">        <span class="keyword">for</span> j <span class="keyword">in</span> range(len(points)):</div><div class="line">            i, c, h, w = points[j]</div><div class="line">            src = src_list[i][c<span class="number">-64</span>:c+<span class="number">64</span>, h<span class="number">-64</span>:h+<span class="number">64</span>, w<span class="number">-64</span>:w+<span class="number">64</span>] </div><div class="line">            std = std_list[i][c<span class="number">-64</span>:c+<span class="number">64</span>, h<span class="number">-64</span>:h+<span class="number">64</span>, w<span class="number">-64</span>:w+<span class="number">64</span>] </div><div class="line">            <span class="keyword">yield</span> (src, std)</div><div class="line">    <span class="keyword">return</span> func</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">main</span><span class="params">()</span>:</span></div><div class="line">    .....</div><div class="line">    </div><div class="line">    ds = tf.data.Dataset.from_generator(gen(src_list, std_list, pickle_file), \</div><div class="line">            (tf.int16, tf.int16)).batch(<span class="number">2</span>)</div><div class="line">    ge = gen(src_list, std_list, pickle_file)</div><div class="line">    value = ds.make_one_shot_iterator().get_next()</div><div class="line">    sess = tf.Session()</div><div class="line">    <span class="keyword">for</span> _ <span class="keyword">in</span> range(<span class="number">9</span>):</div><div class="line">        <span class="keyword">print</span> sess.run(value)[<span class="number">0</span>].shape  <span class="comment"># [2, 128, 128, 128]</span></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"><span class="keyword">if</span> __name__ == <span class="string">"__main__"</span>:</div><div class="line">    main()</div></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> tensorflow <span class="keyword">as</span> tf</span><br><span class="line"><span class="keyword">import</span> os</span><br><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"><span class="keyword">import</span> SimpleITK <span class="keyword">as</span> sitk</span><br><span class="line"><span class="keyword">import</span> pickle <span class="keyword">as</span> pk</span><br><span class="line"></span><br><span class="line"><span class="comment"># 实现生成器,这里由于生成器需要接受几个参数,from_generator中gen参数对象需要callable而且返回一个可迭代对象,</span></span><br><span class="line"><span class="comment"># 可以写成闭包的形式如下,也可以写成一个类(支持callable)或者lambda也是可以的</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">gen</span><span class="params">(src_list, std_list, pickle_file)</span>:</span></span><br><span class="line">  <span class="string">'''</span></span><br><span class="line"><span class="string">  src_list,std_list 图像array数据</span></span><br><span class="line"><span class="string">  返回一个生成器函数</span></span><br><span class="line"><span class="string">  '''</span></span><br><span class="line">    <span class="keyword">with</span> open(pickle_file, <span class="string">'rb'</span>) <span class="keyword">as</span> f:</span><br><span class="line">        points = pk.load(f)</span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">func</span><span class="params">()</span>:</span></span><br><span class="line">        <span class="keyword">for</span> j <span class="keyword">in</span> range(len(points)):</span><br><span class="line">            i, c, h, w = points[j]</span><br><span class="line">            src = src_list[i][c<span class="number">-64</span>:c+<span class="number">64</span>, h<span class="number">-64</span>:h+<span class="number">64</span>, w<span class="number">-64</span>:w+<span class="number">64</span>] </span><br><span class="line">            std = std_list[i][c<span class="number">-64</span>:c+<span class="number">64</span>, h<span class="number">-64</span>:h+<span class="number">64</span>, w<span class="number">-64</span>:w+<span class="number">64</span>] </span><br><span class="line">            <span class="keyword">yield</span> (src, std)</span><br><span class="line">    <span class="keyword">return</span> func</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">main</span><span class="params">()</span>:</span></span><br><span class="line">    .....</span><br><span class="line">    </span><br><span class="line">    ds = tf.data.Dataset.from_generator(gen(src_list, std_list, pickle_file), \</span><br><span class="line">            (tf.int16, tf.int16)).batch(<span class="number">2</span>)</span><br><span class="line">    ge = gen(src_list, std_list, pickle_file)</span><br><span class="line">    value = ds.make_one_shot_iterator().get_next()</span><br><span class="line">    sess = tf.Session()</span><br><span class="line">    <span class="keyword">for</span> _ <span class="keyword">in</span> range(<span class="number">9</span>):</span><br><span class="line">        <span class="keyword">print</span> sess.run(value)[<span class="number">0</span>].shape  <span class="comment"># [2, 128, 128, 128]</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">"__main__"</span>:</span><br><span class="line">    main()</span><br></pre></td></tr></table></figure>
 <p>之后可以从时间较多对比下~,其实之前做过一些测试,发现tfrecord和pytorch下Dataset&amp;DataLoader时间相差无几.</p>
 
       
@@ -456,6 +449,10 @@ tf.contrib.data.Dataset,1.4版本后移到了’tf.data.Dataset’.
 
           <div class="post-nav-prev post-nav-item">
             
+              <a href="/2019/11/13/2020-campus-recruitment-1/" rel="prev" title="2020算法校招感悟">
+                2020算法校招感悟 <i class="fa fa-chevron-right"></i>
+              </a>
+            
           </div>
         </div>
       
@@ -483,7 +480,7 @@ tf.contrib.data.Dataset,1.4版本后移到了’tf.data.Dataset’.
   <a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jiathis_separator jtico jtico_jiathis" target="_blank"></a>
   <a class="jiathis_counter_style"></a>
 </div>
-<script type="text/javascript" >
+<script type="text/javascript">
   var jiathis_config={
     hideMore:false
   }
@@ -532,7 +529,7 @@ tf.contrib.data.Dataset,1.4版本后移到了’tf.data.Dataset’.
 
       
         <ul class="sidebar-nav motion-element">
-          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
             文章目录
           </li>
           <li class="sidebar-nav-overview" data-target="site-overview">
@@ -543,16 +540,14 @@ tf.contrib.data.Dataset,1.4版本后移到了’tf.data.Dataset’.
 
       <section class="site-overview sidebar-panel ">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
-          <img class="site-author-image" itemprop="image"
-               src="/images/avatar.png"
-               alt="Wong Chen" />
+          <img class="site-author-image" itemprop="image" src="/images/avatar.png" alt="Wong Chen">
           <p class="site-author-name" itemprop="name">Wong Chen</p>
           <p class="site-description motion-element" itemprop="description">若你喜欢怪人,其实我很美</p>
         </div>
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">12</span>
+              <span class="site-state-item-count">13</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
@@ -560,7 +555,7 @@ tf.contrib.data.Dataset,1.4版本后移到了’tf.data.Dataset’.
           
             <div class="site-state-item site-state-categories">
               <a href="/categories">
-                <span class="site-state-item-count">4</span>
+                <span class="site-state-item-count">5</span>
                 <span class="site-state-item-name">分类</span>
               </a>
             </div>
@@ -668,10 +663,10 @@ tf.contrib.data.Dataset,1.4版本后移到了’tf.data.Dataset’.
 
     <footer id="footer" class="footer">
       <div class="footer-inner">
-        <div class="copyright" >
+        <div class="copyright">
   
   &copy; 
-  <span itemprop="copyrightYear">2018</span>
+  <span itemprop="copyrightYear">2019</span>
   <span class="with-love">
     <i class="fa fa-heart"></i>
   </span>

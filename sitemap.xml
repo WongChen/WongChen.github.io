@@ -2,6 +2,20 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://wongchen.github.io/2019/11/13/2020-campus-recruitment-1/</loc>
+    
+    <lastmod>2019-11-13T14:05:04.723Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://wongchen.github.io/2017/12/31/summary2017/</loc>
+    
+    <lastmod>2019-11-13T13:19:31.908Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://wongchen.github.io/2018/01/21/tf-dynamic-dataset/</loc>
     
     <lastmod>2018-01-21T07:16:15.000Z</lastmod>
@@ -26,13 +40,6 @@
     <loc>http://wongchen.github.io/2017/09/11/tf-datareader/</loc>
     
     <lastmod>2018-01-17T12:50:20.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://wongchen.github.io/2017/12/31/summary2017/</loc>
-    
-    <lastmod>2017-12-31T08:26:05.000Z</lastmod>
     
   </url>
   
