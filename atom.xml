@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://wongchen.github.io/"/>
-  <updated>2019-11-13T23:49:47.092Z</updated>
+  <updated>2019-11-19T02:06:14.212Z</updated>
   <id>http://wongchen.github.io/</id>
   
   <author>
@@ -14,6 +14,114 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Vim中的跳转</title>
+    <link href="http://wongchen.github.io/2019/11/14/vim-navigate/"/>
+    <id>http://wongchen.github.io/2019/11/14/vim-navigate/</id>
+    <published>2019-11-13T23:55:51.000Z</published>
+    <updated>2019-11-19T02:06:14.212Z</updated>
+    
+    <content type="html"><![CDATA[<p>Vim中的跳转方式多样,熟练之后可以肌肉记忆💪做到灵活跳转,十分方便,脱🖱指南,就在这里🐶</p>
+<p>一般我们move还是navigate的时候,大部分都是在<strong>Normal Mode</strong>下,<strong>Visual Mode</strong>也有一些.</p>
+<p>Insert Mode只做好<strong>一件事情</strong>就可以了,那就是插入内容,当我们完成插入之后要记得</p>
+<blockquote>
+<p>Get Back To Normal Mode.</p>
+</blockquote>
+<p><code>Esc</code>, <code>C-[</code>, <code>C-o</code>都可以从Insert Mode到Normal Mode,我个人习惯将<code>jk</code>映射到<code>Esc</code>键.</p>
+<h2 id="Movement-↪️-Navigation-➡️-In-Normal-Mode"><a href="#Movement-↪️-Navigation-➡️-In-Normal-Mode" class="headerlink" title="Movement ↪️ Navigation ➡️ In Normal Mode"></a>Movement ↪️ Navigation ➡️ In Normal Mode</h2><p>包含基础跳转, 查找跳转, 插件中的跳转, 寄存器跳转以及文件之间的跳转.</p>
+<p>Vim基本的一个操作就是数字加上动作重复多次,比如<code>5k</code>就是上移动5行, <code>2@a</code>就是执行<code>a</code>寄存器里的宏两次.</p>
+<h3 id="Basic-Movements-🚶"><a href="#Basic-Movements-🚶" class="headerlink" title="Basic Movements 🚶"></a>Basic Movements 🚶</h3><p>字符移动: <code>hjkl</code>, 就不多说了.</p>
+<p>行移动:</p>
+<ul>
+<li><code>gg</code>, <code>G</code>, 🔢+<code>G</code>, 行首, 行尾, 指定行~  使用频率不算高其实,可以设置相对行<code>set relativenumber</code>, 通过🔢+<code>jk</code>实现行的跳转.</li>
+<li><code>+</code>, <code>-</code>分别是回到下一行和上一行的第一个非空白字符的位置.</li>
+</ul>
+<p>词汇移动:<code>wW/eE/bB/geE</code></p>
+<p>前向/后向移动一个词汇到头/尾部, 许多符号也是被当做一个词汇看待的,如<code>[]()</code>但是<code>:</code>是不被当做额外的词汇的.</p>
+<p>所以,</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> flag: <span class="comment"># 如果cursor在flag头部想要  ce  的时候,会把后面的 : 也带走</span></span><br><span class="line">  print(<span class="string">"🐶"</span>)</span><br></pre></td></tr></table></figure>
+<p>另外, <code>cw</code>其实就是<code>ce</code>, <code>change-word</code>不应该把后面的空格也带走,这样更合理一些🤔.</p>
+<p>大小写(word/WORD)的定义的词汇的区别是:</p>
+<ul>
+<li>word, 一系列连续的字符(字母, 数字,下划线,等等, <strong>空格/tab/换行</strong>分隔, <strong>空行也被视为词汇</strong>)</li>
+<li>WORD, 一系列连续的非空字符(<strong>空格</strong>分隔, <strong>空行也被视为词汇</strong>)</li>
+</ul>
+<p><img src="/images/word_move.png" alt="走起"></p>
+<p>marker系列: 通过<code>m/M</code>+<code>{a-zA-Z}</code>mark一个位置, 此后通过<code>&#39;</code>或者`  +  <code>marker</code>返回到标记位置. ‘返回到该行, `会返回到该位置. 大写的标记是可以全局进行跳转的.</p>
+<p>此外vim在我们进行某些操作的时候会自动进行一些标记✍️</p>
+<table>
+<thead>
+<tr>
+<th>按键</th>
+<th>行为</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>``</td>
+<td>当前文件的上一次jump</td>
+</tr>
+<tr>
+<td>`.</td>
+<td>上一次change的地方</td>
+</tr>
+<tr>
+<td>`^</td>
+<td>上一次插入的地方</td>
+</tr>
+<tr>
+<td>`[</td>
+<td>上一次change或者yank的起始位置</td>
+</tr>
+<tr>
+<td>`]</td>
+<td>上一次change或者yank的结束位置</td>
+</tr>
+<tr>
+<td>`&lt;/`&gt;</td>
+<td>上一次可视化的起始/结束位置</td>
+</tr>
+</tbody>
+</table>
+<p>查找跳转:</p>
+<p><code>f/F</code>+<code>char</code>: 行内正向/逆向查找某个字符, <code>;</code>next, <code>,</code> previous.</p>
+<p><code>t/T</code>+<code>char</code>: 同上,但是cursor定位在所查找字符的前面(正向/逆向方向的前面).</p>
+<p>最后就是<code>/</code> <code>#</code>查找命令了.</p>
+<p>jump list: 🕺</p>
+<p><code>&lt;C-i&gt;</code> 和 <code>&lt;C-o&gt;</code> 前向/后向切换,要查看jump list, 命令<code>:jumps</code></p>
+<p>change list:</p>
+<p>与jump list相似, 我们修改内容的时候,也会保留一个change list, 命令<code>:changes</code>可以查看.</p>
+<p>当我们uodo redo的时候其实就是在change list中切换,同时cursor会跳转到相应位置.</p>
+<p><code>g;</code>和<code>g,</code>可以前向和后向在change list中进行跳转.</p>
+<p>其他:</p>
+<p><code>$</code>和<code>^</code>分别是本行最后一个字符和第一个非空白字符.</p>
+<p><code>%</code>匹配括号之间跳转.</p>
+<p>在cursor处 <code>*</code>或<code>#</code>会后向/前向查找完全匹配cursor位置处的词. 很有用.😀</p>
+<h3 id="页面相关"><a href="#页面相关" class="headerlink" title="页面相关:"></a>页面相关:</h3><p><code>HML</code>移动到页面的顶部/中间/底部.</p>
+<p><code>C-d</code>, <code>C-u</code>, <code>C-b</code> 向下/向上半页.</p>
+<p><code>C-y</code>, <code>C-e</code> 上下一行.</p>
+<p><code>zz</code>: cursor所在行移动到页面中间. (<code>z</code>系列可以参考帮助文档,将cursor所在行移动到指定位置).</p>
+<p><code>scrolloff</code>:  这个属性指的是进行移动跳转时,cursor下面至少包含多少行内容.设置一个合理的值可以保证我们在移动的时候尽量让要查看的内容在屏幕的中间位置.</p>
+<h2 id="Movement-↪️-Navigation-➡️-In-Visual-Mode"><a href="#Movement-↪️-Navigation-➡️-In-Visual-Mode" class="headerlink" title="Movement ↪️ Navigation ➡️ In Visual Mode"></a>Movement ↪️ Navigation ➡️ In Visual Mode</h2><p>visual mode进行选择的时候,上面那些跳转都是可行的.比如: 🌰</p>
+<p><code>vfe</code>就选择了从当前cursor到下一个<code>e</code>字符的位置.</p>
+<p>此外就是在selection中cursor的movements</p>
+<p><code>o</code>: 反方向的最后位置, 来回切换</p>
+<p><code>O/o</code>: 在block visualmode下, 可以四个角来回切换.</p>
+<p>大概就这么多了,以后学习到新的还会来补充😝</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;Vim中的跳转方式多样,熟练之后可以肌肉记忆💪做到灵活跳转,十分方便,脱🖱指南,就在这里🐶&lt;/p&gt;
+&lt;p&gt;一般我们move还是navigate的时候,大部分都是在&lt;strong&gt;Normal Mode&lt;/strong&gt;下,&lt;strong&gt;Visual Mode&lt;/st
+    
+    </summary>
+    
+    
+      <category term="vim" scheme="http://wongchen.github.io/tags/vim/"/>
+    
+  </entry>
   
   <entry>
     <title>2020算法校招感悟</title>
