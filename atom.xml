@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://wongchen.github.io/"/>
-  <updated>2019-11-19T02:06:14.212Z</updated>
+  <updated>2019-11-19T02:12:53.016Z</updated>
   <id>http://wongchen.github.io/</id>
   
   <author>
@@ -17,10 +17,10 @@
   
   <entry>
     <title>Vim中的跳转</title>
-    <link href="http://wongchen.github.io/2019/11/14/vim-navigate/"/>
-    <id>http://wongchen.github.io/2019/11/14/vim-navigate/</id>
-    <published>2019-11-13T23:55:51.000Z</published>
-    <updated>2019-11-19T02:06:14.212Z</updated>
+    <link href="http://wongchen.github.io/2019/11/18/vim-navigate/"/>
+    <id>http://wongchen.github.io/2019/11/18/vim-navigate/</id>
+    <published>2019-11-17T23:55:51.000Z</published>
+    <updated>2019-11-19T02:12:53.016Z</updated>
     
     <content type="html"><![CDATA[<p>Vim中的跳转方式多样,熟练之后可以肌肉记忆💪做到灵活跳转,十分方便,脱🖱指南,就在这里🐶</p>
 <p>一般我们move还是navigate的时候,大部分都是在<strong>Normal Mode</strong>下,<strong>Visual Mode</strong>也有一些.</p>
@@ -48,6 +48,7 @@
 <li>WORD, 一系列连续的非空字符(<strong>空格</strong>分隔, <strong>空行也被视为词汇</strong>)</li>
 </ul>
 <p><img src="/images/word_move.png" alt="走起"></p>
+<p> [{]}系列:  这个系列就比较多了, 在vim中 :h [查看,个人而言,使用较少,常用的有section 跳转和paragraph跳转.</p>
 <p>marker系列: 通过<code>m/M</code>+<code>{a-zA-Z}</code>mark一个位置, 此后通过<code>&#39;</code>或者`  +  <code>marker</code>返回到标记位置. ‘返回到该行, `会返回到该位置. 大写的标记是可以全局进行跳转的.</p>
 <p>此外vim在我们进行某些操作的时候会自动进行一些标记✍️</p>
 <table>
