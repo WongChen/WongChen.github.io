@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://wongchen.github.io/"/>
-  <updated>2019-11-19T02:12:53.016Z</updated>
+  <updated>2019-11-30T16:38:31.503Z</updated>
   <id>http://wongchen.github.io/</id>
   
   <author>
@@ -16,11 +16,96 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>如何写好我们自己的vimrc❓</title>
+    <link href="http://wongchen.github.io/2019/11/30/vimrc-of-your-own/"/>
+    <id>http://wongchen.github.io/2019/11/30/vimrc-of-your-own/</id>
+    <published>2019-11-29T16:44:42.000Z</published>
+    <updated>2019-11-30T16:38:31.503Z</updated>
+    
+    <content type="html"><![CDATA[<p>Vim可以说是个高度自定义化的编辑器,1000个vimer就有1000个vimrc:😀</p>
+<p>怎么写好属于我们自己的vimrc呢, That is a question✔︎</p>
+<p>我是如下分类整理和更新的.📁</p>
+<h2 id="基础的配置"><a href="#基础的配置" class="headerlink" title="基础的配置"></a>基础的配置</h2><p>大概包括下面一些, </p>
+<ul>
+<li>文件类型(filetype)</li>
+<li>界面配置</li>
+<li>语法(syntax)</li>
+<li>fold相关</li>
+</ul>
+<p>好的是,上面这些都可以使用vim的帮助命令去查看,<code>filetype</code>, <code>syntax</code>以及<code>fold</code>在帮助文档都有详细的描述,</p>
+<p>当你发现需要某些功能的时候,就可以去搜索查找vim如何配置做到.比如:</p>
+<p>切换buffer的时候会发现每次都会提示你当前buffer未保存, 那么如何做到呢?</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">set hidden</span><br></pre></td></tr></table></figure>
+<p>就可以了.</p>
+<p>这些命令也都是可以在<code>command-mode</code>下面执行的命令. 主要是</p>
+<ul>
+<li><code>set</code></li>
+<li><code>filetype</code>, <code>syntax</code>, <code>fold*</code></li>
+<li><code>call</code></li>
+</ul>
+<blockquote>
+<p>提示:</p>
+<p>在vim-user manual里, <code>C-]</code> 可以跳转到cusor下文件对应的目录.</p>
+</blockquote>
+<h2 id="自动命令autocmd-🚘"><a href="#自动命令autocmd-🚘" class="headerlink" title="自动命令autocmd 🚘"></a>自动命令autocmd 🚘</h2><p>首先需要编译vim时 <code>+autocmd</code>的支持.</p>
+<p>简要来说就是在某种模式下,vim自动执行某些命令.  这样分类是因为</p>
+<ul>
+<li>autocmd很强大,实现许多功能</li>
+<li>也可能出现一些副作用等问题,使用时最好先提前测试.</li>
+</ul>
+<p><code>autocmd</code>看手册学习就可以了,有需求的时候可以边学边造轮子.  拜托那些繁杂的操作,从现在开始.</p>
+<p>简单来说了解模式之后,主要看一下<code>&lt;Event&gt;</code></p>
+<ul>
+<li>读buffer/file</li>
+<li>写buffer/file</li>
+<li>buffer/window/file切换</li>
+<li>filetype/syntax等</li>
+<li>cusor/界面相关</li>
+</ul>
+<blockquote>
+<p>提示:</p>
+<p>查看帮助文档的时候,(命令模式), 插入cusor当前字符使用 <code>&lt;C-r&gt;&lt;C-w&gt;</code>.</p>
+</blockquote>
+<h2 id="插件🔌"><a href="#插件🔌" class="headerlink" title="插件🔌"></a>插件🔌</h2><p>主要包括添加了哪些插件,  每个插件的全局配置等等.</p>
+<p>目前平时用的插件还是不太多的,vim自带的功能其实本身已经很强大了.自带的许多插件也很棒的像</p>
+<ul>
+<li>nerdtree</li>
+<li>quickfix</li>
+</ul>
+<p>其他也就 <code>YouCompleteMe</code>和<code>vim-colorscheme</code>用的比较频繁.</p>
+<h2 id="mapping-☑️"><a href="#mapping-☑️" class="headerlink" title="mapping ☑️"></a>mapping ☑️</h2><p>按键映射可以说是使用频繁的一个功能, 也使得vim更加高度自定义化和便于记忆. 最终达到的一个很棒的效果就是不用大脑思考,完全肌肉记忆.</p>
+<p>首先<code>&lt;Leader&gt;</code>键还是很有用的,个人定义空格作为leader key. 个人常用的的mapping有:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line">let mapleader = &quot;\&lt;Space&gt;&quot;</span><br><span class="line">&quot; key mapping for ale</span><br><span class="line">nmap &lt;silent&gt; &lt;C-p&gt; &lt;Plug&gt;(ale_previous_wrap)</span><br><span class="line">nmap &lt;silent&gt; &lt;C-n&gt; &lt;Plug&gt;(ale_next_wrap)</span><br><span class="line"></span><br><span class="line">&quot; key mapping for g++</span><br><span class="line">nnoremap &lt;Leader&gt;rr :!g++ -std=c++11 % -o %:r&lt;CR&gt;</span><br><span class="line">nnoremap &lt;Leader&gt;rg :!g++ -g -std=c++11 % -o %:r&lt;CR&gt;</span><br><span class="line">nnoremap &lt;Leader&gt;ter :packadd termdebug&lt;CR&gt;</span><br><span class="line">nnoremap &lt;Leader&gt;db :Termdebug %:r&lt;CR&gt;</span><br><span class="line">inoremap jk &lt;ESC&gt;l</span><br><span class="line"></span><br><span class="line">map &lt;S-e&gt; $</span><br><span class="line">imap xz &lt;ESC&gt;o</span><br><span class="line">imap zx &lt;Up&gt;&lt;ESC&gt;o</span><br><span class="line"></span><br><span class="line">&quot; close buffer mapping</span><br><span class="line">nnoremap &lt;Leader&gt;bb :bd&lt;CR&gt;</span><br><span class="line">nnoremap &lt;Leader&gt;zz :wq&lt;CR&gt;</span><br><span class="line">nnoremap &lt;Leader&gt;w :w&lt;CR&gt;</span><br><span class="line"></span><br><span class="line">&quot; for python</span><br><span class="line">nnoremap &lt;Leader&gt;pp :!python3 %&lt;CR&gt;</span><br><span class="line"></span><br><span class="line">&quot; ctags</span><br><span class="line">nnoremap &lt;silent&gt; &lt;Leader&gt;tt :!ctags -R&lt;CR&gt;</span><br><span class="line"></span><br><span class="line">&quot; buffer switch</span><br><span class="line">nnoremap &lt;silent&gt; [b :bprevious&lt;CR&gt; </span><br><span class="line">nnoremap &lt;silent&gt; ]b :bnext&lt;CR&gt; </span><br><span class="line">nnoremap &lt;silent&gt; [B :bfirst&lt;CR&gt; </span><br><span class="line">nnoremap &lt;silent&gt; ]B :blast&lt;CR&gt;</span><br><span class="line"></span><br><span class="line">&quot; tab switch</span><br><span class="line">nnoremap [t :tabp&lt;CR&gt;</span><br><span class="line">nnoremap ]t :tabn&lt;CR&gt;</span><br></pre></td></tr></table></figure>
+<h3 id="函数-⚱️"><a href="#函数-⚱️" class="headerlink" title="函数 ⚱️"></a>函数 ⚱️</h3><p>一些定义的函数可以放在一起.    </p>
+<p>这些就需要简单地学习一下vimscript去写了.</p>
+<p>设定几个任务</p>
+<ul>
+<li>[ ] 细节部分稍微细致学一下,在写几篇笔记</li>
+<li>[ ] vimsript好好看一下,争取可以做到,能实现自己想要的函数功能</li>
+<li>[ ] 写一个插件</li>
+</ul>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;Vim可以说是个高度自定义化的编辑器,1000个vimer就有1000个vimrc:😀&lt;/p&gt;
+&lt;p&gt;怎么写好属于我们自己的vimrc呢, That is a question✔︎&lt;/p&gt;
+&lt;p&gt;我是如下分类整理和更新的.📁&lt;/p&gt;
+&lt;h2 id=&quot;基础的配置&quot;&gt;&lt;a 
+    
+    </summary>
+    
+    
+      <category term="vim" scheme="http://wongchen.github.io/tags/vim/"/>
+    
+  </entry>
+  
+  <entry>
     <title>Vim中的跳转</title>
     <link href="http://wongchen.github.io/2019/11/18/vim-navigate/"/>
     <id>http://wongchen.github.io/2019/11/18/vim-navigate/</id>
     <published>2019-11-17T23:55:51.000Z</published>
-    <updated>2019-11-19T02:12:53.016Z</updated>
+    <updated>2019-11-29T17:48:41.584Z</updated>
     
     <content type="html"><![CDATA[<p>Vim中的跳转方式多样,熟练之后可以肌肉记忆💪做到灵活跳转,十分方便,脱🖱指南,就在这里🐶</p>
 <p>一般我们move还是navigate的时候,大部分都是在<strong>Normal Mode</strong>下,<strong>Visual Mode</strong>也有一些.</p>
@@ -102,7 +187,8 @@
 <h3 id="页面相关"><a href="#页面相关" class="headerlink" title="页面相关:"></a>页面相关:</h3><p><code>HML</code>移动到页面的顶部/中间/底部.</p>
 <p><code>C-d</code>, <code>C-u</code>, <code>C-b</code> 向下/向上半页.</p>
 <p><code>C-y</code>, <code>C-e</code> 上下一行.</p>
-<p><code>zz</code>: cursor所在行移动到页面中间. (<code>z</code>系列可以参考帮助文档,将cursor所在行移动到指定位置).</p>
+<p><code>zz</code>: cursor所在行移动到页面中间. (<code>z</code>系列可以参考帮助文档,包含移动,folds以及spelling相关的命令).</p>
+<p>此外fold之间的移动,也需要z系列, 分别是<code>zj</code>, <code>zk</code>, 在一个开启的folds中可以通过<code>[z</code>和<code>]z</code>上下跳转</p>
 <p><code>scrolloff</code>:  这个属性指的是进行移动跳转时,cursor下面至少包含多少行内容.设置一个合理的值可以保证我们在移动的时候尽量让要查看的内容在屏幕的中间位置.</p>
 <h2 id="Movement-↪️-Navigation-➡️-In-Visual-Mode"><a href="#Movement-↪️-Navigation-➡️-In-Visual-Mode" class="headerlink" title="Movement ↪️ Navigation ➡️ In Visual Mode"></a>Movement ↪️ Navigation ➡️ In Visual Mode</h2><p>visual mode进行选择的时候,上面那些跳转都是可行的.比如: 🌰</p>
 <p><code>vfe</code>就选择了从当前cursor到下一个<code>e</code>字符的位置.</p>

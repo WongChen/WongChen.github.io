@@ -68,7 +68,7 @@
 <link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css">
 
 
-  <meta name="keywords" content="mac,vim,">
+  <meta name="keywords" content="vim,">
 
 
 
@@ -86,18 +86,18 @@
 
 
 
-<meta name="description" content="网上关于Vim配置的讲很多，一键配置也很多。但是我们使用Vim不是因为它的插件实现的功能，自动补全，提示有多厉害，而是它自身的逻辑，自身的快速定位，格式化代码。 所以自己使用方便，好用的配置才是最好的！ 我起初就是写python，所以主要配置围绕python。首先，在~目录新建.vimrc文件，添加一些配置： vimrc文件在这. 123456789101112131415161718192021">
-<meta name="keywords" content="mac,vim">
+<meta name="description" content="Vim可以说是个高度自定义化的编辑器,1000个vimer就有1000个vimrc:😀 怎么写好属于我们自己的vimrc呢, That is a question✔︎ 我是如下分类整理和更新的.📁 基础的配置大概包括下面一些,   文件类型(filetype) 界面配置 语法(syntax) fold相关  好的是,上面这些都可以使用vim的帮助命令去查看,filetype, syntax以及">
+<meta name="keywords" content="vim">
 <meta property="og:type" content="article">
-<meta property="og:title" content="我的Vim配置">
-<meta property="og:url" content="http://wongchen.github.io/2016/11/13/我的MacVim配置/index.html">
+<meta property="og:title" content="如何写好我们自己的vimrc❓">
+<meta property="og:url" content="http://wongchen.github.io/2019/11/30/vimrc-of-your-own/index.html">
 <meta property="og:site_name" content="印第安老斑鸠">
-<meta property="og:description" content="网上关于Vim配置的讲很多，一键配置也很多。但是我们使用Vim不是因为它的插件实现的功能，自动补全，提示有多厉害，而是它自身的逻辑，自身的快速定位，格式化代码。 所以自己使用方便，好用的配置才是最好的！ 我起初就是写python，所以主要配置围绕python。首先，在~目录新建.vimrc文件，添加一些配置： vimrc文件在这. 123456789101112131415161718192021">
+<meta property="og:description" content="Vim可以说是个高度自定义化的编辑器,1000个vimer就有1000个vimrc:😀 怎么写好属于我们自己的vimrc呢, That is a question✔︎ 我是如下分类整理和更新的.📁 基础的配置大概包括下面一些,   文件类型(filetype) 界面配置 语法(syntax) fold相关  好的是,上面这些都可以使用vim的帮助命令去查看,filetype, syntax以及">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2017-08-25T16:23:45.000Z">
+<meta property="og:updated_time" content="2019-11-30T16:38:31.503Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="我的Vim配置">
-<meta name="twitter:description" content="网上关于Vim配置的讲很多，一键配置也很多。但是我们使用Vim不是因为它的插件实现的功能，自动补全，提示有多厉害，而是它自身的逻辑，自身的快速定位，格式化代码。 所以自己使用方便，好用的配置才是最好的！ 我起初就是写python，所以主要配置围绕python。首先，在~目录新建.vimrc文件，添加一些配置： vimrc文件在这. 123456789101112131415161718192021">
+<meta name="twitter:title" content="如何写好我们自己的vimrc❓">
+<meta name="twitter:description" content="Vim可以说是个高度自定义化的编辑器,1000个vimer就有1000个vimrc:😀 怎么写好属于我们自己的vimrc呢, That is a question✔︎ 我是如下分类整理和更新的.📁 基础的配置大概包括下面一些,   文件类型(filetype) 界面配置 语法(syntax) fold相关  好的是,上面这些都可以使用vim的帮助命令去查看,filetype, syntax以及">
 
 
 
@@ -118,9 +118,9 @@
 
 
 
-  <link rel="canonical" href="http://wongchen.github.io/2016/11/13/我的MacVim配置/">
+  <link rel="canonical" href="http://wongchen.github.io/2019/11/30/vimrc-of-your-own/">
 
-  <title> 我的Vim配置 | 印第安老斑鸠 </title>
+  <title> 如何写好我们自己的vimrc❓ | 印第安老斑鸠 </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -302,7 +302,7 @@
             
             
               
-                我的Vim配置
+                如何写好我们自己的vimrc❓
               
             
           </h1>
@@ -314,38 +314,19 @@
               <i class="fa fa-calendar-o"></i>
             </span>
             <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-11-13T13:14:35+08:00" content="2016-11-13">
-              2016-11-13
+            <time itemprop="dateCreated" datetime="2019-11-30T00:44:42+08:00" content="2019-11-30">
+              2019-11-30
             </time>
           </span>
 
-          
-            <span class="post-category">
-              &nbsp; | &nbsp;
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-              
-                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/Mac配置/" itemprop="url" rel="index">
-                    <span itemprop="name">Mac配置</span>
-                  </a>
-                </span>
-
-                
-                
-
-              
-            </span>
           
 
           
             
               <span class="post-comments-count">
                 &nbsp; | &nbsp;
-                <a href="/2016/11/13/我的MacVim配置/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count fb-comments-count" data-href="http://wongchen.github.io/2016/11/13/我的MacVim配置/" itemprop="commentsCount">0</span> comments
+                <a href="/2019/11/30/vimrc-of-your-own/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count fb-comments-count" data-href="http://wongchen.github.io/2019/11/30/vimrc-of-your-own/" itemprop="commentsCount">0</span> comments
                 </a>
               </span>
             
@@ -355,7 +336,7 @@
 
           
           
-             <span id="/2016/11/13/我的MacVim配置/" class="leancloud_visitors" data-flag-title="我的Vim配置">
+             <span id="/2019/11/30/vimrc-of-your-own/" class="leancloud_visitors" data-flag-title="如何写好我们自己的vimrc❓">
                &nbsp; | &nbsp;
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -377,66 +358,68 @@
       
 
       
-        <p>网上关于Vim配置的讲很多，一键配置也很多。但是我们使用Vim不是因为它的插件实现的功能，自动补全，提示有多厉害，而是它自身的逻辑，自身的快速定位，格式化代码。</p>
-<p>所以自己使用方便，好用的配置才是最好的！</p>
-<p>我起初就是写<code>python</code>，所以主要配置围绕<code>python</code>。首先，在<code>~</code>目录新建<code>.vimrc</code>文件，添加一些配置：</p>
-<p><a href="https://github.com/WongChen/.vim/blob/master/.vimrc" target="_blank" rel="noopener">vimrc</a>文件在这.</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br></pre></td><td class="code"><pre><span class="line">&quot;去掉vi的一致性</span><br><span class="line">set nocompatible</span><br><span class="line">&quot;文件类型</span><br><span class="line">filetype on</span><br><span class="line">自动补全</span><br><span class="line">set autoindent</span><br><span class="line">智能补全</span><br><span class="line">set smartindent</span><br><span class="line">&quot;显示行号</span><br><span class="line">set nu!</span><br><span class="line">&quot;高亮搜索</span><br><span class="line">set hlsearch</span><br><span class="line">&quot; 相对行</span><br><span class="line">set relativenumber</span><br><span class="line"></span><br><span class="line">&quot; tab size</span><br><span class="line">set tabstop=4</span><br><span class="line">&quot;不折叠</span><br><span class="line">set unwrap</span><br><span class="line">&quot;指示当前行</span><br><span class="line">set cursorline</span><br><span class="line">&quot;指示当前列</span><br><span class="line">set cursorcolumn</span><br><span class="line">&quot;语法</span><br><span class="line">syntax enable</span><br><span class="line">&quot;根据文件类型缩进</span><br><span class="line">filetype indent on</span><br><span class="line"></span><br><span class="line">syntax on</span><br><span class="line">&quot;python 缩进4</span><br><span class="line">au FileType python set cindent shiftwidth=4</span><br><span class="line"></span><br><span class="line">&quot; 绑定jk为ESC按键,操作更方便</span><br><span class="line">inoremap jk &lt;ESC&gt;</span><br><span class="line">&quot; 设置Control a左删除, Control d又删除</span><br><span class="line">inoremap &lt;C-a&gt; &lt;backspace&gt;</span><br><span class="line">inoremap &lt;C-d&gt; &lt;Right&gt;&lt;backspace&gt;</span><br><span class="line"></span><br><span class="line">&quot; 回车 visual line mode</span><br><span class="line">map &lt;CR&gt; &lt;S-v&gt;</span><br><span class="line">`</span><br><span class="line">&quot; 设置 leader key 为空格键</span><br><span class="line">let mapleader = &quot;\&lt;Space&gt;&quot;</span><br><span class="line"></span><br><span class="line">&quot;设置在插入模式下, xz为下行输入, zx为上行输入</span><br><span class="line">imap xz &lt;ESC&gt;o</span><br><span class="line">imap zx &lt;Up&gt;&lt;ESC&gt;o</span><br><span class="line"></span><br><span class="line">&quot;结合leader key设置  空格加w 保存, 空格加zz 保存退出,也是为了快捷操作&quot;</span><br><span class="line">nnoremap &lt;Leader&gt;zz :wq&lt;CR&gt;</span><br><span class="line">nnoremap &lt;Leader&gt;w :w&lt;CR&gt;</span><br></pre></td></tr></table></figure>
-<p>之后安装插件:</p>
-<h2 id="vundle插件管理工具"><a href="#vundle插件管理工具" class="headerlink" title="vundle插件管理工具"></a>vundle插件管理工具</h2><ul>
-<li>安装</li>
-</ul>
-<p><code>git clone https://github.com/gmarik/vundle.git ~/.vim/bundle/vundle</code></p>
+        <p>Vim可以说是个高度自定义化的编辑器,1000个vimer就有1000个vimrc:😀</p>
+<p>怎么写好属于我们自己的vimrc呢, That is a question✔︎</p>
+<p>我是如下分类整理和更新的.📁</p>
+<h2 id="基础的配置"><a href="#基础的配置" class="headerlink" title="基础的配置"></a>基础的配置</h2><p>大概包括下面一些, </p>
 <ul>
-<li>配置</li>
+<li>文件类型(filetype)</li>
+<li>界面配置</li>
+<li>语法(syntax)</li>
+<li>fold相关</li>
 </ul>
-<p>在<code>.vimrc</code>中添加</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">set rtp+=~/.vim/bundle/vundle/</span><br><span class="line">call vundle#rc()</span><br></pre></td></tr></table></figure>
+<p>好的是,上面这些都可以使用vim的帮助命令去查看,<code>filetype</code>, <code>syntax</code>以及<code>fold</code>在帮助文档都有详细的描述,</p>
+<p>当你发现需要某些功能的时候,就可以去搜索查找vim如何配置做到.比如:</p>
+<p>切换buffer的时候会发现每次都会提示你当前buffer未保存, 那么如何做到呢?</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">set hidden</span><br></pre></td></tr></table></figure>
+<p>就可以了.</p>
+<p>这些命令也都是可以在<code>command-mode</code>下面执行的命令. 主要是</p>
 <ul>
-<li>插件安装</li>
+<li><code>set</code></li>
+<li><code>filetype</code>, <code>syntax</code>, <code>fold*</code></li>
+<li><code>call</code></li>
 </ul>
-<p>目前我用的插件,之后再更新.</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">&quot;目前我使用的插件</span><br><span class="line"></span><br><span class="line">Bundle &apos;gmarik/vundle&apos;</span><br><span class="line"></span><br><span class="line">Bundle &apos;davidhalter/jedi&apos;</span><br><span class="line"></span><br><span class="line">Bundle &apos;Valloric/YouCompleteMe&apos;</span><br><span class="line"></span><br><span class="line">Bundle &apos;jiangmiao/auto-pairs&apos;</span><br><span class="line"></span><br><span class="line">Bundle &apos;scrooloose/nerdcommenter&apos;</span><br></pre></td></tr></table></figure>
-<p>安装插件,只需在任一vim窗口<code>normal</code>模式下执行<code>BundleInstall</code>即可.</p>
-<h2 id="jedi"><a href="#jedi" class="headerlink" title="jedi"></a>jedi</h2><p>Python补全强力插件.</p>
-<h3 id="YouCompleteMe"><a href="#YouCompleteMe" class="headerlink" title="YouCompleteMe"></a>YouCompleteMe</h3><h4 id="介绍"><a href="#介绍" class="headerlink" title="介绍"></a>介绍</h4><blockquote>
-<p><a href="http://valloric.github.io/YouCompleteMe/#intro" target="_blank" rel="noopener">YouCompleteMe</a> is a fast, as-you-type, fuzzy-search code completion engine for Vim.</p>
+<blockquote>
+<p>提示:</p>
+<p>在vim-user manual里, <code>C-]</code> 可以跳转到cusor下文件对应的目录.</p>
 </blockquote>
-<p>特点:</p>
+<h2 id="自动命令autocmd-🚘"><a href="#自动命令autocmd-🚘" class="headerlink" title="自动命令autocmd 🚘"></a>自动命令autocmd 🚘</h2><p>首先需要编译vim时 <code>+autocmd</code>的支持.</p>
+<p>简要来说就是在某种模式下,vim自动执行某些命令.  这样分类是因为</p>
 <ul>
-<li>识别every language</li>
-<li>支持C-family languages(C/C++/Objective-C/Objective-C++)</li>
-<li>对于Python2/3附带Jedi-based补全(尴尬,另外的jedi卸载了也没关系),使用jediHttp wrapper</li>
-<li>an OmniSharp-based completion engine for C#(不懂C#)</li>
-<li>a Tern-based completion engine for JavaScript</li>
-<li>…</li>
+<li>autocmd很强大,实现许多功能</li>
+<li>也可能出现一些副作用等问题,使用时最好先提前测试.</li>
 </ul>
-<p>此外还有<a href="a Tern-based completion engine for JavaScript">semantic IDE-like features</a>,像goto declarations, definitions, usages, etc这种,根据语意重命名变量(rename variables)等等,使用体验试试吧</p>
-<h4 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h4><ul>
-<li>使用mvim(Vim binary that is inside the MacVim.app package )更好体验,将vim链接到mvim</li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ln -s /usr/local/bin/mvim vim</span><br></pre></td></tr></table></figure>
+<p><code>autocmd</code>看手册学习就可以了,有需求的时候可以边学边造轮子.  拜托那些繁杂的操作,从现在开始.</p>
+<p>简单来说了解模式之后,主要看一下<code>&lt;Event&gt;</code></p>
 <ul>
-<li>vundle cloneYCM后,到YCM目录编译,需要用到<a href="https://cmake.org/download/" target="_blank" rel="noopener">Cmake</a></li>
-<li>编译</li>
+<li>读buffer/file</li>
+<li>写buffer/file</li>
+<li>buffer/window/file切换</li>
+<li>filetype/syntax等</li>
+<li>cusor/界面相关</li>
 </ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">cd ~/.vim/bundle/YouCompleteMe</span><br><span class="line">./install.py --[xxx]</span><br></pre></td></tr></table></figure>
-<p>可选参数有:</p>
+<blockquote>
+<p>提示:</p>
+<p>查看帮助文档的时候,(命令模式), 插入cusor当前字符使用 <code>&lt;C-r&gt;&lt;C-w&gt;</code>.</p>
+</blockquote>
+<h2 id="插件🔌"><a href="#插件🔌" class="headerlink" title="插件🔌"></a>插件🔌</h2><p>主要包括添加了哪些插件,  每个插件的全局配置等等.</p>
+<p>目前平时用的插件还是不太多的,vim自带的功能其实本身已经很强大了.自带的许多插件也很棒的像</p>
 <ul>
-<li>–clang-completer,添加C-family支持</li>
-<li>–all, everything</li>
+<li>nerdtree</li>
+<li>quickfix</li>
 </ul>
-<h3 id="auto-pairs"><a href="#auto-pairs" class="headerlink" title="auto-pairs"></a>auto-pairs</h3><p>添加引号,括号配对补全,不多说了.</p>
-<h2 id="nerdcommenter"><a href="#nerdcommenter" class="headerlink" title="nerdcommenter"></a>nerdcommenter</h2><p>添加/解除注释,支持多种语言,默认操作为:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&lt;leader&gt;cc   加注释</span><br><span class="line">&lt;leader&gt;cu   解开注释</span><br></pre></td></tr></table></figure>
-<h2 id="vim学习"><a href="#vim学习" class="headerlink" title="vim学习"></a>vim学习</h2><ul>
-<li><code>vimtutor</code>是最基础的老师了.</li>
-<li>在推荐一个<a href="https://getpocket.com/a/read/43816131" target="_blank" rel="noopener">vim 学习的链接</a>,看完这个应该能学到好多</li>
-<li>话说新MacBook Pro with TouchBar取消了<code>esc</code>键后,vim使用便比较尴尬</li>
+<p>其他也就 <code>YouCompleteMe</code>和<code>vim-colorscheme</code>用的比较频繁.</p>
+<h2 id="mapping-☑️"><a href="#mapping-☑️" class="headerlink" title="mapping ☑️"></a>mapping ☑️</h2><p>按键映射可以说是使用频繁的一个功能, 也使得vim更加高度自定义化和便于记忆. 最终达到的一个很棒的效果就是不用大脑思考,完全肌肉记忆.</p>
+<p>首先<code>&lt;Leader&gt;</code>键还是很有用的,个人定义空格作为leader key. 个人常用的的mapping有:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line">let mapleader = &quot;\&lt;Space&gt;&quot;</span><br><span class="line">&quot; key mapping for ale</span><br><span class="line">nmap &lt;silent&gt; &lt;C-p&gt; &lt;Plug&gt;(ale_previous_wrap)</span><br><span class="line">nmap &lt;silent&gt; &lt;C-n&gt; &lt;Plug&gt;(ale_next_wrap)</span><br><span class="line"></span><br><span class="line">&quot; key mapping for g++</span><br><span class="line">nnoremap &lt;Leader&gt;rr :!g++ -std=c++11 % -o %:r&lt;CR&gt;</span><br><span class="line">nnoremap &lt;Leader&gt;rg :!g++ -g -std=c++11 % -o %:r&lt;CR&gt;</span><br><span class="line">nnoremap &lt;Leader&gt;ter :packadd termdebug&lt;CR&gt;</span><br><span class="line">nnoremap &lt;Leader&gt;db :Termdebug %:r&lt;CR&gt;</span><br><span class="line">inoremap jk &lt;ESC&gt;l</span><br><span class="line"></span><br><span class="line">map &lt;S-e&gt; $</span><br><span class="line">imap xz &lt;ESC&gt;o</span><br><span class="line">imap zx &lt;Up&gt;&lt;ESC&gt;o</span><br><span class="line"></span><br><span class="line">&quot; close buffer mapping</span><br><span class="line">nnoremap &lt;Leader&gt;bb :bd&lt;CR&gt;</span><br><span class="line">nnoremap &lt;Leader&gt;zz :wq&lt;CR&gt;</span><br><span class="line">nnoremap &lt;Leader&gt;w :w&lt;CR&gt;</span><br><span class="line"></span><br><span class="line">&quot; for python</span><br><span class="line">nnoremap &lt;Leader&gt;pp :!python3 %&lt;CR&gt;</span><br><span class="line"></span><br><span class="line">&quot; ctags</span><br><span class="line">nnoremap &lt;silent&gt; &lt;Leader&gt;tt :!ctags -R&lt;CR&gt;</span><br><span class="line"></span><br><span class="line">&quot; buffer switch</span><br><span class="line">nnoremap &lt;silent&gt; [b :bprevious&lt;CR&gt; </span><br><span class="line">nnoremap &lt;silent&gt; ]b :bnext&lt;CR&gt; </span><br><span class="line">nnoremap &lt;silent&gt; [B :bfirst&lt;CR&gt; </span><br><span class="line">nnoremap &lt;silent&gt; ]B :blast&lt;CR&gt;</span><br><span class="line"></span><br><span class="line">&quot; tab switch</span><br><span class="line">nnoremap [t :tabp&lt;CR&gt;</span><br><span class="line">nnoremap ]t :tabn&lt;CR&gt;</span><br></pre></td></tr></table></figure>
+<h3 id="函数-⚱️"><a href="#函数-⚱️" class="headerlink" title="函数 ⚱️"></a>函数 ⚱️</h3><p>一些定义的函数可以放在一起.    </p>
+<p>这些就需要简单地学习一下vimscript去写了.</p>
+<p>设定几个任务</p>
+<ul>
+<li>[ ] 细节部分稍微细致学一下,在写几篇笔记</li>
+<li>[ ] vimsript好好看一下,争取可以做到,能实现自己想要的函数功能</li>
+<li>[ ] 写一个插件</li>
 </ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">inoremap jk &lt;ESC&gt;</span><br></pre></td></tr></table></figure>
-<p>环境搭建好之后,强迫自己多使用学习到的vim高端操作,逐渐熟悉,尤其是在远程CLI环境中,vim很有用,慢慢你会熟悉掌握并爱上vim.</p>
-<p>映射到自己喜欢的按键吧.<br>等等.</p>
 
       
     </div>
@@ -459,8 +442,6 @@
       
         <div class="post-tags">
           
-            <a href="/tags/mac/" rel="tag">#mac</a>
-          
             <a href="/tags/vim/" rel="tag">#vim</a>
           
         </div>
@@ -470,13 +451,13 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
+              <a href="/2019/11/18/vim-navigate/" rel="next" title="Vim中的跳转">
+                <i class="fa fa-chevron-left"></i> Vim中的跳转
+              </a>
+            
           </div>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2016/11/13/gae-proxy-ipv6/" rel="prev" title="IPv6环境使用Goagent代理免校园网流量">
-                IPv6环境使用Goagent代理免校园网流量 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -672,7 +653,7 @@
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#vundle插件管理工具"><span class="nav-number">1.</span> <span class="nav-text">vundle插件管理工具</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#jedi"><span class="nav-number">2.</span> <span class="nav-text">jedi</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#YouCompleteMe"><span class="nav-number">2.1.</span> <span class="nav-text">YouCompleteMe</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#介绍"><span class="nav-number">2.1.1.</span> <span class="nav-text">介绍</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#安装"><span class="nav-number">2.1.2.</span> <span class="nav-text">安装</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#auto-pairs"><span class="nav-number">2.2.</span> <span class="nav-text">auto-pairs</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#nerdcommenter"><span class="nav-number">3.</span> <span class="nav-text">nerdcommenter</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#vim学习"><span class="nav-number">4.</span> <span class="nav-text">vim学习</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#基础的配置"><span class="nav-number">1.</span> <span class="nav-text">基础的配置</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#自动命令autocmd-🚘"><span class="nav-number">2.</span> <span class="nav-text">自动命令autocmd 🚘</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#插件🔌"><span class="nav-number">3.</span> <span class="nav-text">插件🔌</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#mapping-☑️"><span class="nav-number">4.</span> <span class="nav-text">mapping ☑️</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#函数-⚱️"><span class="nav-number">4.1.</span> <span class="nav-text">函数 ⚱️</span></a></li></ol></li></ol></div>
             
           </div>
         </section>
@@ -782,9 +763,9 @@
 
     <script type="text/javascript">
       var disqus_shortname = 'blog-ygkmqaokul';
-      var disqus_identifier = '2016/11/13/我的MacVim配置/';
-      var disqus_title = "我的Vim配置";
-      var disqus_url = 'http://wongchen.github.io/2016/11/13/我的MacVim配置/';
+      var disqus_identifier = '2019/11/30/vimrc-of-your-own/';
+      var disqus_title = "如何写好我们自己的vimrc❓";
+      var disqus_url = 'http://wongchen.github.io/2019/11/30/vimrc-of-your-own/';
 
       function run_disqus_script(disqus_script){
         var dsq = document.createElement('script');

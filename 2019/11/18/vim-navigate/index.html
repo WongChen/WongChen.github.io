@@ -95,7 +95,7 @@
 <meta property="og:description" content="Vim中的跳转方式多样,熟练之后可以肌肉记忆💪做到灵活跳转,十分方便,脱🖱指南,就在这里🐶 一般我们move还是navigate的时候,大部分都是在Normal Mode下,Visual Mode也有一些. Insert Mode只做好一件事情就可以了,那就是插入内容,当我们完成插入之后要记得  Get Back To Normal Mode.  Esc, C-[, C-o都可以从Inser">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="http://wongchen.github.io/images/word_move.png">
-<meta property="og:updated_time" content="2019-11-19T02:12:53.016Z">
+<meta property="og:updated_time" content="2019-11-29T17:48:41.584Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Vim中的跳转">
 <meta name="twitter:description" content="Vim中的跳转方式多样,熟练之后可以肌肉记忆💪做到灵活跳转,十分方便,脱🖱指南,就在这里🐶 一般我们move还是navigate的时候,大部分都是在Normal Mode下,Visual Mode也有一些. Insert Mode只做好一件事情就可以了,那就是插入内容,当我们完成插入之后要记得  Get Back To Normal Mode.  Esc, C-[, C-o都可以从Inser">
@@ -440,7 +440,8 @@
 <h3 id="页面相关"><a href="#页面相关" class="headerlink" title="页面相关:"></a>页面相关:</h3><p><code>HML</code>移动到页面的顶部/中间/底部.</p>
 <p><code>C-d</code>, <code>C-u</code>, <code>C-b</code> 向下/向上半页.</p>
 <p><code>C-y</code>, <code>C-e</code> 上下一行.</p>
-<p><code>zz</code>: cursor所在行移动到页面中间. (<code>z</code>系列可以参考帮助文档,将cursor所在行移动到指定位置).</p>
+<p><code>zz</code>: cursor所在行移动到页面中间. (<code>z</code>系列可以参考帮助文档,包含移动,folds以及spelling相关的命令).</p>
+<p>此外fold之间的移动,也需要z系列, 分别是<code>zj</code>, <code>zk</code>, 在一个开启的folds中可以通过<code>[z</code>和<code>]z</code>上下跳转</p>
 <p><code>scrolloff</code>:  这个属性指的是进行移动跳转时,cursor下面至少包含多少行内容.设置一个合理的值可以保证我们在移动的时候尽量让要查看的内容在屏幕的中间位置.</p>
 <h2 id="Movement-↪️-Navigation-➡️-In-Visual-Mode"><a href="#Movement-↪️-Navigation-➡️-In-Visual-Mode" class="headerlink" title="Movement ↪️ Navigation ➡️ In Visual Mode"></a>Movement ↪️ Navigation ➡️ In Visual Mode</h2><p>visual mode进行选择的时候,上面那些跳转都是可行的.比如: 🌰</p>
 <p><code>vfe</code>就选择了从当前cursor到下一个<code>e</code>字符的位置.</p>
@@ -486,6 +487,10 @@
           </div>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2019/11/30/vimrc-of-your-own/" rel="prev" title="如何写好我们自己的vimrc❓">
+                如何写好我们自己的vimrc❓ <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -581,7 +586,7 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">14</span>
+              <span class="site-state-item-count">15</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>

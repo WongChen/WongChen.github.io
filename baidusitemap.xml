@@ -4,8 +4,25 @@
 
     
   <url>
+    <loc>http://wongchen.github.io/2019/11/30/vimrc-of-your-own/</loc>
+    <lastmod>2019-11-30T16:38:31.503Z</lastmod>
+    <data>
+        <display>
+        <title>如何写好我们自己的vimrc❓</title>
+        <pubTime>2019-11-29T16:44:42.000Z</pubTime>
+        
+        <tag>vim</tag>
+         
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://wongchen.github.io/2019/11/18/vim-navigate/</loc>
-    <lastmod>2019-11-19T02:12:53.016Z</lastmod>
+    <lastmod>2019-11-29T17:48:41.584Z</lastmod>
     <data>
         <display>
         <title>Vim中的跳转</title>
